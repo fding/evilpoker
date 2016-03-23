@@ -1,0 +1,30 @@
+Client to server:
+
+login name
+> ok playerid token (e.g. ok 7 $9xW0)
+player 7 $9xW0 waitgame
+> newgame nplayers=10
+player 7 $9xW0 waitturn
+> playbegin smallblind=10 bigblind=20 dealer=0
+player 7 $9xW0 waitturn
+> yourturn pot=100 smallblind=10 bigblind=20 community=__________ hole=5S8C dealer=0 betsize=30 yourbet=0 (player id=1 chips=99990 action=smallblind) (player id=2 chips=99980 action=bigblind) (player id=3 chips=10000 state=folded action=fold) (player id=4 chips=99970 action=raise-10) (player id=5 chips=99970 action=call)
+
+player 7 $9xW0 makemove raise-20
+> moveok
+player 7 $9xW0 waitturn
+> roundend pot=200 smallblind=10 bigblind=20 community=_________ hole=5S8C dealer=0 betsize=30 yourbet=0 (summary of all things that happened until round end)
+player 7 $9xW0 waitturn
+> yourturn pot=210 smallblind=10 bigblind=20 community=5C9SAD____ hole=5S8C dealer=0 betsize=10 yourbet=0 (player id=1 chips=99990 state=folded) (player id=2 chips=99980 action=check) (player id=3 chips=10000 state=folded) (player id=4 chips=99970 action=check) (player id=5 chips=99970 action=raise-10)
+etc.
+player 7 $9xW0 waitturn
+> playend winner=2 (player id=1 hole=____ chips=99990) (player id=2 hole=ACAS chips=10100) ...
+player 7 $9xW0 waitturn
+> playbegin smallblind=10 bigblind=20 dealer=1
+player 7 $9xW0 waitturn
+...
+> youreout (if you ever runout of chips, this is shown instead of playend)
+> youwon (shown after the turn that you win)
+
+
+waitturn will hang until the server is ready with a response. After it returns, subsequent calls to waitturn will return the same message if the
+player is expected to make an action (after youturn messages).
