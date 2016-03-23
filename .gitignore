@@ -1,1 +1,9 @@
 *.o
+*.log
+*.err
+*.std
+
+project_acpc_server/all_in_expectation
+project_acpc_server/bm_run_matches
+project_acpc_server/dealer
+project_acpc_server/example_player
