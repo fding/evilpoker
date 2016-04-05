@@ -71,7 +71,7 @@ class EvoAgent(object):
                 self.epoch_results.append(self.play_epoch(group))
 
             # sort the agents in order of rank 
-            self.agents = self.rank_agents(self.epoch_results)
+            self.agents = self.rank_agents()
             # get the top agents (arbitrarilty set to num_agents/2)
             mutate_agents = self.agents[:len(self.agents) - (self.to_mutate)]
             top_agents = self.agents[:len(self.agents) - (self.to_keep)]
@@ -87,20 +87,16 @@ class EvoAgent(object):
     def play_epoch(self, agents):    
         game_results = []
         for i in xrange(self.num_games):
+            #TODO play game here
+            # TODO fork off the dealer + agents here
             game_results.append(self.play_game(agents))
         return game_results
 
     '''
-    Plays one game and outputs a string that is the result
-    '''
-    def play_game(self, agents):
-        # TODO fork off the dealer + agents here
-        return ""
-
-    '''
     Ranks the agents based upon the results from the epoch 
     '''
-    def rank_agents(self.epoch_results):
+    def rank_agents(self):
+        self.epoch_results
         # TODO 
         # use ids of self.agents, sort them somehow, return list
         return []
