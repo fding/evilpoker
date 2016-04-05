@@ -2,6 +2,7 @@
 *.log
 *.err
 *.std
+*.pyc
 
 project_acpc_server/all_in_expectation
 project_acpc_server/bm_run_matches
