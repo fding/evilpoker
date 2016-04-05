@@ -19,7 +19,7 @@ test_hands: test_hands.cc hands.o
 
 hands_swig.py: hands.o hands.i
 	swig -python -c++ hands.i
-	c++ $(INCLUDE) -c hands_wrap.cxx -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/
+	c++ $(INCLUDE) -c hands_wrap.cxx
 	c++ $(LIB) -shared hands.o hands_wrap.o -o _hands_swig.so -lpython2.7
 
 clean:

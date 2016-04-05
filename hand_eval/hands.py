@@ -1,5 +1,7 @@
 import hands_swig
 
+from hands_swig import Deck, Card
+
 def eval_hand_potential(nplayers, hole, board, ntrials=20000):
     hole_s = hands_swig.HoleCards()
     board_s = hands_swig.CommunityCards()
