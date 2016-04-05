@@ -3,8 +3,11 @@
 *.err
 *.std
 *.pyc
+*.cxx
+*.so
 
 project_acpc_server/all_in_expectation
 project_acpc_server/bm_run_matches
 project_acpc_server/dealer
 project_acpc_server/example_player
+hand_eval/hands_swig.py
