@@ -11,6 +11,9 @@ Copyright (C) 2011 by the Computer Poker Research Group, University of Alberta
    f_house	1014	10920
    quads	169	11934
    s_flush	13	12103 */
+
+#include <stdint.h>
+
 #define HANDCLASS_SINGLE_CARD 0
 #define HANDCLASS_PAIR 1287
 #define HANDCLASS_TWO_PAIR 5005
