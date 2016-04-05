@@ -1,2 +1,3 @@
-# evilpoker
-Evolutionary Poker Playing Agent
+# Evopoker: Evolutionary Opponent-Modeling Poker Playing Agent
+
+David Ding, Lily Tsai, Serena Wang
