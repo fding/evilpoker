@@ -131,10 +131,16 @@ class Deck {
 
 struct HoleCards {
     Card cards[2];
+    void set_card(int i, Card c) {
+        cards[i] = c;
+    }
 };
 
 struct CommunityCards {
     Card cards[5];
+    void set_card(int i, Card c) {
+        cards[i] = c;
+    }
 };
 
 typedef int score_t;
