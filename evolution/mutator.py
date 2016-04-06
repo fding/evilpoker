@@ -24,7 +24,7 @@ class Mutator(object):
                 params = {}
                 for feature, param in feature_params:
                     params[feature] = int(param)
-                self.parent_agents.append(Params(p, params=params, agent_dir))
+                self.parent_agents.append(Params(p, agent_dir))
        
     def crossover(num_agents_to_produce):
         agents = {}
