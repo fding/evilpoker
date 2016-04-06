@@ -74,6 +74,7 @@ class EvoAgent(object):
            
             # get the results of each epoch for each gameplaying group
             for group in self.game_groups:
+                # TODO parallelize
                 self.epoch_results.append(self.play_epoch(group))
 
             # sort the agents in order of rank 
@@ -99,7 +100,7 @@ class EvoAgent(object):
     '''
     def play_epoch(self, agents):    
         game_results = []
-        for i in xrange(self.num_games):
+        for i in xrange(self.num_games_per_epoch):
             #TODO play game here
             # TODO fork off the dealer + agents here
             game_results.append(self.play_game(agents))
@@ -124,7 +125,7 @@ class EvoAgent(object):
             # XXX David, is this a function you'd write?
             params = init_agent()
             uuid = uuid.uuid4()
-            with open(os.path.join(agent_dir, "%s.txt" % uuid), 'w') as f:
+            with open(os.path.join(agent_dir, "%s" % uuid), 'w') as f:
                 for p in param:
                     f.write(p + '\n')
             self.agents.append(uuid)
