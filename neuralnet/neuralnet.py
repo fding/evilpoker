@@ -56,41 +56,44 @@ class NeuralNet(object):
 
         self._vweights = [None] * len(self.layers)
         self._vbiases = [None] * len(self.layers)
-        for i, (inputs, f) in enumerate(wiring):
+        for i, (inputs, f) in enumerate(self.wiring):
             if not inputs:
                 assert i in self.input_layers
                 continue
-
-            for j in inputs:
-                assert self._vlayers[j] is not None
-            assert self._vlayers[i] is None
-
             size = sum(self.layers[j] for j in inputs)
 
             self._vweights[i] = theano.shared(0.01 / numpy.sqrt(self.layers[i]) * numpy.random.randn(size, self.layers[i]))
             self._vbiases[i] = theano.shared(0.01 * numpy.random.randn(self.layers[i]))
-            lin_comb = T.dot(T.concatenate([self._vlayers[j] for j in inputs]), self._vweights[i])
+
+        self.learning_rate = learning_rate
+        self.L2REG = L2REG
+
+        self.rebuild()
+
+    def rebuild(self):
+        for i, (inputs, f) in enumerate(self.wiring):
+            if not inputs:
+                continue
+
+            lin_comb = T.dot(T.concatenate([self._vlayers[j] for j in inputs], axis=1), self._vweights[i])
             add_biases = lin_comb + self._vbiases[i]
             self._vlayers[i] = f(add_biases)
 
-        self._output = T.concatenate([self._vlayers[j] for j in self.output_layers])
-        self._prediction = theano.function(inputs=[self._vlayers[i] for i in self.input_layers],
-                                           outputs=self._output)
+        self._output = T.concatenate([self._vlayers[j] for j in self.output_layers], axis=1)
 
         self._target = T.matrix()
         outputp = T.switch(T.eq(self._output, 0), 0.00001, self._output)
         outputpp = T.switch(T.eq(outputp, 1), 0.999999, outputp)
         crossentropy = T.nnet.categorical_crossentropy(self._output, self._target)
         self._cost = (crossentropy.sum() + 
-                      L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
-                      L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
+                      self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
+                      self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
 
         self._derivatives = [None] * len(self.layers)
         self._updates = []
-        self.learning_rate = learning_rate
 
         MAX_DERIV = 1000
-        for i, (inputs, f) in enumerate(wiring):
+        for i, (inputs, f) in enumerate(self.wiring):
             if not inputs:
                 continue
             deriv1 = T.grad(self._cost, self._vweights[i])
@@ -106,7 +109,8 @@ class NeuralNet(object):
 
             self._updates.append((self._vweights[i], self._vweights[i] - self.learning_rate * self._derivatives[i][0]))
             self._updates.append((self._vbiases[i], self._vbiases[i] - self.learning_rate * self._derivatives[i][1]))
-
+        self._prediction = theano.function(inputs=[self._vlayers[i] for i in self.input_layers],
+                                           outputs=self._output)
         self._train = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
                                       outputs=self._cost,
                                       updates=self._updates)
@@ -161,6 +165,8 @@ class NeuralNet(object):
                        The k-th element of inputs is the list of inputs for the k-th
                        training example
         '''
+        if len(inputs) == 0:
+            return
         assert len(inputs) == len(target)
         epoch = 0
         batches = []
