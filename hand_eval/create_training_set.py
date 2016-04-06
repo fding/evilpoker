@@ -121,8 +121,8 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
             betsize = 0
 
         bet_seq[p].append((nremain, nunits, betsize, tocall, position,
-                           [chips[i] for i in range(nplayers)],
-                           [chips[i] for i in range(nplayers) if remain[p]]
+                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers)],
+                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers) if remain[p]]
                           ))
         last_bet_size[p] = units_per_bet
 
@@ -146,7 +146,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
                                      position,
                                      nremain,
                                      # [c * unitsize for c in chips_all],
-                                     [(chips_at_round_begin[p] + c * unitsize if c != 1 else 0) for c in chips_remain]))
+                                     chips_remain, chips_all))
 
     return bet_structure
 
@@ -202,6 +202,7 @@ def process_hand(hand_id):
                 p = players[player_name][hand_id]
                 if player_name in name_to_id:
                     for bet, a in itertools.izip_longest(bet_structure[name_to_id[player_name]], p[2+roundi], fillvalue='-'):
+                        bet = bet[:-1]
                         if a not in {'b', 'c', 'k', 'r', 'f'}:
                             continue
                         if roundi == 0:
