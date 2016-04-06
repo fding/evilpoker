@@ -1,46 +1,26 @@
-class Params(object):
-    param_names = [
-                "hand_strength",
-                "hand_potential",
-                "sum_agent_cards",
-                "sum_table_cards",
-                "highest_pair ",
-                "highest_triple",
-                "flush_potential",
-                "table_flush_potential",
-                "agent_pot_chips",
-                "pot_chips",
-                "call_chips ",
-                "num_opponents",
-                "round_pos",
-                "chips_per_opponent"
-            ]
+import os
+import numpy as np
 
-    def __init__(self, aid="", agent_dir="agent_params", create=True):
+class Params(object):
+
+    def __init__(self, aid="", agent_dir="agent_params", params_list=None):
         self.aid = aid 
         self.agent_dir = agent_dir
-        self.param_dict = {}
-        if not create:
-            self.param_dict = read_params(self.aid, self.agent_dir)
+
+        self.params = params_list
+        if self.params is not None:
+            self.params = params_list
         else:
-            for name in param_names:
-                self.param_dict[name] = 0
+            self.params = []
 
     ''' 
     writes this param object's parameters to file
     '''
     def write_params(self):
-        with open(os.path.join(agent_dir, self.aid), 'w') as f:
-            for name, param in params:
-                f.write("%s:%f\n" % name, param)
+        np.savez(os.path.join(agent_dir,self.aid), *self.params)
 
     '''
     returns a params dict
     '''
     def read_params(self, aid, agent_dir):
-        with open(os.path.join(agent_dir, self.aid), 'r') as f:
-            feature_params = [line.split(':') for line in f.read().splitlines()]
-            params = {}
-            for feature, param in feature_params:
-                params[feature] = int(param)
-            return params
+        self.params = np.load(os.path.join(agent_dir,self.aid))

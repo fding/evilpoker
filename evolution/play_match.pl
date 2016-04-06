@@ -79,7 +79,7 @@ for( $p = 0; $p < $numPlayers; ++$p ) {
 	    or die "can't dup player $p STDERR";
 
 	exec { $ARGV[ 4 + $p * 2 + 1 ] } ( $ARGV[ 4 + $p * 2 + 1 ],
-                        $ARGV[ 4 + $p * 2 + 2 ],
+                        $ARGV[ 4 + $p * 2 ],
 					   $hostip, $_[ $p ] )
 	    or die "couldn't run $ARGV[ 4 + $p * 2 + 1 ] for player $p";
     }

@@ -38,6 +38,8 @@ class Mutator(object):
         
         # insert in order of top-ranked parent agent to bottom agent
         for p in parent_agents:
+            p_param = Params(aid=p, agent_dir=agent_dir)
+            p_param.read_params()
             self.parent_agents.append(Params(aid=p, agent_dir=agent_dir, create=False))
         # calculate the parent probability of being chosen
         self.num_parents = len(parent_agents)
@@ -57,15 +59,16 @@ class Mutator(object):
             # create a new agent and its parameters
             new_aid = uuid.uuid4()
             agents.append(new_aid)
-            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir, create=True)
+            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir)
            
             # randomize which parameters to take from which parents
-            random.shuffle(Param.param_names)
-            for i, param in enumerate(Param.param_names):
+            indices = range(len(new_agent_params.params))
+            random.shuffle(indices)
+            for i, j in enumerate(indices):
                 if i < params_to_cross:
-                    new_agent_params.param_dict[param] = parents[0].param_dict[param]
+                    new_agent_params.params.append(parents[0].params[j])
                 else:
-                    new_agent_params.param_dict[param] = parents[1].param_dict[param]
+                    new_agent_params.params.append(parents[1].params[j])
             new_agent_params.write_params()
         return agents
 
@@ -77,11 +80,11 @@ class Mutator(object):
             # create a new agent and its parameters
             new_aid = uuid.uuid4()
             agents.append(new_aid)
-            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir, create=True)
+            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir)
             
             # randomly add noise to weights
-            for param in enumerate(Param.param_names):
-                new_agent_params.param_dict[param] = np.random.normal(parent.param_dict[param], 1, 1)[0]
+            for param in parent.params:
+                new_agent_params.params = param + np.random.normal(0, 1, 1)
 
             new_agent_params.write_params()
         return agents
@@ -94,17 +97,19 @@ class Mutator(object):
             # create a new agent and its parameters
             new_aid = uuid.uuid4()
             agents.append(new_aid)
-            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir, create=True)
+            new_agent_params = Param(aid=new_aid, agent_dir=agent_dir)
             
             # randomly assign each parent weights
             parent_weights = [random.random() for _ in xrange(len(parents))]
 
-            for param in enumerate(Param.param_names):
-                new_param = 0
+            # iterate through all parent parameters, calculating a weighted average
+            # as the new agent's parameter
+            for param_index in xrange(len(p.params)):
+                new_param = np.zeros((p.params[param_index].shape()))
                 for i, p in enumerate(parents):
-                    new_param += parent_weights[i] * p.param_dict[param]
+                    new_param += parent_weights[i] * p.params[param_index]
                 new_param /= sum(parent_weights)
-                new_agent_params.param_dict[param] = new_param
+                new_agent_params.params.append(new_param)
 
             new_agent_params.write_params()
         return agents
