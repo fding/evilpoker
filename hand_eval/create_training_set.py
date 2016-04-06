@@ -81,7 +81,7 @@ def calculate_features(nplayers, hole_cards, table_cards, bets, action):
     flush_potential = max(count(map(suit, hole_cards + table_cards)))
     table_flush_potential = max(count(map(suit, table_cards) + [0]))
 
-    return [nplayers, potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
+    return [nplayers, len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
             flush_potential, table_flush_potential] + list(bets[:-1]) + list(bets[-1]) + encode(action)
 
 def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
@@ -122,7 +122,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
 
         bet_seq[p].append((nremain, nunits, betsize, tocall, position,
                            [chips[i] for i in range(nplayers)],
-                           [(chips[i] if remain[p] else 1) for i in range(nplayers)]
+                           [chips[i] for i in range(nplayers) if remain[p]]
                           ))
         last_bet_size[p] = units_per_bet
 
@@ -141,7 +141,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
         for nremain, nunits, betsize, tocall, position, chips_all, chips_remain in bet_seq[p]:
             my_chips_in_pot[p] += unitsize * betsize
             bet_structure[p].append((my_chips_in_pot[p], 
-                                     nunits * unitsize,
+                                     pot_at_round_begin + nunits * unitsize,
                                      tocall * unitsize,
                                      position,
                                      nremain,
