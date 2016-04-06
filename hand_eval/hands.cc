@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cstdio>
 #include "hands.h"
+#include <stdint.h>
 
 #include "evalHandTables"
 
