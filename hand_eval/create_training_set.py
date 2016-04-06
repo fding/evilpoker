@@ -122,7 +122,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
 
         bet_seq[p].append((nremain, nunits, betsize, tocall, position,
                            [chips[i] for i in range(nplayers)],
-                           [(chips[i] if remain[p]) for i in range(nplayers)]
+                           [chips[i] for i in range(nplayers) if remain[p]]
                           ))
         last_bet_size[p] = units_per_bet
 
