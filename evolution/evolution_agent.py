@@ -124,11 +124,11 @@ class EvoAgent(object):
         for i in xrange(self.num_agents):
             # XXX David, is this a function you'd write?
             params = init_agent()
-            uuid = uuid.uuid4()
-            with open(os.path.join(agent_dir, "%s" % uuid), 'w') as f:
+            aid = uuid.uuid4()
+            with open(os.path.join(agent_dir, "%s" % aid), 'w') as f:
                 for p in param:
                     f.write(p + '\n')
-            self.agents.append(uuid)
+            self.agents.append(aid)
 
     ''' 
     Sets the list of benchmark agents the agent will
