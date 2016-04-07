@@ -12,8 +12,13 @@ The evolution agent (EA) runs the evolutionary process
 import random
 import os 
 import uuid
+import fcntl
+import time
+import subprocess
+import re
+from collections import defaultdict
 from mutator import Mutator
-from parameters import Param
+from parameters import Params
 
 class EvoAgent(object):
 
@@ -36,8 +41,8 @@ class EvoAgent(object):
         self.agents = []
         self.epoch_results = []
         
-        if not os.path.exists(agent_dir):
-            os.makedirs(agent_dir)
+        if not os.path.exists(self.agent_dir):
+            os.makedirs(self.agent_dir)
         
     '''
     Run by the main function to produce the top agents.
@@ -49,7 +54,7 @@ class EvoAgent(object):
                 %d epochs\n \
                 %d agents\n\
                 %d agents per game group\n\
-                coevolution: %b\n" % \
+                coevolution: %d\n" % \
                 (self.num_epochs, self.num_agents, self.num_game_players, self.coevolve)
         
         self.run_epochs(self.to_mutate, self.to_keep)
@@ -69,7 +74,7 @@ class EvoAgent(object):
     def run_epochs(self, to_mutate, to_keep):
         for _ in xrange(self.num_epochs):
             # set the gameplaying groups
-            self.init_agent_gameplaying_groups(self.coevolve)
+            self.init_agent_gameplaying_groups()
 
             # maps from player to list player scores in games played during
             # the epoch
@@ -105,47 +110,29 @@ class EvoAgent(object):
     which maps a player's aid to the player's scores in each game
     '''
     def play_epoch(self, agents):    
-        game_results = {}
-        
-        match_args = ["play_match.pl",
-                "match",
-                "holdem.nolimit.2p.game",
-                1000,
-                random.randint()]
-       
+        game_results = defaultdict(list)
+      
+        match_args = ()
         # add all agents to the game
         if self.coevolve:
             for aid in agents:
                 game_results[aid] = []
-                match_args.append(aid)
-                match_args.append("./agent.sh")
+                match_args += (str(aid),)
 
         else:
             game_results[agents[0]] = []
-            match_args.append(agents[0])
-            match_args.append("./play_agent.sh")
-            match_args.append("benchmark")
-            match_args.append("./play_benchmark.sh")
+            match_args += (str(agents[0]), "benchmark",)
 
+        print match_args
         # play the games and record the output (which is the scores of the agents in the game)
         for i in xrange(self.num_games_per_epoch):
-            match = subprocess.Popen(match_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
-            fcntl.fcntl(p.stdout.fileno(), fcntl.F_SETFL, os.O_NONBLOCK)
-            
-            while True:
-                try:
-                    output = dealer.stdout.read()
-                except IOError:
-                    pass
+            output = subprocess.check_output("./play_match.pl matchName holdem.nolimit.2p.game 1000 0 %s ./example_player.nolimit.2p.sh %s ./example_player.nolimit.2p.sh" % match_args, shell=True)
+            if output.split(':')[0] == "SCORE": 
                 # output should be of format SCORE:-530|530:Alice|Bob
-                if output.split(':')[0] == "SCORE": 
-                    output = re.split(r'[:|]', output)
-                    game_results[output[3]].append(output[1])
-                    if output[4] != "benchmark":
-                        game_results[output[4]].append(output[2])
-                    break
-
-                time.sleep(.1)
+                output = re.split(r'[:|]', output)
+                game_results[output[3]].append(output[1])
+                if output[4] != "benchmark":
+                    game_results[output[4]].append(output[2])
         return game_results
 
     '''
@@ -167,11 +154,13 @@ class EvoAgent(object):
     def init_agents(self):
         self.agents = []
         for i in xrange(self.num_agents):
-            params = init_agent()
-            aid = uuid.uuid4()
+            #params = init_agent()
+            aid = str(uuid.uuid4())
+            '''
             with open(os.path.join(agent_dir, "%s" % aid), 'w') as f:
                 for p in param:
                     f.write(p + '\n')
+            '''
             self.agents.append(aid)
 
     '''
@@ -187,22 +176,24 @@ class EvoAgent(object):
        
         if self.coevolve:
             agents_indices = range(len(self.agents))
-            random.shuffle(agents_indicies)
+            random.shuffle(agents_indices)
 
+            i = 0
             while (i < len(self.agents)):
                 group = []
                 for _ in xrange(self.num_game_players):
-                    agent_game_groups.append(self.agents[i])
+                    group.append(self.agents[i])
                     i += 1
+                agent_game_groups.append(group)
         else:
             for agent in self.agents:
                 agent_game_groups.append([agent])
                 # the other agents will be benchmark agent programs
-        return agent_game_groups
+        self.game_groups = agent_game_groups
 
 def main():
-    evoagent = EvoAgent(coevolve=False)
-    evoagent.produce_agents(3)
+    evoagent = EvoAgent(coevolve=True)
+    evoagent.produce_agents(1)
 
 if __name__ == "__main__":
     main()

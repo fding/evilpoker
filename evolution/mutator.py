@@ -1,5 +1,5 @@
 import os
-from parameters import Param
+from parameters import Params
 import numpy as np
 from numpy.random import random_sample
 import random

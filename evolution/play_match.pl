@@ -81,7 +81,7 @@ for( $p = 0; $p < $numPlayers; ++$p ) {
 	exec { $ARGV[ 4 + $p * 2 + 1 ] } ( $ARGV[ 4 + $p * 2 + 1 ],
                         $ARGV[ 4 + $p * 2 ],
 					   $hostip, $_[ $p ] )
-	    or die "couldn't run $ARGV[ 4 + $p * 2 + 1 ] for player $p";
+	    or die "couldn't run $ARGV[ 4 + $p * 2 + 1 ] for player $ARGV[ 4+$p*2]"
     }
 }
 
