@@ -1,8 +1,9 @@
-ifeq ($(sh "uname -s"), Linux)
+UNAME=$(shell uname -s)
+ifeq ($(UNAME), Linux)
 INCLUDE=-I/usr/local/include/python2.7
 LIB=-L/usr/local/lib/python2.7
 else
-ifeq ($(sh "uname -s"), Darwin)
+ifeq ($(UNAME), Darwin)
 INCLUDE=-I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7/
 LIB=-L/System/Library/Frameworks/Python.framework/Versions/2.7/lib/
 endif
