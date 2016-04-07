@@ -110,6 +110,7 @@ class Mutator(object):
                 new_param /= sum(parent_weights)
                 new_agent_params.params.append(new_param)
 
+            print new_agent_params.params
             new_agent_params.write_params()
         return agents
 
