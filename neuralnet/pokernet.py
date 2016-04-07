@@ -118,7 +118,7 @@ class PokerNet(object):
                     for j in range(2, 11):
                         err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
-                        self.save_params(counter)
+                    self.save_params(counter)
 
 if __name__ == '__main__':
     p = PokerNet()
