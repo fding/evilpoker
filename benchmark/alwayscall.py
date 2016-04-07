@@ -2,8 +2,7 @@ import evilpoker.poker
 from evilpoker.pokerbot import PokerBot
 import sys
 
-# Always folds when valid, otherwise calls.
-class AlwaysFoldAgent(PokerBot):
+class AlwaysCallAgent(PokerBot):
     def __init__(self, host, port, gamefile):
         # Initialize networking stuff
         super(AlwaysFoldAgent, self).__init__()
@@ -14,13 +13,13 @@ class AlwaysFoldAgent(PokerBot):
     def what_should_i_do(self, my_id, state):
         board_cards = poker.get_board_cards(self.game, state)
         hole_cards = poker.get_hole_cards(self.game, state)
-        # super complicated algorithm
         
+		# Do I need to check if there are chips left? or does it fold automatically?
         action = Action()
-        action.type = poker.FOLD
+        action.type = poker.CALL
 		action.size = 0
-		if (not poker.isValidAction( game, state.state, 0, action ) > 0):
-			action.type = poker.CALL
+		# How do we deal with passing by reference using swig??
+		assert(poker.isValidAction( game, state.state, 0, action ) > 0)
         return action
 
 # Take user input host and port
@@ -41,5 +40,5 @@ for opt, arg in opts:
 	elif opt == "--game_file":
 		gamefile = arg
 		
-p = AlwaysFoldAgent(host, port, gamefile)
+p = AlwaysCallAgent(host, port, gamefile)
 p.run()
