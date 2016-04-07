@@ -10,6 +10,7 @@ class Params(object):
         self.params = params_list
         if self.params is not None:
             self.params = params_list
+            self.write_params()
         else:
             self.params = []
 
@@ -17,10 +18,12 @@ class Params(object):
     writes this param object's parameters to file
     '''
     def write_params(self):
-        np.savez(os.path.join(agent_dir,self.aid), *self.params)
+        np.savez(os.path.join(self.agent_dir,self.aid+".npz"), *self.params)
 
     '''
     returns a params dict
     '''
     def read_params(self):
-        self.params = np.load(os.path.join(self.agent_dir,self.aid))
+        self.params = []
+        self.params.append((np.load(os.path.join(self.agent_dir,self.aid+".npz")))['arr_0'])
+        self.params.append((np.load(os.path.join(self.agent_dir,self.aid+".npz")))['arr_1'])

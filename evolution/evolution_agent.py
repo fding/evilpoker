@@ -27,8 +27,8 @@ class EvoAgent(object):
     to_keep = 5
 
     num_hands = 10
-    num_agents= 10
-    num_epochs= 1
+    num_agents= 20
+    num_epochs= 5
     num_games_per_epoch = 5
     num_game_players = 2
 
@@ -61,7 +61,7 @@ class EvoAgent(object):
         self.run_epochs(self.to_mutate, self.to_keep)
         
         # get the parameters of the top agent
-        for i in xrange(max(nagents, to_keep)):
+        for i in xrange(max(nagents, self.to_keep)):
             print "Top agent %d ID: %s" % (i, self.top_agents[i])
 
     '''
@@ -97,13 +97,13 @@ class EvoAgent(object):
             num_agents_in_mutate_groups = (self.num_agents - self.to_keep)/3
             crossovers = self.mutator.crossover(num_agents_in_mutate_groups)
             mutated = self.mutator.mutate(num_agents_in_mutate_groups)
-            combinations = self.mutator.combo(self.num-agents - self.to_keep - 2*num_agents_in_mutate_groups)
+            combinations = self.mutator.combo(self.num_agents - self.to_keep - 2*num_agents_in_mutate_groups)
 
             # get the top to_keep agents
             self.top_agents = self.agents[:self.to_keep]
 
             # set the agents for the next epoch
-            self.agents = crossovers + mutated + combinations + top_agents
+            self.agents = crossovers + mutated + combinations + self.top_agents
             self.epoch_results = {}
 
     '''
@@ -132,9 +132,9 @@ class EvoAgent(object):
             if output.split(':')[0] == "SCORE": 
                 # output should be of format SCORE:-530|530:Alice|Bob
                 output = re.split(r'[:|]', output)
-                game_results[output[3]].append(int(output[1]))
+                game_results[output[3].strip()].append(int(output[1]))
                 if output[4] != "benchmark":
-                    game_results[output[4]].append(int(output[2]))
+                    game_results[output[4].strip()].append(int(output[2]))
         return game_results
 
     '''
@@ -159,11 +159,7 @@ class EvoAgent(object):
         for i in xrange(self.num_agents):
             #params = init_agent()
             aid = str(uuid.uuid4())
-            '''
-            with open(os.path.join(agent_dir, "%s" % aid), 'w') as f:
-                for p in param:
-                    f.write(p + '\n')
-            '''
+            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=[[1,1],[2,1,1]])
             self.agents.append(aid)
 
     '''
