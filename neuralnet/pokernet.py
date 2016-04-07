@@ -58,6 +58,14 @@ class PokerNet(object):
             self.nets[i]._vbiases[5] = self.nets[2]._vbiases[5]
             self.nets[i].rebuild()
 
+    def save_params(self, fname):
+        np.savez_compressed('pokernet-params/param-%s.npz' % fname,
+                 self.nets[2]._vweights[3],
+                 self.nets[2]._vbiases[3],
+                 self.nets[2]._vweights[5],
+                 self.nets[2]._vbiases[5],
+                 *([self.nets[i]._vweights[4] for i in self.nets] + [self.nets[i]._vbiases[4] for i in self.nets]))
+
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
         validation = {}
@@ -110,6 +118,7 @@ class PokerNet(object):
                     for j in range(2, 11):
                         err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
+                        self.save_params(counter)
 
 if __name__ == '__main__':
     p = PokerNet()
