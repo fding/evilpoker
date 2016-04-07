@@ -1,1 +1,1 @@
-./agent $1 $2 $3
+./agent --filename=$1 --host=$2 --port=$3

@@ -16,6 +16,7 @@ import fcntl
 import time
 import subprocess
 import re
+import operator
 from collections import defaultdict
 from mutator import Mutator
 from parameters import Params
@@ -26,9 +27,9 @@ class EvoAgent(object):
     to_keep = 5
 
     num_hands = 10
-    num_agents= 100
-    num_epochs= 10
-    num_games_per_epoch = 10
+    num_agents= 10
+    num_epochs= 1
+    num_games_per_epoch = 5
     num_game_players = 2
 
     agent_dir = "agent_params"
@@ -51,7 +52,7 @@ class EvoAgent(object):
     '''
     def produce_agents(self, nagents):
         print "Producing 3 top agents of evolution:\n\
-                %d epochs\n \
+                %d epochs\n\
                 %d agents\n\
                 %d agents per game group\n\
                 coevolution: %d\n" % \
@@ -110,6 +111,7 @@ class EvoAgent(object):
     which maps a player's aid to the player's scores in each game
     '''
     def play_epoch(self, agents):    
+        print "playing epoch"
         game_results = defaultdict(list)
       
         match_args = ()
@@ -123,16 +125,16 @@ class EvoAgent(object):
             game_results[agents[0]] = []
             match_args += (str(agents[0]), "benchmark",)
 
-        print match_args
         # play the games and record the output (which is the scores of the agents in the game)
         for i in xrange(self.num_games_per_epoch):
+            print "\tplaying game in epoch"
             output = subprocess.check_output("./play_match.pl matchName holdem.nolimit.2p.game 1000 0 %s ./example_player.nolimit.2p.sh %s ./example_player.nolimit.2p.sh" % match_args, shell=True)
             if output.split(':')[0] == "SCORE": 
                 # output should be of format SCORE:-530|530:Alice|Bob
                 output = re.split(r'[:|]', output)
-                game_results[output[3]].append(output[1])
+                game_results[output[3]].append(int(output[1]))
                 if output[4] != "benchmark":
-                    game_results[output[4]].append(output[2])
+                    game_results[output[4]].append(int(output[2]))
         return game_results
 
     '''
@@ -142,8 +144,9 @@ class EvoAgent(object):
     def rank_agents(self):
         sum_scores = []
         for aid, scores in self.epoch_results.iteritems():
-            sum_scores.append((aid, sum(scores)))
-        sorted_list = [aid for aid, _ in sum_scores.sort(key=itemgetter(1), reverse=True)]
+            sum_scores.append((sum(scores), aid))
+            sum_scores.sort(reverse=True)
+        sorted_list = [aid for (_, aid) in sum_scores]
         return sorted_list
 
     ''' 

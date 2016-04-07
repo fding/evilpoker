@@ -1,1 +1,1 @@
-./benchmark_agent $2 $3
+./benchmarkagent --filename=$1 --host=$2 --port=$3

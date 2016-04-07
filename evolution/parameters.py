@@ -22,5 +22,5 @@ class Params(object):
     '''
     returns a params dict
     '''
-    def read_params(self, aid, agent_dir):
-        self.params = np.load(os.path.join(agent_dir,self.aid))
+    def read_params(self):
+        self.params = np.load(os.path.join(self.agent_dir,self.aid))
