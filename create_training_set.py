@@ -1,4 +1,4 @@
-from hands import eval_hand_potential, Deck, Card
+from pokerlib.poker import eval_hand_potential, Deck, Card
 import sys
 import os
 from multiprocessing import Pool
