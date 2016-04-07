@@ -154,7 +154,21 @@ class NeuralNet(object):
 
         return self._prediction(*(inp.reshape(1, len(inp)) for inp in inputs))
 
-    def train(self, target, inputs, max_epochs=1000, batch_size=100):
+    def cost(self, target, inputs):
+        if len(inputs) == 0:
+            return 0
+        assert len(inputs) == len(target)
+        ls = [[] for _ in range(len(inputs[0]))]
+        for inp in inputs:
+            for j, arr in enumerate(inp):
+                ls[j].append(arr)
+
+        batch = (numpy.array(target), [numpy.array(inp) for inp in ls])
+        assert len(batch[1]) == len(self.input_layers)
+
+        return self._costfun(batch[0], *batch[1])
+
+    def train(self, target, inputs, max_epochs=1000, batch_size=100, log=True):
         '''
         train: trains the neural network using stochastic gradient descent
         
@@ -188,4 +202,5 @@ class NeuralNet(object):
                 batch_count += 1
                 err = self._train(batch[0], *batch[1])
                 err_sum += err
-            print 'Epoch %d: error = %.4f' % (epoch, err_sum/len(inputs))
+            if log:
+                print 'Epoch %d: error = %.4f' % (epoch, err_sum/len(inputs))

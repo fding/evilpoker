@@ -1,6 +1,8 @@
 from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
 import numpy as np
 
+import sys
+
 class PokerNet(object):
     def __init__(self):
         # nets is a series of networks mapping nplayers to corresponding nnet
@@ -56,12 +58,15 @@ class PokerNet(object):
             self.nets[i]._vbiases[5] = self.nets[2]._vbiases[5]
             self.nets[i].rebuild()
 
-    def train(self, input_file, max_epochs = 100000):
+    def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
+        validation = {}
         current_batch = {}
         for i in range(2, 11):
             data[i] = []
+            validation[i] = []
             current_batch[i] = 0
+
         with open(input_file) as f:
             for line in f:
                 if line.strip():
@@ -73,14 +78,39 @@ class PokerNet(object):
                         np.array(parts[-3:]),
                         [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
 
+        with open(validation_file) as f:
+            for line in f:
+                if line.strip():
+                    parts = map(float, line.strip().split())
+                    if len(parts[15:-3]) != int(parts[0]):
+                        print 'Bad input'
+                        continue
+                    validation[int(parts[0])].append((
+                        np.array(parts[-3:]),
+                        [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+
         batchsize = 500
-        for _ in range(max_epochs):
+        counter = 0
+        validation_freq = 500
+        for _ in range(max_epochs * max(map(len, data.values()))):
             for i in range(2, 11):
+                counter += 1
                 examples = data[i][current_batch[i]: current_batch[i] + batchsize]
                 self.nets[i].train([e[0] for e in examples],
                                    [e[1] for e in examples],
                                    max_epochs = 1,
-                                   batch_size=batchsize)
+                                   batch_size=batchsize,
+                                   log=False
+                                  )
                 current_batch[i] = current_batch[i] + batchsize
                 if current_batch[i] > len(data[i]):
                     current_batch[i] = 0
+
+                if counter % validation_freq == 0:
+                    for j in range(2, 11):
+                        err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
+                        print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
+
+if __name__ == '__main__':
+    p = PokerNet()
+    p.train(sys.argv[1], sys.argv[2])
