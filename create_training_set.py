@@ -47,6 +47,10 @@ def highest_nkind(l):
 
     return (maxcount, maxval)
 
+def print_atomic(line):
+    # Prints atomically (single system call) to stdout
+    os.write(sys.stdout.fileno(), line + '\n')
+
 def suit(c):
     return c[1]
 
@@ -206,13 +210,13 @@ def process_hand(hand_id):
                         if a not in {'b', 'c', 'k', 'r', 'f'}:
                             continue
                         if roundi == 0:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], [], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], [], bet, a))))
                         elif roundi == 1:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:3], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:3], bet, a))))
                         elif roundi == 2:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:4], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:4], bet, a))))
                         elif roundi == 3:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:5], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:5], bet, a))))
     except Exception as e:
         print >>sys.stderr, e
 

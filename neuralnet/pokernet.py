@@ -66,6 +66,18 @@ class PokerNet(object):
                  self.nets[2]._vbiases[5],
                  *([self.nets[i]._vweights[4] for i in self.nets] + [self.nets[i]._vbiases[4] for i in self.nets]))
 
+    def load_params(self, fname):
+        with np.load(fname) as data:
+            self.nets[2]._vweights[3].set_value(data['arr_0'])
+            self.nets[2]._vbiases[3].set_value(data['arr_1'])
+            self.nets[2]._vweights[5].set_value(data['arr_2'])
+            self.nets[2]._vbiases[5].set_value(data['arr_3'])
+            for i in range(2, 11):
+                self.nets[i]._vweights[4].set_value(data['arr_%d' % (2 + i)])
+
+            for i in range(2, 11):
+                self.nets[i]._vbiases[4].set_value(data['arr_%d' % (11 + i)])
+
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
         validation = {}
@@ -119,6 +131,29 @@ class PokerNet(object):
                         err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
                     self.save_params(counter)
+
+    def cost(self, validation_file):
+        validation = {}
+        for i in range(2, 11):
+            validation[i] = []
+
+        with open(validation_file) as f:
+            for line in f:
+                if line.strip():
+                    parts = map(float, line.strip().split())
+                    if len(parts[15:-3]) != int(parts[0]):
+                        print 'Bad input'
+                        continue
+                    validation[int(parts[0])].append((
+                        np.array(parts[-3:]),
+                        [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+
+        errs = []
+        for j in range(2, 11):
+            err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
+            errs.append(err)
+
+        return errs
 
 if __name__ == '__main__':
     p = PokerNet()
