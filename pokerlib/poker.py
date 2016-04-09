@@ -110,8 +110,18 @@ def calculate_card_features(nplayers, hole_cards, table_cards):
     flush_potential = max(count(map(suit, hole_cards + table_cards)))
     table_flush_potential = max(count(map(suit, table_cards) + [0]))
 
-    return [nplayers, len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
+    return [len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
             flush_potential, table_flush_potential]
+
+def count(l):
+    counts = {}
+    for i in l:
+        if i not in counts:
+            counts[i] = 0
+        counts[i] += 1
+
+    return counts.values()
+
 
 def eval_hand_potential(nplayers, hole, board, ntrials=20000):
     hole_s = hands_swig.HoleCards()

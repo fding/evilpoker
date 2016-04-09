@@ -24,20 +24,11 @@ def print_atomic(line):
     # Prints atomically (single system call) to stdout
     os.write(sys.stdout.fileno(), line + '\n')
 
-def count(l):
-    counts = {}
-    for i in l:
-        if i not in counts:
-            counts[i] = 0
-        counts[i] += 1
-
-    return counts.values()
-
 
 def calculate_features(nplayers, hole_cards, table_cards, bets, action):
     card_features = calculate_card_features(nplayers, hole_cards, table_cards)
 
-    return card_features + list(bets[:-1]) + list(bets[-1]) + encode(action)
+    return [nplayers] + card_features + list(bets[:-1]) + list(bets[-1]) + encode(action)
 
 def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
                             my_chips_in_pot_at_round_begin, diff, sequence):
@@ -60,6 +51,9 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
     for position, (p, a) in enumerate(sequence):
         betsize = units_per_bet - last_bet_size[p]
         tocall = betsize
+        chips_begin = [chips_at_round_begin[i] + chips[i] for i in range(nplayers) if remain[i]]
+        nremain_old = nremain
+        assert nremain_old == len(chips_begin)
         if a in {'B', 'r', 'b'}:
             units_per_bet += 1
             betsize = units_per_bet - last_bet_size[p]
@@ -75,10 +69,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
         else:
             betsize = 0
 
-        bet_seq[p].append((nremain, nunits, betsize, tocall, position,
-                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers)],
-                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers) if remain[p]]
-                          ))
+        bet_seq[p].append((nremain_old, nunits, betsize, tocall, position, [chips_at_round_begin[i] + chips[i] for i in range(nplayers)], chips_begin))
         last_bet_size[p] = units_per_bet
 
     if nunits > 0:
@@ -161,13 +152,13 @@ def process_hand(hand_id):
                         if a not in {'b', 'c', 'k', 'r', 'f'}:
                             continue
                         if roundi == 0:
-                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], [], bet, a))))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], [], bet, a))))
                         elif roundi == 1:
-                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:3], bet, a))))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:3], bet, a))))
                         elif roundi == 2:
-                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:4], bet, a))))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:4], bet, a))))
                         elif roundi == 3:
-                            print_atomic(' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:5], bet, a))))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:5], bet, a))))
     except Exception as e:
         print >>sys.stderr, e
 
