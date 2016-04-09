@@ -1,12 +1,11 @@
 import os
 import sys
-print sys.path
-print os.getcwd()
 sys.path.append(os.getcwd())
 
 import pokerlib
+from neuralnet import neuralnet
+from pokerlib import poker
 from pokerlib.pokerbot import PokerBot
-import sys
 
 class AlwaysCallAgent(PokerBot):
     def __init__(self, host, port, gamefile):
@@ -23,9 +22,9 @@ class AlwaysCallAgent(PokerBot):
 		# Do I need to check if there are chips left? or does it fold automatically?
         action = Action()
         action.type = poker.CALL
-	action.size = 0
+        action.size = 0
         # How do we deal with passing by reference using swig??
-	assert(poker.isValidAction( game, state.state, 0, action ) > 0)
+        assert(poker.isValidAction( game, state.state, 0, action ) > 0)
         return action
 
 # Take user input host and port
