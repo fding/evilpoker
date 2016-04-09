@@ -3,7 +3,7 @@ import numpy as np
 
 class Params(object):
 
-    def __init__(self, aid="", agent_dir="agent_params", params_list=None):
+    def __init__(self, aid="", agent_dir="evolution/agent_params", params_list=None):
         self.aid = aid 
         self.agent_dir = agent_dir
 
@@ -25,6 +25,6 @@ class Params(object):
     '''
     def read_params(self):
         self.params = []
-        with load(os.path.join(self.agent_dir,self.aid+".npz")) as data:
-            for _, p in data:
-                self.params.append(p)
+        with np.load(os.path.join(self.agent_dir,self.aid+".npz")) as data:
+            for i in range(len(data.keys())):
+                self.params.append(data["arr_%d" % i])

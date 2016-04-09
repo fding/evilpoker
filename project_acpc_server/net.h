@@ -13,7 +13,7 @@ Copyright (C) 2011 by the Computer Poker Research Group, University of Alberta
 
 
 #define READBUF_LEN 4096
-#define NUM_PORT_CREATION_ATTEMPTS 128
+#define NUM_PORT_CREATION_ATTEMPTS 100
 
 
 /* buffered I/O on file descriptors
