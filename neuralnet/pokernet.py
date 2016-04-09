@@ -1,4 +1,5 @@
 from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
+import pokerlib 
 import numpy as np
 
 import sys
@@ -154,6 +155,10 @@ class PokerNet(object):
             errs.append(err)
 
         return errs
+
+    def eval_hand(nplayers, hole_cards, board_cards):
+        hand_potential = pokerlib.eval_hand_potential(nplayers, hole_cards, board_cards)
+        self.net[nplayers].eval()
 
 if __name__ == '__main__':
     p = PokerNet()
