@@ -29,6 +29,10 @@ uint8_t getBoardCard(const State *state, int i) {
 uint8_t getHoleCard(const State *state, int i) {
     return state->holeCards[i];
 }
+
+uint8_t getCurrentPos(const State *state) {
+    return state->numActions[state->round];
+}
 %}
 
 %include "stdint.i"

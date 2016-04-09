@@ -55,6 +55,62 @@ def get_hole_cards(game, state):
     '''Return all hole cards'''
     return [int_to_card(poker_swig.getHoleCard(state, i)) for i in range(0, game.numHoleCards)]
 
+def get_current_pos(state):
+    '''Get the current position of the player in the round'''
+    return poker_swig.getCurrentPos(state)
+
+def card_value(c):
+    return value_dict[c[0]]
+
+def suit(c):
+    return c[1]
+
+def highest_nkind(l):
+    lp = sorted(l)
+    maxcount = 0
+    maxval = 0
+    oldc = 0
+    count = 0
+    for c in lp:
+        if c == oldc:
+            count += 1
+            continue
+        else:
+            if count == maxcount:
+                if oldc > maxval:
+                    maxval = oldc
+            elif count > maxcount:
+                maxval = oldc
+                maxcount = count
+            
+            count = 0
+            oldc = c
+
+    return (maxcount, maxval)
+
+def calculate_card_features(nplayers, hole_cards, table_cards):
+    potential = eval_hand_potential(nplayers, hole_cards, table_cards)
+    hole_values = map(card_value, hole_cards)
+    max_hole_value = max(hole_values)
+    other_hole_value = min(hole_values)
+
+    table_values = map(card_value, table_cards)
+    tvsum = sum(table_values)
+
+    highest_pair = 0
+    highest_triple = 0
+
+    nkind, val = highest_nkind(hole_values + table_values)
+    if nkind >= 2:
+        highest_pair = val
+    if nkind >= 3:
+        highest_triple = val
+
+    flush_potential = max(count(map(suit, hole_cards + table_cards)))
+    table_flush_potential = max(count(map(suit, table_cards) + [0]))
+
+    return [nplayers, len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
+            flush_potential, table_flush_potential]
 
 def eval_hand_potential(nplayers, hole, board, ntrials=20000):
     hole_s = hands_swig.HoleCards()

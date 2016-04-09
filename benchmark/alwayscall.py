@@ -1,7 +1,11 @@
+import os
+import sys
+sys.path.append(os.getcwd())
+
+import pokerlib
 from neuralnet import neuralnet
 from pokerlib import poker
 from pokerlib.pokerbot import PokerBot
-import sys
 
 class AlwaysCallAgent(PokerBot):
     def __init__(self, host, port, gamefile):

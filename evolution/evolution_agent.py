@@ -24,8 +24,8 @@ from parameters import Params
     
 NUM_GAMES_PER_EPOCH = 5
 COEVOLVE = True
-NUM_AGENTS= 20
-NUM_EPOCHS= 2
+NUM_AGENTS= 10
+NUM_EPOCHS= 5
 NUM_GAME_PLAYERS = 2
 
 
@@ -47,6 +47,7 @@ def play_epoch(agents):
         game_results[agents[0]] = []
         match_args += (str(agents[0]), "benchmark",)
 
+    print match_args
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
         output = subprocess.check_output("./play_match.pl game holdem.nolimit.2p.game 1000 0 %s ./example_player.nolimit.2p.sh %s ./example_player.nolimit.2p.sh" % match_args, shell=True)
@@ -60,10 +61,8 @@ def play_epoch(agents):
 
 
 class EvoAgent(object):
-
     to_mutate = 50
     to_keep = 3
-
     agent_dir = "agent_params"
     top_agent_file = "top_agent%d"
     

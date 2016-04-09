@@ -1,4 +1,4 @@
-from pokerlib.poker import eval_hand_potential, Deck, Card
+from pokerlib.poker import Deck, Card, calculate_card_features
 import sys
 import os
 from multiprocessing import Pool
@@ -21,38 +21,9 @@ def encode(a):
         return [1, 0, 0]
     raise Exception('Saw %s' % a)
 
-def card_value(c):
-    return value_dict[c[0]]
-
-def highest_nkind(l):
-    lp = sorted(l)
-    maxcount = 0
-    maxval = 0
-    oldc = 0
-    count = 0
-    for c in lp:
-        if c == oldc:
-            count += 1
-            continue
-        else:
-            if count == maxcount:
-                if oldc > maxval:
-                    maxval = oldc
-            elif count > maxcount:
-                maxval = oldc
-                maxcount = count
-            
-            count = 0
-            oldc = c
-
-    return (maxcount, maxval)
-
 def print_atomic(line):
     # Prints atomically (single system call) to stdout
     os.write(sys.stdout.fileno(), line + '\n')
-
-def suit(c):
-    return c[1]
 
 def count(l):
     counts = {}
@@ -65,28 +36,9 @@ def count(l):
 
 
 def calculate_features(nplayers, hole_cards, table_cards, bets, action):
-    potential = eval_hand_potential(nplayers, hole_cards, table_cards)
-    hole_values = map(card_value, hole_cards)
-    max_hole_value = max(hole_values)
-    other_hole_value = min(hole_values)
+    card_features = calculate_card_features(nplayers, hole_cards, table_cards)
 
-    table_values = map(card_value, table_cards)
-    tvsum = sum(table_values)
-
-    highest_pair = 0
-    highest_triple = 0
-
-    nkind, val = highest_nkind(hole_values + table_values)
-    if nkind >= 2:
-        highest_pair = val
-    if nkind >= 3:
-        highest_triple = val
-
-    flush_potential = max(count(map(suit, hole_cards + table_cards)))
-    table_flush_potential = max(count(map(suit, table_cards) + [0]))
-
-    return [nplayers, len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
-            flush_potential, table_flush_potential] + list(bets[:-1]) + list(bets[-1]) + encode(action)
+    return card_features + list(bets[:-1]) + list(bets[-1]) + encode(action)
 
 def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
                             my_chips_in_pot_at_round_begin, diff, sequence):
