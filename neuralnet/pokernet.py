@@ -61,11 +61,11 @@ class PokerNet(object):
 
     def save_params(self, fname):
         np.savez_compressed('pokernet-params/param-%s.npz' % fname,
-                 self.nets[2]._vweights[3],
-                 self.nets[2]._vbiases[3],
-                 self.nets[2]._vweights[5],
-                 self.nets[2]._vbiases[5],
-                 *([self.nets[i]._vweights[4] for i in self.nets] + [self.nets[i]._vbiases[4] for i in self.nets]))
+                 self.nets[2]._vweights[3].get_value(),
+                 self.nets[2]._vbiases[3].get_value(),
+                 self.nets[2]._vweights[5].get_value(),
+                 self.nets[2]._vbiases[5].get_value(),
+                 *([self.nets[i]._vweights[4].get_value() for i in self.nets] + [self.nets[i]._vbiases[4].get_value() for i in self.nets]))
 
     def load_params(self, fname):
         with np.load(fname) as data:
@@ -88,28 +88,37 @@ class PokerNet(object):
             validation[i] = []
             current_batch[i] = 0
 
+        bad_training = 0
         with open(input_file) as f:
             for line in f:
                 if line.strip():
-                    parts = map(float, line.strip().split())
-                    if len(parts[15:-3]) != int(parts[0]):
-                        print 'Bad input'
-                        continue
-                    data[int(parts[0])].append((
-                        np.array(parts[-3:]),
-                        [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    try:
+                        parts = map(float, line.strip().split())
+                        if len(parts[15:-3]) != int(parts[0]):
+                            bad_training += 1
+                            continue
+                        data[int(parts[0])].append((
+                            np.array(parts[-3:]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    except Exception as e:
+                        bad_training += 1
 
+        bad_validation = 0
         with open(validation_file) as f:
             for line in f:
                 if line.strip():
-                    parts = map(float, line.strip().split())
-                    if len(parts[15:-3]) != int(parts[0]):
-                        print 'Bad input'
-                        continue
-                    validation[int(parts[0])].append((
-                        np.array(parts[-3:]),
-                        [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    try:
+                        parts = map(float, line.strip().split())
+                        if len(parts[15:-3]) != int(parts[0]):
+                            bad_validation += 1
+                            continue
+                        validation[int(parts[0])].append((
+                            np.array(parts[-3:]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    except Exception as e:
+                        bad_validation += 1
 
+        print 'Finished loading data. %d bad training examples, %d bad validation examples' % (bad_training, bad_validation)
         batchsize = 500
         counter = 0
         validation_freq = 500
@@ -141,22 +150,24 @@ class PokerNet(object):
         with open(validation_file) as f:
             for line in f:
                 if line.strip():
-                    parts = map(float, line.strip().split())
-                    if len(parts[15:-3]) != int(parts[0]):
-                        print 'Bad input'
-                        continue
-                    validation[int(parts[0])].append((
-                        np.array(parts[-3:]),
-                        [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    try:
+                        parts = map(float, line.strip().split())
+                        if len(parts[15:-3]) != int(parts[0]):
+                            continue
+                        validation[int(parts[0])].append((
+                            np.array(parts[-3:]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                    except Exception as e:
+                        pass
 
         errs = []
         for j in range(2, 11):
-            err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
+            err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / float(len(validation[j]))
             errs.append(err)
 
         return errs
 
-    def eval(self, cardfeatures, potfeatures, chipfeatures):
+    def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
         return self.nets[nplayers].eval([cardfeatures, potfeatures, chipfeatures])
 
 if __name__ == '__main__':
