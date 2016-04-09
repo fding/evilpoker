@@ -26,8 +26,8 @@ class NeuralNet_Agent(PokerBot):
          
         # pot features are chips in pot, chips to call, number of opponents, and position 
         chips_in_pot = sum(state.spent)
-        chips_to_call = self.game.stack[currentPlayer(self.game, state)]
-        pos = currentPlayer(self.game, state) - self.game.firstPlayer[state.round] 
+        chips_to_call = self.game.stack[my_id]
+        pos = pokerlib. get_current_pos(state)
 
         pot_features = [chips_in_pot, chips_to_call, nplayers, pos]
         chip_features = self.game.stack

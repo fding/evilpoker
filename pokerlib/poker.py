@@ -55,6 +55,9 @@ def get_hole_cards(game, state):
     '''Return all hole cards'''
     return [int_to_card(poker_swig.getHoleCard(state, i)) for i in range(0, game.numHoleCards)]
 
+def get_current_pos(state):
+    '''Get the current position of the player in the round'''
+    return poker_swig.getCurrentPos(state)
 
 def card_value(c):
     return value_dict[c[0]]
