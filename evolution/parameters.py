@@ -25,5 +25,6 @@ class Params(object):
     '''
     def read_params(self):
         self.params = []
-        self.params.append((np.load(os.path.join(self.agent_dir,self.aid+".npz")))['arr_0'])
-        self.params.append((np.load(os.path.join(self.agent_dir,self.aid+".npz")))['arr_1'])
+        with load(os.path.join(self.agent_dir,self.aid+".npz")) as data:
+            for _, p in data:
+                self.params.append(p)
