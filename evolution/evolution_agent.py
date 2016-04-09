@@ -154,13 +154,16 @@ class EvoAgent(object):
     Sets self.agents to be the initial list of agents as a dictionary
     mapping from an agent ID to the agent parameters
     '''
-    # XXX David, is this a function you'd write?
     def init_agents(self):
         self.agents = []
+        noise = 0.1
         for i in xrange(NUM_AGENTS):
-            #params = init_agent()
             aid = str(uuid.uuid4())
-            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=[[1,1],[2,1,1]])
+            initial_params = []
+            with load(os.path.join(self.agent_dir,"initial-poker-params.npz")) as data:
+                for i in len(data.keys()):
+                    initial_params.append(data["arr_%d" % i] + np.random.normal(0, noise, 1)[0])
+            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=initial_params)
             self.agents.append(aid)
 
     '''
