@@ -4,6 +4,7 @@ import numpy as np
 import sys
 
 class PokerNet(object):
+    '''Limit Holdem Neural Net'''
     def __init__(self):
         # nets is a series of networks mapping nplayers to corresponding nnet
         self.nets = {
@@ -154,6 +155,9 @@ class PokerNet(object):
             errs.append(err)
 
         return errs
+
+    def eval(self, cardfeatures, potfeatures, chipfeatures):
+        return self.nets[nplayers].eval([cardfeatures, potfeatures, chipfeatures])
 
 if __name__ == '__main__':
     p = PokerNet()
