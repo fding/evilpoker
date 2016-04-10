@@ -18,16 +18,16 @@ class AlwaysFoldAgent(PokerBot):
         
         action = Action()
         action.type = poker.FOLD
-		action.size = 0
-		if (not poker.isValidAction( game, state.state, 0, action ) > 0):
-			action.type = poker.CALL
+        action.size = 0
+        if (not poker.isValidAction( game, state.state, 0, action ) > 0):
+            action.type = poker.CALL
         return action
 
 # Take user input host and port
 try:
     opts, args = getopt.getopt(argv,["dealer_host=","dealer_port=","--game_file"])
 except getopt.GetoptError:
-    print 'USAGE: ./benchmark_agent --dealer_host=localhost --dealer_port=8080 --game_file=holdem.limit.2p.reverse_blinds.game'
+    print 'USAGE: ./benchmark_agent --dealer_host=localhost --dealer_port=8080 --game_file=evolution/holdem.nolimit.2p.game'
     sys.exit(2)
 
 host = 'localhost'

@@ -52,7 +52,7 @@ def play_epoch(agents):
     print match_args
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        output = subprocess.check_output("evolution/play_match.pl game evolution/holdem.nolimit.2p.game 1000 %d %s evolution/example_player.nolimit.2p.sh %s evolution/example_player.nolimit.2p.sh" % match_args, shell=True)
+        output = subprocess.check_output("evolution/play_match.pl game evolution/holdem.nolimit.2p.game 1000 %d %s evolution/example_player.nolimit.2p.sh %s neuralnet/play_agent.sh" % match_args, shell=True)
         if output.split(':')[0] == "SCORE": 
             # output should be of format SCORE:-530|530:Alice|Bob
             output = re.split(r'[:|]', output)
