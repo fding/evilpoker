@@ -1,6 +1,7 @@
-import evilpoker.poker
-from evilpoker.pokerbot import PokerBot
+import pokerlib.poker
+from pokerlib.pokerbot import PokerBot
 import sys
+import getopt
 
 # Always folds when valid, otherwise calls.
 class AlwaysFoldAgent(PokerBot):
@@ -18,14 +19,14 @@ class AlwaysFoldAgent(PokerBot):
         
         action = Action()
         action.type = poker.FOLD
-		action.size = 0
-		if (not poker.isValidAction( game, state.state, 0, action ) > 0):
-			action.type = poker.CALL
+	action.size = 0
+	if (not poker.isValidAction( game, state.state, 0, action ) > 0):
+	    action.type = poker.CALL
         return action
 
 # Take user input host and port
 try:
-    opts, args = getopt.getopt(argv,["dealer_host=","dealer_port=","--game_file"])
+    opts, args = getopt.getopt(sys.argv,["dealer_host=","dealer_port=","--game_file"])
 except getopt.GetoptError:
     print 'USAGE: ./benchmark_agent --dealer_host=localhost --dealer_port=8080 --game_file=holdem.limit.2p.reverse_blinds.game'
     sys.exit(2)
