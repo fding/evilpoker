@@ -169,7 +169,7 @@ class PokerNet(object):
         return errs
 
     def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
-        return self.nets[nplayers].eval([cardfeatures, potfeatures, chipfeatures])
+        return self.nets[nplayers].eval([np.array(cardfeatures), np.array(potfeatures), np.array(chipfeatures)])
 
 if __name__ == '__main__':
     p = PokerNet()
