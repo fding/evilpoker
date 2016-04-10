@@ -5,6 +5,7 @@ Copyright (C) 2011 by the Computer Poker Research Group, University of Alberta
 #include <unistd.h>
 #include <netdb.h>
 #include <string.h>
+#include <stdio.h>
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <netinet/in.h>
@@ -190,6 +191,7 @@ int getListenSocket( uint16_t *desiredPort )
     while( 1 ) {
       addr.sin_family = AF_INET;
       *desiredPort = ( random() % 64512 ) + 1024;
+      fprintf(stderr, "Trying port %d (%d tries)\n", *desiredPort, t);
       addr.sin_port = htons( *desiredPort );
       addr.sin_addr.s_addr = htonl( INADDR_ANY );
       if( bind( sock, (struct sockaddr *)&addr, sizeof( addr ) ) < 0 ) {

@@ -21,11 +21,12 @@ from multiprocessing import Pool
 from collections import defaultdict
 from mutator import Mutator
 from parameters import Params
+import numpy as np
     
 NUM_GAMES_PER_EPOCH = 5
 COEVOLVE = True
-NUM_AGENTS= 20
-NUM_EPOCHS= 2
+NUM_AGENTS= 8
+NUM_EPOCHS= 5
 NUM_GAME_PLAYERS = 2
 
 
@@ -35,8 +36,9 @@ which maps a player's aid to the player's scores in each game
 '''
 def play_epoch(agents):    
     game_results = defaultdict(list)
-  
-    match_args = ()
+
+    btes = map(ord, os.urandom(2))
+    match_args = (btes[0] * 256 + btes[1],)
     # add all agents to the game
     if COEVOLVE:
         for aid in agents:
@@ -47,9 +49,10 @@ def play_epoch(agents):
         game_results[agents[0]] = []
         match_args += (str(agents[0]), "benchmark",)
 
+    print match_args
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        output = subprocess.check_output("./play_match.pl game holdem.nolimit.2p.game 1000 0 %s ./example_player.nolimit.2p.sh %s ./example_player.nolimit.2p.sh" % match_args, shell=True)
+        output = subprocess.check_output("evolution/play_match.pl game evolution/holdem.nolimit.2p.game 1000 %d %s evolution/example_player.nolimit.2p.sh %s neuralnet/play_agent.sh" % match_args, shell=True)
         if output.split(':')[0] == "SCORE": 
             # output should be of format SCORE:-530|530:Alice|Bob
             output = re.split(r'[:|]', output)
@@ -60,11 +63,9 @@ def play_epoch(agents):
 
 
 class EvoAgent(object):
-
     to_mutate = 50
     to_keep = 3
-
-    agent_dir = "agent_params"
+    agent_dir = "evolution/agent_params"
     top_agent_file = "top_agent%d"
     
     def __init__(self):
@@ -125,7 +126,7 @@ class EvoAgent(object):
             # get which agents to mutate
             self.mutate_agents = self.agents[:self.to_mutate]
             # mutate the agents for the next generation 
-            self.mutator = Mutator(self.mutate_agents)
+            self.mutator = Mutator(self.mutate_agents, self.agent_dir)
             NUM_AGENTS_in_mutate_groups = (NUM_AGENTS - self.to_keep)/3
             crossovers = self.mutator.crossover(NUM_AGENTS_in_mutate_groups)
             mutated = self.mutator.mutate(NUM_AGENTS_in_mutate_groups)
@@ -155,13 +156,16 @@ class EvoAgent(object):
     Sets self.agents to be the initial list of agents as a dictionary
     mapping from an agent ID to the agent parameters
     '''
-    # XXX David, is this a function you'd write?
     def init_agents(self):
         self.agents = []
+        noise = 0.001
         for i in xrange(NUM_AGENTS):
-            #params = init_agent()
             aid = str(uuid.uuid4())
-            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=[[1,1],[2,1,1]])
+            initial_params = []
+            with np.load(os.path.join(self.agent_dir,"initial-poker-params.npz")) as data:
+                for i in range(len(data.keys())):
+                    initial_params.append(data["arr_%d" % i] + np.random.normal(0, noise, 1)[0])
+            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=initial_params)
             self.agents.append(aid)
 
     '''

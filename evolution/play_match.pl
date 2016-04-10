@@ -43,7 +43,7 @@ if( $dealerPID == 0 ) {
     open STDOUT, '>&STDOUTWRITEPIPE' or die "can't dup STDOUT";
     open STDERR, ">>$ARGV[ 0 ].err" or die "can't open log file $ARGV[ 0 ].err";
 
-    @args = ( "dealer", $ARGV[ 0 ], $ARGV[ 1 ],
+    @args = ( "evolution/dealer", $ARGV[ 0 ], $ARGV[ 1 ],
 	      $ARGV[ 2 ], $ARGV[ 3 ] );
 
     # add names to the arguments
@@ -55,7 +55,7 @@ if( $dealerPID == 0 ) {
     for( $i = 4 + $numPlayers * 2; $i <= $#ARGV; ++$i ) {
 	push @args, $ARGV[ $i ];
     }
-    exec { "./dealer" } @args or die "Couldn't run dealer";
+    exec { "evolution/dealer" } @args or die "Couldn't run dealer";
 }
 
 close STDINREADPIPE;

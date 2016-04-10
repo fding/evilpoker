@@ -6,8 +6,8 @@ to output the action given a game state.
 
 Example:
 
-import poker
-from pokerbot import PokerBot
+import pokerlib
+from pokerlib.pokerbot import PokerBot
 
 class AlwaysFoldAgent(PokerBot):
     def __init__(self, host, port, gamefile, agent specific parameters):
@@ -18,15 +18,15 @@ class AlwaysFoldAgent(PokerBot):
         pass
 
     def what_should_i_do(self, my_id, state):
-        board_cards = poker.get_board_cards(self.game, state)
-        hole_cards = poker.get_hole_cards(self.game, state)
+        board_cards = pokerlib.get_board_cards(self.game, state)
+        hole_cards = pokerlib.get_hole_cards(self.game, state)
         # super complicated algorithm
         
         action = Action()
-        action = poker.FOLD
+        action = pokerlib.FOLD
         return action
 
-p = AlwaysFoldAgent('localhost', 8080, 'holdem.limit.2p.reverse_blinds.game', other params)
+p = AlwaysFoldAgent('localhost', 8080, 'holdem.nolimit.2p.game', other params)
 p.run()
 
 '''

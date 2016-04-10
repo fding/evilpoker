@@ -31,7 +31,7 @@ class Mutator(object):
     std_mutation = 1
     parents_to_combine = 5
 
-    def __init__(self, parent_agents=[], agent_dir="agent_params"):
+    def __init__(self, parent_agents=[], agent_dir="evolution/agent_params"):
         self.agent_dir = agent_dir
         self.parent_agents = [] 
         
@@ -67,7 +67,6 @@ class Mutator(object):
                     new_agent_params.params.append(parents[0].params[j])
                 else:
                     new_agent_params.params.append(parents[1].params[j])
-            print new_agent_params.params
             new_agent_params.write_params()
         return agents
 
@@ -84,7 +83,6 @@ class Mutator(object):
             # randomly add noise to weights
             for param in parent.params:
                 new_agent_params.params.append(param + np.random.normal(0, 1, 1))
-            print new_agent_params.params
             new_agent_params.write_params()
         return agents
     
@@ -110,7 +108,6 @@ class Mutator(object):
                 new_param /= sum(parent_weights)
                 new_agent_params.params.append(new_param)
 
-            print new_agent_params.params
             new_agent_params.write_params()
         return agents
 

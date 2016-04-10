@@ -1,4 +1,4 @@
-from pokerlib.poker import eval_hand_potential, Deck, Card
+from pokerlib.poker import Deck, Card, calculate_card_features
 import sys
 import os
 from multiprocessing import Pool
@@ -10,7 +10,6 @@ import itertools
 hdb = {}
 roster = {}
 players = {}
-value_dict = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
 
 def encode(a):
     if a == 'r' or a == 'b':
@@ -21,68 +20,15 @@ def encode(a):
         return [1, 0, 0]
     raise Exception('Saw %s' % a)
 
-def card_value(c):
-    return value_dict[c[0]]
-
-def highest_nkind(l):
-    lp = sorted(l)
-    maxcount = 0
-    maxval = 0
-    oldc = 0
-    count = 0
-    for c in lp:
-        if c == oldc:
-            count += 1
-            continue
-        else:
-            if count == maxcount:
-                if oldc > maxval:
-                    maxval = oldc
-            elif count > maxcount:
-                maxval = oldc
-                maxcount = count
-            
-            count = 0
-            oldc = c
-
-    return (maxcount, maxval)
-
-def suit(c):
-    return c[1]
-
-def count(l):
-    counts = {}
-    for i in l:
-        if i not in counts:
-            counts[i] = 0
-        counts[i] += 1
-
-    return counts.values()
+def print_atomic(line):
+    # Prints atomically (single system call) to stdout
+    os.write(sys.stdout.fileno(), line + '\n')
 
 
 def calculate_features(nplayers, hole_cards, table_cards, bets, action):
-    potential = eval_hand_potential(nplayers, hole_cards, table_cards)
-    hole_values = map(card_value, hole_cards)
-    max_hole_value = max(hole_values)
-    other_hole_value = min(hole_values)
+    card_features = calculate_card_features(nplayers, hole_cards, table_cards)
 
-    table_values = map(card_value, table_cards)
-    tvsum = sum(table_values)
-
-    highest_pair = 0
-    highest_triple = 0
-
-    nkind, val = highest_nkind(hole_values + table_values)
-    if nkind >= 2:
-        highest_pair = val
-    if nkind >= 3:
-        highest_triple = val
-
-    flush_potential = max(count(map(suit, hole_cards + table_cards)))
-    table_flush_potential = max(count(map(suit, table_cards) + [0]))
-
-    return [nplayers, len(table_cards) + len(hole_cards), potential, max_hole_value, other_hole_value, tvsum, highest_pair, highest_triple,
-            flush_potential, table_flush_potential] + list(bets[:-1]) + list(bets[-1]) + encode(action)
+    return [nplayers] + card_features + list(bets[:-1]) + list(bets[-1]) + encode(action)
 
 def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
                             my_chips_in_pot_at_round_begin, diff, sequence):
@@ -105,6 +51,9 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
     for position, (p, a) in enumerate(sequence):
         betsize = units_per_bet - last_bet_size[p]
         tocall = betsize
+        chips_begin = [chips_at_round_begin[i] + chips[i] for i in range(nplayers) if remain[i]]
+        nremain_old = nremain
+        assert nremain_old == len(chips_begin)
         if a in {'B', 'r', 'b'}:
             units_per_bet += 1
             betsize = units_per_bet - last_bet_size[p]
@@ -120,10 +69,7 @@ def calculate_bet_structure(nplayers, pot_at_round_begin, chips_at_round_begin,
         else:
             betsize = 0
 
-        bet_seq[p].append((nremain, nunits, betsize, tocall, position,
-                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers)],
-                           [chips_at_round_begin[p] + chips[i] for i in range(nplayers) if remain[p]]
-                          ))
+        bet_seq[p].append((nremain_old, nunits, betsize, tocall, position, [chips_at_round_begin[i] + chips[i] for i in range(nplayers)], chips_begin))
         last_bet_size[p] = units_per_bet
 
     if nunits > 0:
@@ -206,13 +152,13 @@ def process_hand(hand_id):
                         if a not in {'b', 'c', 'k', 'r', 'f'}:
                             continue
                         if roundi == 0:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], [], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], [], bet, a))))
                         elif roundi == 1:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:3], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:3], bet, a))))
                         elif roundi == 2:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:4], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:4], bet, a))))
                         elif roundi == 3:
-                            print ' '.join(map(str, calculate_features(nplayers, p[-1], hdb[hand_id][-1][:5], bet, a)))
+                            print_atomic(' '.join(map(str, calculate_features(bet[4], p[-1], hdb[hand_id][-1][:5], bet, a))))
     except Exception as e:
         print >>sys.stderr, e
 
