@@ -1,8 +1,10 @@
+import sys
+import os
+sys.path.append(os.getcwd())
+
 from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
 import pokerlib 
 import numpy as np
-
-import sys
 
 class PokerNet(object):
     '''Limit Holdem Neural Net'''
@@ -139,7 +141,7 @@ class PokerNet(object):
 
                 if counter % validation_freq == 0:
                     for j in range(2, 11):
-                        err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
+                        err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / len(validation[j])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
                     self.save_params(counter)
 

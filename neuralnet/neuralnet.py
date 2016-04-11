@@ -89,6 +89,8 @@ class NeuralNet(object):
                       self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
                       self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
 
+        self._costnoreg = crossentropy.sum()
+
         self._derivatives = [None] * len(self.layers)
         self._updates = []
 
@@ -113,10 +115,10 @@ class NeuralNet(object):
                                            outputs=self._output)
         self._train = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
                                       outputs=self._cost,
-                                      updates=self._updates)
+                                      updates=self._updates, allow_input_downcast=True)
                                       #mode=NanGuardMode(nan_is_error=True, inf_is_error=True, big_is_error=True)) # debug NaN
         self._costfun = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
-                                      outputs=self._cost)
+                                      outputs=self._costnoreg, allow_input_downcast=True)
 
     def set_weights(self, weights):
         '''
