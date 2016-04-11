@@ -17,7 +17,14 @@ from poker_swig import (
     numAllIn,
     numActingPlayers,
     readMatchState,
-    printAction
+    printAction,
+    sumBoardCards,
+    getPotSize,
+    chipsToCall,
+    getSpent,
+    getNumActions,
+    getStack,
+    getFolded
 )
 
 import hands_swig
@@ -52,9 +59,9 @@ def get_board_cards(game, state):
     n = sumBoardCards(game, state.round)
     return [int_to_card(poker_swig.getBoardCard(state, i)) for i in range(0, n)]
 
-def get_hole_cards(game, state):
+def get_hole_cards(game, state, pid):
     '''Return all hole cards'''
-    return [int_to_card(poker_swig.getHoleCard(state, i)) for i in range(0, game.numHoleCards)]
+    return [int_to_card(poker_swig.getHoleCard(state, pid, i)) for i in range(0, game.numHoleCards)]
 
 def get_current_pos(state):
     '''Get the current position of the player in the round'''

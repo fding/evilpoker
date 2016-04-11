@@ -26,8 +26,8 @@ uint8_t getBoardCard(const State *state, int i) {
     return state->boardCards[i];
 }
 
-uint8_t getHoleCard(const State *state, int i) {
-    return state->holeCards[i];
+uint8_t getHoleCard(const State *state, int pnum, int i) {
+    return state->holeCards[pnum][i];
 }
 
 uint8_t getCurrentPos(const State *state) {
@@ -69,9 +69,10 @@ int getNumActions(const State *state, int rnd) {
 
 
 %}
-
 %include "stdint.i"
-%include "game.h"
 
 %include "typemaps.i"
 %apply int32_t *OUTPUT { int32_t *minSize, int32_t *maxSize };
+
+%include "game.h"
+

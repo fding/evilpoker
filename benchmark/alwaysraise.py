@@ -1,12 +1,17 @@
-import evilpoker.poker
-from evilpoker.pokerbot import PokerBot
+import os
 import sys
+sys.path.append(os.getcwd())
+
+from pokerlib import poker
+from pokerlib.pokerbot import PokerBot
+
+import argparse
 
 # Always raises by the min amount allowed, otherwise calls.
 class AlwaysRaiseAgent(PokerBot):
-    def __init__(self, host, port, gamefile, raise_amount):
+    def __init__(self, host, port, gamefile):
         # Initialize networking stuff
-        super(AlwaysFoldAgent, self).__init__()
+        super(AlwaysRaiseAgent, self).__init__(host, port, gamefile)
 
         # Do agent specific initialization
 		
@@ -14,38 +19,25 @@ class AlwaysRaiseAgent(PokerBot):
 
     def what_should_i_do(self, my_id, state):
         board_cards = poker.get_board_cards(self.game, state)
-        hole_cards = poker.get_hole_cards(self.game, state)
+        hole_cards = poker.get_hole_cards(self.game, state, my_id)
         
-		# Do I need to check if there are chips left? or does it fold automatically?
-        action = Action()
-		action.type = poker.CALL
-		action.size = 0
-		# Modify action in place by reference?
-		min = 0
-		max = 0
-		if poker.raiseIsValid( game, state.state, min, max ) > 0:
-			action.type = poker.RAISE
-			action.size = min
-		assert(poker.isValidAction( game, state.state, 0, action ) > 0)
+        action = poker.Action()
+	action.type = poker.CALL
+       	action.size = 0
+        raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
+	if raisevalid:
+	    action.type = poker.RAISE
+	    action.size = minsize
+            
+	assert(poker.isValidAction( self.game, state, 0, action ) > 0)
         return action
 
 # Take user input host and port
-try:
-    opts, args = getopt.getopt(argv,["dealer_host=","dealer_port=","--game_file"])
-except getopt.GetoptError:
-    print 'USAGE: ./benchmark_agent --dealer_host=localhost --dealer_port=8080 --game_file=holdem.limit.2p.reverse_blinds.game'
-    sys.exit(2)
+parser = argparse.ArgumentParser(description="run benchmark agent")
+parser.add_argument('--dealer_host', dest='host', type=str)
+parser.add_argument('--dealer_port', dest='port', type=int)
+parser.add_argument('--game_file', dest='gamefile', type=str, default='holdem.nolimit.2p.game')
+args = parser.parse_args()
 
-host = 'localhost'
-port = 8080
-gamefile = ''
-for opt, arg in opts:
-	if opt == "--dealer_host":
-		host = arg
-	elif opt == "--dealer_port":
-		port = arg
-	elif opt == "--game_file":
-		gamefile = arg
-		
-p = AlwaysRaiseAgent(host, port, gamefile, raise_amount)
+p = AlwaysRaiseAgent(args.host, args.port, args.gamefile)
 p.run()

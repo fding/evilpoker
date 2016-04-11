@@ -3,7 +3,7 @@ import numpy as np
 
 class Params(object):
 
-    def __init__(self, aid="", agent_dir="evolution/agent_params", params_list=None):
+    def __init__(self, aid="", agent_dir="agent_params", params_list=None):
         self.aid = aid 
         self.agent_dir = agent_dir
 

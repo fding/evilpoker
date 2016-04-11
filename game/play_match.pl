@@ -41,9 +41,9 @@ if( $dealerPID == 0 ) {
     close STDOUTREADPIPE;
     open STDIN, '<&STDINREADPIPE' or die "can't dup STDIN";
     open STDOUT, '>&STDOUTWRITEPIPE' or die "can't dup STDOUT";
-    open STDERR, ">>$ARGV[ 0 ].err" or die "can't open log file $ARGV[ 0 ].err";
+    open STDERR, ">>game/$ARGV[ 0 ].err" or die "can't open log file game/$ARGV[ 0 ].err";
 
-    @args = ( "evolution/dealer", $ARGV[ 0 ], $ARGV[ 1 ],
+    @args = ( "game/dealer", "game/$ARGV[ 0 ]", $ARGV[ 1 ],
 	      $ARGV[ 2 ], $ARGV[ 3 ] );
 
     # add names to the arguments
@@ -55,7 +55,7 @@ if( $dealerPID == 0 ) {
     for( $i = 4 + $numPlayers * 2; $i <= $#ARGV; ++$i ) {
 	push @args, $ARGV[ $i ];
     }
-    exec { "evolution/dealer" } @args or die "Couldn't run dealer";
+    exec { "game/dealer" } @args or die "Couldn't run dealer";
 }
 
 close STDINREADPIPE;
@@ -73,9 +73,9 @@ for( $p = 0; $p < $numPlayers; ++$p ) {
 	# we're the child
 
 	# log standard out and standard error
-	open STDOUT, ">$ARGV[ 0 ].player$p.std"
+	open STDOUT, ">game/$ARGV[ 0 ].player$p.std"
 	    or die "can't dup player $p STDOUT";
-	open STDERR, ">$ARGV[ 0 ].player$p.err"
+	open STDERR, ">game/$ARGV[ 0 ].player$p.err"
 	    or die "can't dup player $p STDERR";
 
 	exec { $ARGV[ 4 + $p * 2 + 1 ] } ( $ARGV[ 4 + $p * 2 + 1 ],
