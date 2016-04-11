@@ -31,7 +31,7 @@ class Mutator(object):
     std_mutation = 1
     parents_to_combine = 5
 
-    def __init__(self, parent_agents=[], agent_dir="evolution/agent_params"):
+    def __init__(self, parent_agents=[], agent_dir="agent_params"):
         self.agent_dir = agent_dir
         self.parent_agents = [] 
         
