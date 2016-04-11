@@ -123,7 +123,7 @@ class PokerNet(object):
         batchsize = 500
         counter = 0
         validation_freq = 500
-        for _ in range(max_epochs * max(map(len, data.values()))):
+        for _ in xrange(max_epochs * len(data[2])):
             for i in range(2, 11):
                 counter += 1
                 examples = data[i][current_batch[i]: current_batch[i] + batchsize]
