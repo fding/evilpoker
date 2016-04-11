@@ -22,8 +22,12 @@ def play_game(aid, benchmarkfile, gamefile, ngames):
             game_results[output[3].strip()].append(int(output[1]))
             game_results[output[4].strip()].append(int(output[2]))
     
-    print "Agent %s overall score: %d" % (aid, sum(game_results[aid]))
+    print "Agent %s overall score: %d (won %d/%d games)" % (aid, 
+            sum(game_results[aid], ngames), len(filter(lambda x: x >0, game_results[aid])), ngames)
     print "Benchmark %s overall score: %d" % (benchmarkfile, sum(game_results['benchmark']))
+
+    for k, v in game_results.iteritems():
+        print "%s game scores: " % k, v
 
 # Take user input host and port
 parser = argparse.ArgumentParser(description="run evaluation of NN agent against a benchmark")
