@@ -24,10 +24,11 @@ from mutator import Mutator
 from parameters import Params
 import numpy as np
     
-NUM_GAMES_PER_EPOCH = 10
-NUM_AGENTS= 100
-NUM_EPOCHS= 50
+NUM_GAMES_PER_EPOCH = 1
+NUM_AGENTS= 2
+NUM_EPOCHS= 5
 NUM_GAME_PLAYERS = 2
+GAME = "game/holdem.nolimit.2p.game"
 COEVOLVE = False
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
@@ -43,7 +44,7 @@ def play_epoch(agents):
     game_results = defaultdict(list)
 
     btes = map(ord, os.urandom(2))
-    match_args = (btes[0] * 256 + btes[1],)
+    match_args = (GAME, btes[0] * 256 + btes[1],)
     
     # add all agents and the appropriate scripts to the game
     if COEVOLVE:
@@ -53,12 +54,13 @@ def play_epoch(agents):
     else:
         game_results[agents[0]] = []
         match_args += ("benchmark", BMFILE, str(agents[0]), "neuralnet/play_agent.sh",)
-    print match_args
-
+    
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        output = subprocess.check_output("game/play_match.pl game game/holdem.nolimit.2p.game \
-                1000 %d %s %s %s %s" % match_args, shell=True)
+        play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
+        print "Playing: %s" % play_game_str
+
+        output = subprocess.check_output(play_game_str, shell=True)
         if output.split(':')[0] == "SCORE": 
             # output should be of format SCORE:-530|530:Alice|Bob
             output = re.split(r'[:|]', output)
@@ -111,7 +113,7 @@ class EvoAgent(object):
     as benchmarks for the next generation and to ensure that the evolution never loses progress.
     '''
     def run_epochs(self, to_mutate, to_keep):
-        for _ in xrange(NUM_EPOCHS):
+        for i in xrange(NUM_EPOCHS):
             # set the gameplaying groups
             self.init_agent_gameplaying_groups()
 
@@ -148,6 +150,12 @@ class EvoAgent(object):
             self.agents = crossovers + mutated + combinations + self.top_agents
             self.epoch_results = {}
 
+            for aid in self.top_agents:
+                print "---------------------------------------\n"
+                print "Evaluating top agent %s from epoch %d: " % (aid, i)
+                eval_string = "python evaluate_agent.py --benchmarkfile %s --game_file %s --num_games %d --aid %s" % (BMFILE, GAME, NUM_GAMES_PER_EPOCH, aid)
+                print subprocess.check_output(eval_string, shell=True)
+                print "---------------------------------------\n"
 
     '''
     Sorts agents based upon the results from the epoch 
