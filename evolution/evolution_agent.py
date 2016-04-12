@@ -28,7 +28,7 @@ NUM_GAMES_PER_EPOCH = 10
 NUM_AGENTS= 200
 NUM_EPOCHS= 50
 NUM_GAME_PLAYERS = 2
-GAME = "game/holdem.nolimit.2p.game"
+GAME = "game/holdem.limit.2p.game"
 COEVOLVE = False
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")

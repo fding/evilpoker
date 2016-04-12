@@ -32,7 +32,7 @@ def play_game(aid, benchmarkfile, gamefile, ngames):
 # Take user input host and port
 parser = argparse.ArgumentParser(description="run evaluation of NN agent against a benchmark")
 parser.add_argument('--num_games', dest='ngames', type=int)
-parser.add_argument('--game_file', dest='gamefile', type=str, default='game/holdem.nolimit.2p.game')
+parser.add_argument('--game_file', dest='gamefile', type=str, default='game/holdem.limit.2p.game')
 parser.add_argument('--benchmarkfile', dest='bmfile', type=str, default='game/example_player.nolimit.2p.sh')
 parser.add_argument('--aid', dest='aid', type=str, default='initial-poker-params')
 args = parser.parse_args()
