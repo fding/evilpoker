@@ -12,7 +12,7 @@ from pokerlib.pokerbot import PokerBot
 class AlwaysFoldAgent(PokerBot):
     def __init__(self, host, port, gamefile, agent specific parameters):
         # Initialize networking stuff
-        super(AlwaysFoldAgent, self).__init__()
+        super(AlwaysFoldAgent, self).__init__(host, port, gamefile)
 
         # Do agent specific initialization
         pass
