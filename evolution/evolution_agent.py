@@ -60,7 +60,11 @@ def play_epoch(agents):
         play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
         print "Playing: %s" % play_game_str
 
-        output = subprocess.check_output(play_game_str, shell=True)
+        try:
+            output = subprocess.check_output(play_game_str, shell=True)
+        except subprocess.CalledProcessError as e:
+            raise Exception(str(e))
+
         if output.split(':')[0] == "SCORE": 
             # output should be of format SCORE:-530|530:Alice|Bob
             output = re.split(r'[:|]', output)
@@ -154,7 +158,10 @@ class EvoAgent(object):
                 print "---------------------------------------\n"
                 print "Evaluating top agent %s from epoch %d: " % (aid, i)
                 eval_string = "python evaluate_agent.py --benchmarkfile %s --game_file %s --num_games %d --aid %s" % (BMFILE, GAME, NUM_GAMES_PER_EPOCH, aid)
-                print subprocess.check_output(eval_string, shell=True)
+                try:
+                    print subprocess.check_output(eval_string, shell=True)
+                except subprocess.CalledProcessError as e:
+                    raise Exception(str(e))
                 print "---------------------------------------\n"
 
     '''
