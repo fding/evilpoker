@@ -24,9 +24,9 @@ from mutator import Mutator
 from parameters import Params
 import numpy as np
     
-NUM_GAMES_PER_EPOCH = 1
-NUM_AGENTS= 4
-NUM_EPOCHS= 1
+NUM_GAMES_PER_EPOCH = 10
+NUM_AGENTS= 100
+NUM_EPOCHS= 50
 NUM_GAME_PLAYERS = 2
 COEVOLVE = False
 
