@@ -28,7 +28,6 @@ class AlwaysFoldAgent(PokerBot):
 
 p = AlwaysFoldAgent('localhost', 8080, 'holdem.nolimit.2p.game', other params)
 p.run()
-
 '''
 
 
@@ -68,7 +67,8 @@ class PokerBot(object):
     def do_action(self, action):
         new_stuff = '0' * 4096
         r = poker.printAction(self.game, action, 4096, new_stuff)
-        self.line = '%s:%s\r\n' % (self.line, new_stuff[:r])
+        self.line = '%s:%s\r\n' % (self.line.strip(), new_stuff[:r].strip())
+        print self.line
         self.sock.send(self.line)
 
     def run(self):

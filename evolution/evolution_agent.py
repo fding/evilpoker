@@ -28,7 +28,7 @@ NUM_GAMES_PER_EPOCH = 1
 NUM_AGENTS= 4
 NUM_EPOCHS= 1
 NUM_GAME_PLAYERS = 2
-COEVOLVE = True
+COEVOLVE = False
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
 parser.add_argument('--bmfile', dest='bmfile', type=str)
