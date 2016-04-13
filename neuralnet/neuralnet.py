@@ -25,7 +25,7 @@ SOFTMAX_FUN = T.nnet.softmax
 
 class NeuralNet(object):
 
-    def __init__(self, layers, input_layers, output_layers, wiring, learning_rate = 0.00001, L1REG = 1, L2REG = 0.001):
+    def __init__(self, layers, input_layers, output_layers, wiring, learning_rate = 0.00001, L1REG = 1, L2REG = 0.001, build=True):
         '''
             NeuralNet(layers, wiring) creates a neural network with a specified topology consisting of N layers that are wired together.
             Layer L_n is a collection of #(L_n) nodes.
@@ -68,7 +68,8 @@ class NeuralNet(object):
         self.learning_rate = learning_rate
         self.L2REG = L2REG
 
-        self.rebuild()
+        if build:
+            self.rebuild()
 
     def rebuild(self):
         for i, (inputs, f) in enumerate(self.wiring):
