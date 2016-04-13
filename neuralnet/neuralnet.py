@@ -2,7 +2,7 @@ import theano.tensor as T
 import theano
 import numpy
 import math
-from theano.compile.nanguardmode import NanGuardMode
+#from theano.compile.nanguardmode import NanGuardMode
 
 '''
 Choice of activation functions:
