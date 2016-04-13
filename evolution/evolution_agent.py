@@ -18,6 +18,7 @@ import subprocess
 import re
 import operator
 import argparse
+import sys
 from multiprocessing import Pool
 from collections import defaultdict
 from mutator import Mutator
@@ -59,6 +60,7 @@ def play_epoch(agents):
     for i in xrange(NUM_GAMES_PER_EPOCH):
         play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
         print "Playing: %s" % play_game_str
+	sys.stdout.flush()
 
         try:
             output = subprocess.check_output(play_game_str, shell=True)
@@ -101,12 +103,14 @@ class EvoAgent(object):
                 %d players per game group\n\
                 coevolution: %d\n" % \
                 (nagents, NUM_EPOCHS, NUM_AGENTS, NUM_GAME_PLAYERS, COEVOLVE)
+	sys.stdout.flush()
         
         self.run_epochs(self.to_mutate, self.to_keep)
         
         # get the parameters of the top agent
         for i in xrange(min(nagents, self.to_keep)):
             print "Top agent %d ID: %s" % (i, self.top_agents[i])
+	sys.stdout.flush()
 
     '''
     Runs num_epoch epochs, each of which plays num_game games.
@@ -125,7 +129,7 @@ class EvoAgent(object):
             # the epoch
             self.epoch_results = {}
            
-            p = Pool(8)
+            p = Pool(32)
             all_game_scores = p.map(play_epoch, self.game_groups)
             
             # get the results of each epoch for each gameplaying group
@@ -163,6 +167,7 @@ class EvoAgent(object):
                 except subprocess.CalledProcessError as e:
                     raise Exception(str(e))
                 print "---------------------------------------\n"
+		sys.stdout.flush()
 
     '''
     Sorts agents based upon the results from the epoch 
