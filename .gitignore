@@ -6,6 +6,7 @@
 *.cxx
 *.so
 *.swp
+*.npz
 
 project_acpc_server/all_in_expectation
 project_acpc_server/bm_run_matches
@@ -16,3 +17,4 @@ hand_eval/hands_swig.py
 pokerlib/poker_swig.py
 pokerlib/poker_wrap.c
 pokerlib/hands_swig.py
+evolution/agent_params/

@@ -17,6 +17,8 @@ import time
 import subprocess
 import re
 import operator
+import argparse
+import sys
 from multiprocessing import Pool
 from collections import defaultdict
 from mutator import Mutator
@@ -24,11 +26,19 @@ from parameters import Params
 import numpy as np
     
 NUM_GAMES_PER_EPOCH = 5
-COEVOLVE = True
-NUM_AGENTS= 8
-NUM_EPOCHS= 5
+NUM_AGENTS= 200
+NUM_EPOCHS= 50
 NUM_GAME_PLAYERS = 2
+GAME = "game/holdem.limit.2p.game"
+TO_MUTATE = 50
+TO_KEEP = 10
+AGENT_DIR = "agent_params"
+COEVOLVE = False
 
+parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
+parser.add_argument('--bmfile', dest='bmfile', type=str)
+args = parser.parse_args()
+BMFILE = args.bmfile 
 
 '''
 Plays one epoch (NUM_GAMES_PER_EPOCH games) and outputs a dict of results, 
@@ -38,21 +48,28 @@ def play_epoch(agents):
     game_results = defaultdict(list)
 
     btes = map(ord, os.urandom(2))
-    match_args = (btes[0] * 256 + btes[1],)
-    # add all agents to the game
+    match_args = (GAME, btes[0] * 256 + btes[1],)
+    
+    # add all agents and the appropriate scripts to the game
     if COEVOLVE:
         for aid in agents:
             game_results[aid] = []
-            match_args += (str(aid),)
-
+            match_args += (str(aid), "neuralnet/play_agent.sh",)
     else:
         game_results[agents[0]] = []
-        match_args += (str(agents[0]), "benchmark",)
-
-    print match_args
+        match_args += ("benchmark", BMFILE, str(agents[0]), "neuralnet/play_agent.sh",)
+    
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        output = subprocess.check_output("game/play_match.pl game game/holdem.nolimit.2p.game 1000 %d %s game/example_player.nolimit.2p.sh %s neuralnet/play_agent.sh" % match_args, shell=True)
+        play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
+        #print "Playing: %s" % play_game_str
+	sys.stdout.flush()
+
+        try:
+            output = subprocess.check_output(play_game_str, shell=True)
+        except subprocess.CalledProcessError as e:
+            raise Exception(str(e))
+
         if output.split(':')[0] == "SCORE": 
             # output should be of format SCORE:-530|530:Alice|Bob
             output = re.split(r'[:|]', output)
@@ -63,38 +80,35 @@ def play_epoch(agents):
 
 
 class EvoAgent(object):
-    to_mutate = 50
-    to_keep = 3
-    agent_dir = "agent_params"
-    top_agent_file = "top_agent%d"
-    
     def __init__(self):
 
         self.benchmark_agents = []
         self.agents = []
         self.epoch_results = []
         
-        if not os.path.exists(self.agent_dir):
-            os.makedirs(self.agent_dir)
-        
+        if not os.path.exists(AGENT_DIR):
+            os.makedirs(AGENT_DIR)
+
     '''
     Run by the main function to produce the top agents.
     Function that runs NUM_EPOCHS epochs and writes the parameter results of the 
     top three evolved agents to file
     '''
     def produce_agents(self, nagents):
-        print "Producing 3 top agents of evolution:\n\
+        print "Producing %d top agents of evolution:\n\
                 %d epochs\n\
                 %d agents\n\
-                %d agents per game group\n\
+                %d players per game group\n\
                 coevolution: %d\n" % \
-                (NUM_EPOCHS, NUM_AGENTS, NUM_GAME_PLAYERS, COEVOLVE)
+                (nagents, NUM_EPOCHS, NUM_AGENTS, NUM_GAME_PLAYERS, COEVOLVE)
+	sys.stdout.flush()
         
-        self.run_epochs(self.to_mutate, self.to_keep)
+        self.run_epochs(TO_MUTATE, TO_KEEP)
         
         # get the parameters of the top agent
-        for i in xrange(max(nagents, self.to_keep)):
+        for i in xrange(min(nagents, TO_KEEP)):
             print "Top agent %d ID: %s" % (i, self.top_agents[i])
+	sys.stdout.flush()
 
     '''
     Runs num_epoch epochs, each of which plays num_game games.
@@ -105,7 +119,7 @@ class EvoAgent(object):
     as benchmarks for the next generation and to ensure that the evolution never loses progress.
     '''
     def run_epochs(self, to_mutate, to_keep):
-        for _ in xrange(NUM_EPOCHS):
+        for i in xrange(NUM_EPOCHS):
             # set the gameplaying groups
             self.init_agent_gameplaying_groups()
 
@@ -113,32 +127,43 @@ class EvoAgent(object):
             # the epoch
             self.epoch_results = {}
            
-            p = Pool(8)
+            p = Pool(32)
             all_game_scores = p.map(play_epoch, self.game_groups)
+            
             # get the results of each epoch for each gameplaying group
+            # don't record scores for benchmark
             for game_scores in all_game_scores: 
                 for player, scores in game_scores.iteritems():
-                    self.epoch_results[player] = scores
+                    if player != "benchmark":
+                        self.epoch_results[player] = scores
 
             # sort the agents in order of rank 
             self.agents = self.rank_agents()
             
             # get which agents to mutate
-            self.mutate_agents = self.agents[:self.to_mutate]
+            self.mutate_agents = self.agents[:TO_MUTATE]
             # mutate the agents for the next generation 
-            self.mutator = Mutator(self.mutate_agents, self.agent_dir)
-            NUM_AGENTS_in_mutate_groups = (NUM_AGENTS - self.to_keep)/3
+            self.mutator = Mutator(self.mutate_agents, AGENT_DIR)
+            NUM_AGENTS_in_mutate_groups = (NUM_AGENTS - TO_KEEP)/3
             crossovers = self.mutator.crossover(NUM_AGENTS_in_mutate_groups)
             mutated = self.mutator.mutate(NUM_AGENTS_in_mutate_groups)
-            combinations = self.mutator.combo(NUM_AGENTS - self.to_keep - 2*NUM_AGENTS_in_mutate_groups)
+            combinations = self.mutator.combo(NUM_AGENTS - TO_KEEP - 2*NUM_AGENTS_in_mutate_groups)
 
             # get the top to_keep agents
-            self.top_agents = self.agents[:self.to_keep]
+            self.top_agents = self.agents[:TO_KEEP]
+
+	    for aid in self.top_agents:
+                print "---------------------------------------\n"
+                print "Evaluating top agent %s from epoch %d: " % (aid, i)
+                print "\tTotal Winnings: %d" % sum(self.epoch_results[aid])
+                print "\tGames Won: %d/%d" % (len(filter(lambda x: x >= 0, self.epoch_results[aid])), 
+                    len(self.epoch_results[aid]))
+                print "---------------------------------------\n"
+		sys.stdout.flush()
 
             # set the agents for the next epoch
             self.agents = crossovers + mutated + combinations + self.top_agents
             self.epoch_results = {}
-
 
     '''
     Sorts agents based upon the results from the epoch 
@@ -162,10 +187,10 @@ class EvoAgent(object):
         for i in xrange(NUM_AGENTS):
             aid = str(uuid.uuid4())
             initial_params = []
-            with np.load(os.path.join(self.agent_dir,"initial-poker-params.npz")) as data:
+            with np.load(os.path.join(AGENT_DIR,"initial-poker-params.npz")) as data:
                 for i in range(len(data.keys())):
                     initial_params.append(data["arr_%d" % i] + np.random.normal(0, noise, 1)[0])
-            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=initial_params)
+            agent_params = Params(aid=aid, agent_dir=AGENT_DIR, params_list=initial_params)
             self.agents.append(aid)
 
     '''
@@ -198,7 +223,7 @@ class EvoAgent(object):
 
 def main():
     evoagent = EvoAgent()
-    evoagent.produce_agents(1)
+    evoagent.produce_agents(3)
 
 if __name__ == "__main__":
     main()

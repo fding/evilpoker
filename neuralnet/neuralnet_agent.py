@@ -13,7 +13,8 @@ class NeuralNetAgent(PokerBot):
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
-        self.neural_net = PokerNet()
+        # For now, only support 2 player poker
+        self.neural_net = PokerNet(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
 
@@ -55,9 +56,13 @@ class NeuralNetAgent(PokerBot):
 
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
         if action.type == poker.RAISE and raisevalid:
+            # XXX This is a hack for nolimit
             action.size = minsize # for limit, size can be anything
         elif action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
+        elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
+            action.type = poker.CALL
+        print action.type, action.size
 	
         assert(poker.isValidAction( self.game, state, 0, action ) > 0)
         return action

@@ -1,55 +1,26 @@
+import sys
+import os
+sys.path.append(os.getcwd())
+
 from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
 import pokerlib 
 import numpy as np
 
-import sys
-
 class PokerNet(object):
     '''Limit Holdem Neural Net'''
-    def __init__(self):
+    def __init__(self, maxn=10):
+        self.maxn = maxn
         # nets is a series of networks mapping nplayers to corresponding nnet
-        self.nets = {
-            2: NeuralNet(layers=[9, 5, 2, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            3: NeuralNet(layers=[9, 5, 3, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            4: NeuralNet(layers=[9, 5, 4, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            5: NeuralNet(layers=[9, 5, 5, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            6: NeuralNet(layers=[9, 5, 6, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            7: NeuralNet(layers=[9, 5, 7, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            8: NeuralNet(layers=[9, 5, 8, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            9: NeuralNet(layers=[9, 5, 9, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001),
-            10: NeuralNet(layers=[9, 5, 10, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None),
-                                 ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
-                         learning_rate=0.00001, L2REG=0.001)
-        }
+
+        self.nets = {}
+        for i in xrange(2, maxn+1):
+            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
+                         wiring=[(None, None), (None, None), (None, None), ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
+                         learning_rate=0.00001, L2REG=0.001, build=False)
 
         # To prevent overfitting, share weights between the networks
         # as much as possible
-        for i in range(3, 11):
+        for i in xrange(3, self.maxn+1):
             assert self.nets[i]._vweights[3].get_value().shape == self.nets[2]._vweights[3].get_value().shape
             assert self.nets[i]._vbiases[3].get_value().shape == self.nets[2]._vbiases[3].get_value().shape
             assert self.nets[i]._vweights[5].get_value().shape == self.nets[2]._vweights[5].get_value().shape
@@ -60,13 +31,15 @@ class PokerNet(object):
             self.nets[i]._vbiases[5] = self.nets[2]._vbiases[5]
             self.nets[i].rebuild()
 
+        self.nets[2].rebuild()
+
     def save_params(self, fname):
         np.savez_compressed('pokernet-params/param-%s.npz' % fname,
                  self.nets[2]._vweights[3].get_value(),
                  self.nets[2]._vbiases[3].get_value(),
                  self.nets[2]._vweights[5].get_value(),
                  self.nets[2]._vbiases[5].get_value(),
-                 *([self.nets[i]._vweights[4].get_value() for i in self.nets] + [self.nets[i]._vbiases[4].get_value() for i in self.nets]))
+                 *([self.nets[i]._vweights[4].get_value() for i in self.nets] + [self.nets[i]._vbiases[4].get_value() for i in xrange(2, self.maxn+1)]))
 
     def load_params(self, fname):
         with np.load(fname) as data:
@@ -74,17 +47,18 @@ class PokerNet(object):
             self.nets[2]._vbiases[3].set_value(data['arr_1'])
             self.nets[2]._vweights[5].set_value(data['arr_2'])
             self.nets[2]._vbiases[5].set_value(data['arr_3'])
-            for i in range(2, 11):
+            for i in xrange(2, self.maxn+1):
                 self.nets[i]._vweights[4].set_value(data['arr_%d' % (2 + i)])
 
-            for i in range(2, 11):
+            for i in xrange(2, self.maxn+1):
+                # XXX
                 self.nets[i]._vbiases[4].set_value(data['arr_%d' % (11 + i)])
 
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
         validation = {}
         current_batch = {}
-        for i in range(2, 11):
+        for i in range(2, self.maxn+1):
             data[i] = []
             validation[i] = []
             current_batch[i] = 0
@@ -123,8 +97,8 @@ class PokerNet(object):
         batchsize = 500
         counter = 0
         validation_freq = 500
-        for _ in range(max_epochs * max(map(len, data.values()))):
-            for i in range(2, 11):
+        for _ in xrange(max_epochs * len(data[2])):
+            for i in range(2, self.maxn+1):
                 counter += 1
                 examples = data[i][current_batch[i]: current_batch[i] + batchsize]
                 self.nets[i].train([e[0] for e in examples],
@@ -138,14 +112,14 @@ class PokerNet(object):
                     current_batch[i] = 0
 
                 if counter % validation_freq == 0:
-                    for j in range(2, 11):
-                        err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]])
+                    for j in range(2, self.maxn+1):
+                        err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / len(validation[j])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
                     self.save_params(counter)
 
     def cost(self, validation_file):
         validation = {}
-        for i in range(2, 11):
+        for i in range(2, self.maxn+1):
             validation[i] = []
 
         with open(validation_file) as f:
@@ -162,7 +136,7 @@ class PokerNet(object):
                         pass
 
         errs = []
-        for j in range(2, 11):
+        for j in range(2, self.maxn+1):
             err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / float(len(validation[j]))
             errs.append(err)
 

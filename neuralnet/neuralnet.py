@@ -2,7 +2,7 @@ import theano.tensor as T
 import theano
 import numpy
 import math
-from theano.compile.nanguardmode import NanGuardMode
+#from theano.compile.nanguardmode import NanGuardMode
 
 '''
 Choice of activation functions:
@@ -25,7 +25,7 @@ SOFTMAX_FUN = T.nnet.softmax
 
 class NeuralNet(object):
 
-    def __init__(self, layers, input_layers, output_layers, wiring, learning_rate = 0.00001, L1REG = 1, L2REG = 0.001):
+    def __init__(self, layers, input_layers, output_layers, wiring, learning_rate = 0.00001, L1REG = 1, L2REG = 0.001, build=True):
         '''
             NeuralNet(layers, wiring) creates a neural network with a specified topology consisting of N layers that are wired together.
             Layer L_n is a collection of #(L_n) nodes.
@@ -68,7 +68,8 @@ class NeuralNet(object):
         self.learning_rate = learning_rate
         self.L2REG = L2REG
 
-        self.rebuild()
+        if build:
+            self.rebuild()
 
     def rebuild(self):
         for i, (inputs, f) in enumerate(self.wiring):
@@ -88,6 +89,8 @@ class NeuralNet(object):
         self._cost = (crossentropy.sum() + 
                       self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
                       self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
+
+        self._costnoreg = crossentropy.sum()
 
         self._derivatives = [None] * len(self.layers)
         self._updates = []
@@ -113,10 +116,10 @@ class NeuralNet(object):
                                            outputs=self._output)
         self._train = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
                                       outputs=self._cost,
-                                      updates=self._updates)
+                                      updates=self._updates, allow_input_downcast=True)
                                       #mode=NanGuardMode(nan_is_error=True, inf_is_error=True, big_is_error=True)) # debug NaN
         self._costfun = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
-                                      outputs=self._cost)
+                                      outputs=self._costnoreg, allow_input_downcast=True)
 
     def set_weights(self, weights):
         '''
