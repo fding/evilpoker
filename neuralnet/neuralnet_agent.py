@@ -13,7 +13,8 @@ class NeuralNetAgent(PokerBot):
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
-        self.neural_net = PokerNet()
+        # For now, only support 2 player poker
+        self.neural_net = PokerNet(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
 

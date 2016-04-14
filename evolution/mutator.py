@@ -81,7 +81,7 @@ class Mutator(object):
             
             # randomly add noise to weights
             for param in parent.params:
-                new_agent_params.params.append(param * (1+0.25*np.random.normal(0, 1, 1)))
+                new_agent_params.params.append(param * (1 + 0.4 * np.random.normal(0, 1, 1)))
             new_agent_params.write_params()
         return agents
     
