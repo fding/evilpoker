@@ -28,7 +28,6 @@ class Mutator(object):
 
     params_to_cross = 5
     params_to_mutate = 5
-    std_mutation = 1
     parents_to_combine = 5
 
     def __init__(self, parent_agents=[], agent_dir="agent_params"):
@@ -82,7 +81,7 @@ class Mutator(object):
             
             # randomly add noise to weights
             for param in parent.params:
-                new_agent_params.params.append(param + np.random.normal(0, 1, 1))
+                new_agent_params.params.append(param * (1+0.25*np.random.normal(0, 1, 1)))
             new_agent_params.write_params()
         return agents
     

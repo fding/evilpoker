@@ -25,11 +25,14 @@ from mutator import Mutator
 from parameters import Params
 import numpy as np
     
-NUM_GAMES_PER_EPOCH = 10
+NUM_GAMES_PER_EPOCH = 5
 NUM_AGENTS= 200
 NUM_EPOCHS= 50
 NUM_GAME_PLAYERS = 2
 GAME = "game/holdem.limit.2p.game"
+TO_MUTATE = 50
+TO_KEEP = 10
+AGENT_DIR = "agent_params"
 COEVOLVE = False
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
@@ -59,7 +62,7 @@ def play_epoch(agents):
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
         play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
-        print "Playing: %s" % play_game_str
+        #print "Playing: %s" % play_game_str
 	sys.stdout.flush()
 
         try:
@@ -77,19 +80,14 @@ def play_epoch(agents):
 
 
 class EvoAgent(object):
-    to_mutate = 50
-    to_keep = 3
-    agent_dir = "agent_params"
-    top_agent_file = "top_agent%d"
-    
-    def __init__(self):
+   def __init__(self):
 
         self.benchmark_agents = []
         self.agents = []
         self.epoch_results = []
         
-        if not os.path.exists(self.agent_dir):
-            os.makedirs(self.agent_dir)
+        if not os.path.exists(AGENT_DIR):
+            os.makedirs(AGENT_DIR)
         
     '''
     Run by the main function to produce the top agents.
@@ -105,10 +103,10 @@ class EvoAgent(object):
                 (nagents, NUM_EPOCHS, NUM_AGENTS, NUM_GAME_PLAYERS, COEVOLVE)
 	sys.stdout.flush()
         
-        self.run_epochs(self.to_mutate, self.to_keep)
+        self.run_epochs(TO_MUTATE, TO_KEEP)
         
         # get the parameters of the top agent
-        for i in xrange(min(nagents, self.to_keep)):
+        for i in xrange(min(nagents, TO_KEEP)):
             print "Top agent %d ID: %s" % (i, self.top_agents[i])
 	sys.stdout.flush()
 
@@ -143,29 +141,27 @@ class EvoAgent(object):
             self.agents = self.rank_agents()
             
             # get which agents to mutate
-            self.mutate_agents = self.agents[:self.to_mutate]
+            self.mutate_agents = self.agents[:TO_MUTATE]
             # mutate the agents for the next generation 
-            self.mutator = Mutator(self.mutate_agents, self.agent_dir)
-            NUM_AGENTS_in_mutate_groups = (NUM_AGENTS - self.to_keep)/3
+            self.mutator = Mutator(self.mutate_agents, AGENT_DIR)
+            NUM_AGENTS_in_mutate_groups = (NUM_AGENTS - TO_KEEP)/3
             crossovers = self.mutator.crossover(NUM_AGENTS_in_mutate_groups)
             mutated = self.mutator.mutate(NUM_AGENTS_in_mutate_groups)
-            combinations = self.mutator.combo(NUM_AGENTS - self.to_keep - 2*NUM_AGENTS_in_mutate_groups)
+            combinations = self.mutator.combo(NUM_AGENTS - TO_KEEP - 2*NUM_AGENTS_in_mutate_groups)
 
             # get the top to_keep agents
-            self.top_agents = self.agents[:self.to_keep]
+            self.top_agents = self.agents[:TO_KEEP]
 
             # set the agents for the next epoch
             self.agents = crossovers + mutated + combinations + self.top_agents
             self.epoch_results = {}
 
-            for aid in self.top_agents:
+	    for aid in self.top_agents:
                 print "---------------------------------------\n"
                 print "Evaluating top agent %s from epoch %d: " % (aid, i)
-                eval_string = "python evaluate_agent.py --benchmarkfile %s --game_file %s --num_games %d --aid %s" % (BMFILE, GAME, NUM_GAMES_PER_EPOCH, aid)
-                try:
-                    print subprocess.check_output(eval_string, shell=True)
-                except subprocess.CalledProcessError as e:
-                    raise Exception(str(e))
+                print "\tTotal Winnings: %d" % sum(self.epoch_results[aid])
+                print "\tGames Won: %d/%d" % (len(filter(lambda x: x >= 0, self.epoch_results[aid])), 
+                    len(self.epoch_results[aid]))
                 print "---------------------------------------\n"
 		sys.stdout.flush()
 
@@ -191,10 +187,10 @@ class EvoAgent(object):
         for i in xrange(NUM_AGENTS):
             aid = str(uuid.uuid4())
             initial_params = []
-            with np.load(os.path.join(self.agent_dir,"initial-poker-params.npz")) as data:
+            with np.load(os.path.join(AGENT_DIR,"initial-poker-params.npz")) as data:
                 for i in range(len(data.keys())):
                     initial_params.append(data["arr_%d" % i] + np.random.normal(0, noise, 1)[0])
-            agent_params = Params(aid=aid, agent_dir=self.agent_dir, params_list=initial_params)
+            agent_params = Params(aid=aid, agent_dir=AGENT_DIR, params_list=initial_params)
             self.agents.append(aid)
 
     '''
@@ -230,4 +226,4 @@ def main():
     evoagent.produce_agents(3)
 
 if __name__ == "__main__":
-    main()
+
