@@ -80,7 +80,7 @@ def play_epoch(agents):
 
 
 class EvoAgent(object):
-   def __init__(self):
+    def __init__(self):
 
         self.benchmark_agents = []
         self.agents = []
@@ -88,7 +88,7 @@ class EvoAgent(object):
         
         if not os.path.exists(AGENT_DIR):
             os.makedirs(AGENT_DIR)
-        
+
     '''
     Run by the main function to produce the top agents.
     Function that runs NUM_EPOCHS epochs and writes the parameter results of the 
@@ -152,10 +152,6 @@ class EvoAgent(object):
             # get the top to_keep agents
             self.top_agents = self.agents[:TO_KEEP]
 
-            # set the agents for the next epoch
-            self.agents = crossovers + mutated + combinations + self.top_agents
-            self.epoch_results = {}
-
 	    for aid in self.top_agents:
                 print "---------------------------------------\n"
                 print "Evaluating top agent %s from epoch %d: " % (aid, i)
@@ -164,6 +160,10 @@ class EvoAgent(object):
                     len(self.epoch_results[aid]))
                 print "---------------------------------------\n"
 		sys.stdout.flush()
+
+            # set the agents for the next epoch
+            self.agents = crossovers + mutated + combinations + self.top_agents
+            self.epoch_results = {}
 
     '''
     Sorts agents based upon the results from the epoch 
@@ -226,4 +226,5 @@ def main():
     evoagent.produce_agents(3)
 
 if __name__ == "__main__":
+    main()
 
