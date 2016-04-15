@@ -1,8 +1,12 @@
-from create_training_set import calculate_bet_structure, encode, print_atomic
+from create_training_set import encode
 from pokerlib.poker import calculate_card_features
 import numpy as np
 import sys
 import itertools
+import argparse
+import csv
+import glob
+import os
 
 # Good players to use as training data. Only use pairs of good players.
 good_players = {"Tartanian7", "HibiscusBiscuit", "Nyx", "Prelude", "Hyperborean_iro", "Slumbot"}
@@ -13,10 +17,6 @@ chip_features = [0.5,0.5]
 #[nplayers, card features, my chips in pot (not normalized), number of chips in pot (not normalized), chips to call (not normalized), number of turns before current action within round, 
 # nplayers, each player's number of chips (normalized)] 
 # target: action
-def calculate_features(nplayers, hole_cards, table_cards, bets, action, raise_amount):
-    card_features = calculate_card_features(nplayers, hole_cards, table_cards)
-
-    return [nplayers] + card_features + list(bets[:-1]) + list(bets[-1]) + encode(action) + [raise_amount]
 
 # splits a string of cards into a list of cards. 
 # example: '5sQc' -> [5s, Qc] 
@@ -36,23 +36,26 @@ def find_next_action(round):
 	cur_action = round[0]
 	assert(cur_action in actions)
 	round = round[1:]
-	raise_amount = ''
+	raise_amount = '0'
 	for i in range(len(round)):
 		if round[i] in actions:
 			round = round[i:]
 			break
 		else:
 			raise_amount += round[i]
-	return encode(cur_action).append(int(raise_amount)), round
+        action = encode(cur_action)
+        action.append(int(raise_amount))
+	return action, round
 	
 # Writes all features from given datafile to output csvfile given by writer
 def write_features(datafile, writer):
 	f = open(datafile, 'r')
+        outrows = []
 	for line in f:
 		parts = line.split(":")
-		if linesplit[0] == "STATE":
+		if parts[0] == "STATE":
 			# hands[0] is big blind, hands[1] is small blind
-			cards = linesplit[3].split("/")
+			cards = parts[3].split("/")
 			hands = cards[0].split("|")
 			hands = map(split_cards, hands)
 			assert(len(hands[0]) == 2)
@@ -64,7 +67,7 @@ def write_features(datafile, writer):
 			chips_in_pot = [100, 50]
 			
 			# Iterate through turns
-			rounds = linesplit[2].split("/")
+			rounds = parts[2].split("/")
 			assert(len(rounds) < 5)
 			for i in range(len(rounds)):
 				player_index = 0
@@ -77,7 +80,7 @@ def write_features(datafile, writer):
 				
 				# Iterate through turns in the round
 				rest_of_round = rounds[i]
-				while len(rest_of_round > 0):
+				while len(rest_of_round) > 0:
 					cur_hand = hands[player_index]
 					cur_action, rest_of_round = find_next_action(rest_of_round)
 					raise_amount = cur_action[3]
@@ -87,12 +90,12 @@ def write_features(datafile, writer):
 					card_features = calculate_card_features(nplayers, hole_cards, board_cards)
 					pot_features = [chips_in_pot[player_index], sum(chips_in_pot), chips_to_call, nplayers, nturns]
 					
-					all_features = card_features + pot_features + chip_features
+					all_features = [nplayers] + card_features + pot_features + chip_features
 					
 					# write features to file
-					writer.writerow(all_features + cur_action)
-					print 'features:', all_features
-					print 'action:', cur_action
+                                        writer.writerow(all_features + cur_action)
+					# print 'features:', all_features
+					# print 'action:', cur_action
 					
 					player_index = ~player_index
 					nturns += 1
@@ -110,6 +113,7 @@ def write_features(datafile, writer):
 					else:
 						sys.exit("bad action")
 	f.close()
+            
 	
 
 parser = argparse.ArgumentParser(description='Creates training data for neural network from previous AAAI data.')    
@@ -120,11 +124,11 @@ args = parser.parse_args()
 db_folder = args.input
 
 csvfile = open(args.output, 'w')
-writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+writer = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 
 # Get data from one pair of players
-for player1 in players:
-	for player2 in players:
+for player1 in good_players:
+	for player2 in good_players:
 		for datafile in glob.glob(os.path.expanduser(os.path.join(db_folder, '2pn.' + player1 + '.' + player2 + '*' ))):
 			print "opening file", datafile
 			write_features(datafile, writer)
