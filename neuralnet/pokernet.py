@@ -6,7 +6,19 @@ from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
 import pokerlib 
 import numpy as np
 
-class PokerNet(object):
+class PokerNet(object)
+    def __init__(self):
+	pass
+    def save_params(self, fname):
+	raise NotImplementedError
+    def train(self, input_file, validation_file, max_epochs = 1000):
+	raise NotImplemented
+    def cost(self, validation_file):
+	raise NotImplemented
+    def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
+	raise NotImplemented
+
+class PokerNetLimit(Pokernet):
     '''Limit Holdem Neural Net'''
     def __init__(self, maxn=10):
         self.maxn = maxn

@@ -25,9 +25,9 @@ from mutator import Mutator
 from parameters import Params
 import numpy as np
     
-NUM_GAMES_PER_EPOCH = 5
-NUM_AGENTS= 200
-NUM_EPOCHS= 50
+NUM_GAMES_PER_EPOCH = 3
+NUM_AGENTS= 100
+NUM_EPOCHS= 25 
 NUM_GAME_PLAYERS = 2
 GAME = "game/holdem.limit.2p.game"
 TO_MUTATE = 50
@@ -61,7 +61,7 @@ def play_epoch(agents):
     
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
+        play_game_str = "game/play_match.pl game %s 1800 %d %s %s %s %s" % match_args
         #print "Playing: %s" % play_game_str
 	sys.stdout.flush()
 
@@ -223,7 +223,7 @@ class EvoAgent(object):
 
 def main():
     evoagent = EvoAgent()
-    evoagent.produce_agents(3)
+    evoagent.produce_agents(5)
 
 if __name__ == "__main__":
     main()

@@ -9,7 +9,7 @@ from pokernet import PokerNet
 import argparse
 import numpy as np
 
-class NeuralNetAgent(PokerBot):
+class NeuralNetNolimitAgent(PokerBot):
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
@@ -47,17 +47,15 @@ class NeuralNetAgent(PokerBot):
         chip_features = [c/float(s) for c in chip_features]
 
         action_probabilities = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
+	# XXX set raise amount here
 
         print card_features
         print action_probabilities
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
-        action.size = 0
+        action.size = 0#XXX set raise amount
 
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
-        if action.type == poker.RAISE and raisevalid:
-            # XXX This is a hack for nolimit
-            action.size = minsize # for limit, size can be anything
         elif action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
         elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
@@ -75,5 +73,5 @@ parser.add_argument('--game_file', dest='gamefile', type=str, default='holdem.no
 parser.add_argument('--param_file', dest='params', type=str)
 args = parser.parse_args()
 		
-p = NeuralNetAgent(args.host, args.port, args.gamefile, args.params)
+p = NeuralNetNolimitAgent(args.host, args.port, args.gamefile, args.params)
 p.run()
