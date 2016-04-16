@@ -9,6 +9,8 @@ from pokernet import PokerNet
 import argparse
 import numpy as np
 
+import cProfile
+
 class NeuralNetAgent(PokerBot):
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
@@ -48,15 +50,12 @@ class NeuralNetAgent(PokerBot):
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
         action_probabilities = action_output[:3]
-        raise_amount = action_output[3]
         
         print card_features
         print action_probabilities
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
         action.size = 0
-        if action.type == poker.RAISE:
-            action.size = raise_amount
 
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
         if action.type == poker.RAISE and raisevalid:

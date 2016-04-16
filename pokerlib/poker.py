@@ -130,7 +130,7 @@ def count(l):
     return counts.values()
 
 
-def eval_hand_potential(nplayers, hole, board, ntrials=20000):
+def eval_hand_potential(nplayers, hole, board, ntrials=8000):
     hole_s = hands_swig.HoleCards()
     board_s = hands_swig.CommunityCards()
     for i, c in enumerate(hole):
