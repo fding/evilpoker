@@ -3,7 +3,7 @@ import os
 sys.path.append(os.getcwd())
 
 from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
-import pokerlib 
+#import pokerlib 
 import numpy as np
 
 class PokerNet(object)
@@ -23,10 +23,9 @@ class PokerNetLimit(Pokernet):
     def __init__(self, maxn=10):
         self.maxn = maxn
         # nets is a series of networks mapping nplayers to corresponding nnet
-
         self.nets = {}
         for i in xrange(2, maxn+1):
-            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 3], input_layers=[0, 1, 2], output_layers=[5],
+            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 4], input_layers=[0, 1, 2], output_layers=[5],
                          wiring=[(None, None), (None, None), (None, None), ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
                          learning_rate=0.00001, L2REG=0.001, build=False)
 
@@ -81,12 +80,12 @@ class PokerNetLimit(Pokernet):
                 if line.strip():
                     try:
                         parts = map(float, line.strip().split())
-                        if len(parts[15:-3]) != int(parts[0]):
+                        if len(parts[15:-4]) != int(parts[0]):
                             bad_training += 1
                             continue
                         data[int(parts[0])].append((
-                            np.array(parts[-3:]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                            np.array(parts[-4 :]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4 ])/sum(parts[15:-4 ])]))
                     except Exception as e:
                         bad_training += 1
 
@@ -96,12 +95,12 @@ class PokerNetLimit(Pokernet):
                 if line.strip():
                     try:
                         parts = map(float, line.strip().split())
-                        if len(parts[15:-3]) != int(parts[0]):
+                        if len(parts[15:-4 ]) != int(parts[0]):
                             bad_validation += 1
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-3:]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                            np.array(parts[-4:]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4])/sum(parts[15:-4])]))
                     except Exception as e:
                         bad_validation += 1
 
@@ -139,11 +138,11 @@ class PokerNetLimit(Pokernet):
                 if line.strip():
                     try:
                         parts = map(float, line.strip().split())
-                        if len(parts[15:-3]) != int(parts[0]):
+                        if len(parts[15:-4]) != int(parts[0]):
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-3:]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-3])/sum(parts[15:-3])]))
+                            np.array(parts[-4:]),
+                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4])/sum(parts[15:-4])]))
                     except Exception as e:
                         pass
 
@@ -158,5 +157,5 @@ class PokerNetLimit(Pokernet):
         return self.nets[nplayers].eval([np.array(cardfeatures), np.array(potfeatures), np.array(chipfeatures)])
 
 if __name__ == '__main__':
-    p = PokerNet()
+    p = PokerNetLimit()
     p.train(sys.argv[1], sys.argv[2])

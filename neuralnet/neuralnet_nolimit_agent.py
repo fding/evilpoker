@@ -10,6 +10,7 @@ import argparse
 import numpy as np
 
 class NeuralNetNolimitAgent(PokerBot):
+import cProfile
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
@@ -46,17 +47,17 @@ class NeuralNetNolimitAgent(PokerBot):
         s = sum(chip_features)
         chip_features = [c/float(s) for c in chip_features]
 
-        action_probabilities = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
-	# XXX set raise amount here
-
-        print card_features
+        action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
+        action_probabilities = action_output[:3]
+        
+	print card_features
         print action_probabilities
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
-        action.size = 0#XXX set raise amount
+        action.size = action_output[4]
 
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
-        elif action.type == poker.RAISE and not raisevalid:
+        if action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
         elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
             action.type = poker.CALL
