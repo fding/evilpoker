@@ -4,13 +4,13 @@ sys.path.append(os.getcwd())
 
 from pokerlib import poker
 from pokerlib.pokerbot import PokerBot
-from pokernet import PokerNet
+from pokernet import PokerNetNoLimit
 
 import argparse
 import numpy as np
 
 class NeuralNetNolimitAgent(PokerBot):
-import cProfile
+    import cProfile
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
@@ -19,7 +19,7 @@ import cProfile
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
 
-        super(NeuralNetAgent, self).__init__(host, port, gamefile)
+        super(NeuralNetNolimitAgent, self).__init__(host, port, gamefile)
 
     def what_should_i_do(self, my_id, state):
         board_cards = poker.get_board_cards(self.game, state)
