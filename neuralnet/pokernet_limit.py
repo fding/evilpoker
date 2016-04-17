@@ -32,7 +32,7 @@ class PokerNetLimit(PokerNet):
             self.nets[i].rebuild()
 
         self.nets[2].rebuild()
-
+        
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
         validation = {}
@@ -94,7 +94,7 @@ class PokerNetLimit(PokerNet):
                     for j in range(2, self.maxn+1):
                         err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / len(validation[j])
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
-                    self.save_params(counter)
+                    self.save_params(counter, dirname="agent_params_limit")
 
     def cost(self, validation_file):
         validation = {}
