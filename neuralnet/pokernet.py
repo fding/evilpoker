@@ -51,7 +51,7 @@ class PokerNet(object):
 
             for i in xrange(2, self.maxn+1):
                 # XXX
-                self.nets[i]._vbiases[4].set_value(data['arr_%d' % (11 + i)])
+                self.nets[i]._vbiases[4].set_value(data['arr_%d' % (self.maxn+1 + i)])
 
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}

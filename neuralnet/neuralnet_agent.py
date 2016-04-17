@@ -48,20 +48,24 @@ class NeuralNetAgent(PokerBot):
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
         action_probabilities = action_output[:3]
-        raise_amount = action_output[3]
+        raise_amount = int(action_output[3])
+        # Normalize probabilities because they no longer sum to 1
+        action_probabilities = [float(p)/sum(action_probabilities) for p in action_probabilities]
         
         print card_features
         print action_probabilities
+        
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
         action.size = 0
-        if action.type == poker.RAISE:
-            action.size = raise_amount
-
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
         if action.type == poker.RAISE and raisevalid:
-            # XXX This is a hack for nolimit
-            action.size = minsize # for limit, size can be anything
+            if raise_amount < minsize:
+                action.size = minsize
+            elif raise_amount > maxsize:
+                action.size = maxsize
+            else:
+                action.size = raise_amount
         elif action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
         elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
