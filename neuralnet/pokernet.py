@@ -7,8 +7,20 @@ from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
 import numpy as np
 
 class PokerNet(object):
-    '''No Limit Holdem Neural Net'''
-    def __init__(self, maxn=2):
+    def __init__(self):
+	pass
+    def save_params(self, fname):
+	raise NotImplementedError
+    def train(self, input_file, validation_file, max_epochs = 1000):
+	raise NotImplemented
+    def cost(self, validation_file):
+	raise NotImplemented
+    def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
+	raise NotImplemented
+
+class PokerNetLimit(PokerNet):
+    '''Limit Holdem Neural Net'''
+    def __init__(self, maxn=10):
         self.maxn = maxn
         # nets is a series of networks mapping nplayers to corresponding nnet
         self.nets = {}
@@ -145,5 +157,5 @@ class PokerNet(object):
         return self.nets[nplayers].eval([np.array(cardfeatures), np.array(potfeatures), np.array(chipfeatures)])
 
 if __name__ == '__main__':
-    p = PokerNet()
+    p = PokerNetLimit()
     p.train(sys.argv[1], sys.argv[2])

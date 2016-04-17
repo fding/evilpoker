@@ -4,21 +4,21 @@ sys.path.append(os.getcwd())
 
 from pokerlib import poker
 from pokerlib.pokerbot import PokerBot
-from pokernet import PokerNet
+from pokernet import PokerNetLimit
 
 import argparse
 import numpy as np
 
-class NeuralNetAgent(PokerBot):
+class NeuralNetLimitAgent(PokerBot):
     def __init__(self, host, port, gamefile, paramf):
         # Initialize networking stuff
 
         # For now, only support 2 player poker
-        self.neural_net = PokerNet(maxn=2)
+        self.neural_net = PokerNetLimit(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
 
-        super(NeuralNetAgent, self).__init__(host, port, gamefile)
+        super(NeuralNetLimitAgent, self).__init__(host, port, gamefile)
 
     def what_should_i_do(self, my_id, state):
         board_cards = poker.get_board_cards(self.game, state)
@@ -46,26 +46,18 @@ class NeuralNetAgent(PokerBot):
         s = sum(chip_features)
         chip_features = [c/float(s) for c in chip_features]
 
-        action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
-        action_probabilities = action_output[:3]
-        raise_amount = int(action_output[3])
-        # Normalize probabilities because they no longer sum to 1
-        action_probabilities = [float(p)/sum(action_probabilities) for p in action_probabilities]
-        
+        action_probabilities = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
+
         print card_features
         print action_probabilities
         
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
         action.size = 0
+
         raisevalid, minsize, maxsize = poker.raiseIsValid(self.game, state)
         if action.type == poker.RAISE and raisevalid:
-            if raise_amount < minsize:
-                action.size = minsize
-            elif raise_amount > maxsize:
-                action.size = maxsize
-            else:
-                action.size = raise_amount
+            action.size = minsize # for limit, size can be anything
         elif action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
         elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
@@ -83,5 +75,5 @@ parser.add_argument('--game_file', dest='gamefile', type=str, default='holdem.no
 parser.add_argument('--param_file', dest='params', type=str)
 args = parser.parse_args()
 		
-p = NeuralNetAgent(args.host, args.port, args.gamefile, args.params)
+p = NeuralNetLimitAgent(args.host, args.port, args.gamefile, args.params)
 p.run()

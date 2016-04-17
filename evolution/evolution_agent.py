@@ -25,20 +25,29 @@ from mutator import Mutator
 from parameters import Params
 import numpy as np
     
-NUM_GAMES_PER_EPOCH = 5
-NUM_AGENTS= 200
-NUM_EPOCHS= 50
+NUM_GAMES_PER_EPOCH = 1
 NUM_GAME_PLAYERS = 2
 GAME = "game/holdem.limit.2p.game"
-TO_MUTATE = 50
-TO_KEEP = 10
 AGENT_DIR = "agent_params"
-COEVOLVE = False
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
-parser.add_argument('--bmfile', dest='bmfile', type=str)
+parser.add_argument('--bmfile', dest='bmfile', type=str, default='benchmark/play_callorraise.sh')
+parser.add_argument('--nn_agent_file', dest='nn_agent_file', type=str, default='neuralnet/play_limit_agent.sh')
+parser.add_argument('--ntopagents', type=int, dest='ntopagents', default=3)
+parser.add_argument('--epochs', type=int, dest='epochs', default=50)
+parser.add_argument('--nagents', type=int, dest='nagents', default=100)
+parser.add_argument('--nagents_to_mutate', type=int, dest='nagents_to_mutate', default=50)
+parser.add_argument('--nagents_to_keep', type=int, dest='nagents_to_keep', default=10)
+parser.add_argument('--coevolve', dest='coevolve', action='store_true')
+parser.add_argument('--nthreads', type=int, dest='nthreads', default=32)
 args = parser.parse_args()
 BMFILE = args.bmfile 
+NN_AGENT_FILE = args.nn_agent_file
+NUM_AGENTS = args.nagents
+NUM_EPOCHS = args.epochs
+COEVOLVE = args.coevolve
+TO_MUTATE = args.nagents_to_mutate
+TO_KEEP = args.nagents_to_keep
 
 '''
 Plays one epoch (NUM_GAMES_PER_EPOCH games) and outputs a dict of results, 
@@ -54,16 +63,16 @@ def play_epoch(agents):
     if COEVOLVE:
         for aid in agents:
             game_results[aid] = []
-            match_args += (str(aid), "neuralnet/play_agent.sh",)
+            match_args += (str(aid), NN_AGENT_FILE,)
     else:
         game_results[agents[0]] = []
-        match_args += ("benchmark", BMFILE, str(agents[0]), "neuralnet/play_agent.sh",)
+        match_args += ("benchmark", BMFILE, str(agents[0]), NN_AGENT_FILE,)
     
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        play_game_str = "game/play_match.pl game %s 1000 %d %s %s %s %s" % match_args
-        #print "Playing: %s" % play_game_str
-	sys.stdout.flush()
+        play_game_str = "game/play_match.pl game %s 3000 %d %s %s %s %s" % match_args
+        print >> sys.stderr, "Playing: %s" % play_game_str
+	sys.stderr.flush()
 
         try:
             output = subprocess.check_output(play_game_str, shell=True)
@@ -127,7 +136,7 @@ class EvoAgent(object):
             # the epoch
             self.epoch_results = {}
            
-            p = Pool(32)
+            p = Pool(args.nthreads)
             all_game_scores = p.map(play_epoch, self.game_groups)
             
             # get the results of each epoch for each gameplaying group
@@ -135,7 +144,7 @@ class EvoAgent(object):
             for game_scores in all_game_scores: 
                 for player, scores in game_scores.iteritems():
                     if player != "benchmark":
-                        self.epoch_results[player] = scores
+                        self.epoch_results[player] = self.epoch_results.get(player, []) + scores
 
             # sort the agents in order of rank 
             self.agents = self.rank_agents()
@@ -206,25 +215,24 @@ class EvoAgent(object):
        
         if COEVOLVE:
             agents_indices = range(len(self.agents))
-            random.shuffle(agents_indices)
 
-            i = 0
-            while (i < len(self.agents)):
-                group = []
-                for _ in xrange(NUM_GAME_PLAYERS):
-                    group.append(self.agents[i])
-                    i += 1
-                agent_game_groups.append(group)
+            for _ in range(4):
+                random.shuffle(agents_indices)
+                i = 0
+                while (i < len(self.agents)):
+                    group = []
+                    for _ in xrange(NUM_GAME_PLAYERS):
+                        group.append(self.agents[i])
+                        i += 1
+                    agent_game_groups.append(group)
         else:
             for agent in self.agents:
                 agent_game_groups.append([agent])
                 # the other agents will be benchmark agent programs
         self.game_groups = agent_game_groups
 
-def main():
-    evoagent = EvoAgent()
-    evoagent.produce_agents(3)
 
 if __name__ == "__main__":
-    main()
+    evoagent = EvoAgent()
+    evoagent.produce_agents(args.ntopagents)
 
