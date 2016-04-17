@@ -4,7 +4,7 @@ sys.path.append(os.getcwd())
 
 from pokerlib import poker
 from pokerlib.pokerbot import PokerBot
-from pokernet import PokerNetNoLimit
+from pokernet_nolimit import PokerNetNoLimit
 
 import argparse
 import numpy as np
@@ -15,7 +15,7 @@ class NeuralNetNolimitAgent(PokerBot):
         # Initialize networking stuff
 
         # For now, only support 2 player poker
-        self.neural_net = PokerNet(maxn=2)
+        self.neural_net = PokerNetNoLimit(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
 

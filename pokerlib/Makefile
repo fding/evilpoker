@@ -1,7 +1,7 @@
 UNAME=$(shell uname -s)
 ifeq ($(UNAME), Linux)
-INCLUDE=-I/usr/include/python2.6
-LIB=-L/usr/lib/python2.6
+INCLUDE=-I/usr/include/python2.7
+LIB=-L/usr/lib/python2.7
 else
 ifeq ($(UNAME), Darwin)
 INCLUDE=-I/System/Library/Frameworks/Python.framework/Versions/2.6/include/python2.6/
@@ -24,7 +24,7 @@ test: test_hands
 hands_swig.py: hands.o hands.i
 	swig -python -c++ hands.i
 	c++ $(INCLUDE) -c hands_wrap.cxx -fPIC
-	c++ $(LIB) -shared hands.o hands_wrap.o -o _hands_swig.so -lpython2.6
+	c++ $(LIB) -shared hands.o hands_wrap.o -o _hands_swig.so -lpython2.7
 
 game.o: game.c
 	cc -O3 -c game.c -fPIC
@@ -38,7 +38,7 @@ net.o: net.c
 poker_swig.py: poker.i game.o rng.o net.o
 	swig -python poker.i
 	cc $(INCLUDE) -c poker_wrap.c -fPIC
-	cc $(LIB) -shared game.o rng.o net.o poker_wrap.o -o _poker_swig.so -lpython2.6
+	cc $(LIB) -shared game.o rng.o net.o poker_wrap.o -o _poker_swig.so -lpython2.7
 
 clean:
 	rm -f game.o rng.o net.o poker_swig.py poker_wrap.c poker_wrap.o _poker_swig.so
