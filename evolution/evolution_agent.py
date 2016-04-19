@@ -27,12 +27,12 @@ import numpy as np
     
 NUM_GAMES_PER_EPOCH = 1
 NUM_GAME_PLAYERS = 2
-GAME = "game/holdem.limit.2p.game"
 AGENT_DIR = "agent_params"
 
 parser = argparse.ArgumentParser(description="evolve agent against other agents or benchmarks")
 parser.add_argument('--bmfile', dest='bmfile', type=str, default='benchmark/play_callorraise.sh')
 parser.add_argument('--nn_agent_file', dest='nn_agent_file', type=str, default='neuralnet/play_limit_agent.sh')
+parser.add_argument('--gamefile', dest='gamefile', type=str, default='game/holdem.limit.2p.game')
 parser.add_argument('--ntopagents', type=int, dest='ntopagents', default=3)
 parser.add_argument('--epochs', type=int, dest='epochs', default=50)
 parser.add_argument('--nagents', type=int, dest='nagents', default=100)
@@ -48,7 +48,7 @@ NUM_EPOCHS = args.epochs
 COEVOLVE = args.coevolve
 TO_MUTATE = args.nagents_to_mutate
 TO_KEEP = args.nagents_to_keep
-
+GAME = args.gamefile
 '''
 Plays one epoch (NUM_GAMES_PER_EPOCH games) and outputs a dict of results, 
 which maps a player's aid to the player's scores in each game
