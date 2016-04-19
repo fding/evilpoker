@@ -60,7 +60,7 @@ class NeuralNetLimitAgent(PokerBot):
             action.size = minsize # for limit, size can be anything
         elif action.type == poker.RAISE and not raisevalid:
             action.type = poker.CALL
-        elif (not poker.isValidAction(self.game, state, 0, action ) > 0):
+        elif (poker.isValidAction(self.game, state, 0, action ) <= 0):
             action.type = poker.CALL
         print action.type, action.size
 	
