@@ -40,8 +40,8 @@ class PokerNet(object):
                         count += 1
 
     def train(self, input_file, validation_file, max_epochs = 1000):
-	raise NotImplemented
+	    raise NotImplemented
     def cost(self, validation_file):
-	raise NotImplemented
+	    raise NotImplemented
     def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
         return self.nets[nplayers].eval([np.array(cardfeatures), np.array(potfeatures), np.array(chipfeatures)])
