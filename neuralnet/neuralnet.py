@@ -85,14 +85,13 @@ class NeuralNet(object):
         self._targets = [T.matrix() for j in self.output_layers]
         crossentropy = sum([(T.nnet.categorical_crossentropy(self._vlayers[j], self._targets[i])
                              if self.wiring[j][1] == SOFTMAX_FUN
-                             else ((self._vlayers[j] - self._targets[i]) ** 2 / (1+self._targets[i])**2).sum())
+                             else ((self._vlayers[j] - self._targets[i]) ** 2 / (1+self._targets[i].max())**2).sum())
                             for i, j in enumerate(self.output_layers)
                             ])
-        
-        
+
         self._cost = (crossentropy.sum() + 
-                      self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
-                      self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
+                      self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None)) # + # L2 regularization
+        #0.01* self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for j, bias in enumerate(self._vbiases) if bias is not None and self.wiring[j][1] != LINEAR_FUN))  # L2 regularization
 
         self._costnoreg = crossentropy.sum()
 
