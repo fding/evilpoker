@@ -53,7 +53,7 @@ class PokerNetNoLimit(PokerNet):
                             bad_training += 1
                             continue
                         data[int(parts[0])].append((
-                            np.array(parts[-4 :]),
+                            np.array(parts[-4 : -1] + [max(200, parts[-1])]),
                             [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4 ])/sum(parts[15:-4 ])]))
                     except Exception as e:
                         bad_training += 1
@@ -68,7 +68,7 @@ class PokerNetNoLimit(PokerNet):
                             bad_validation += 1
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-4:]),
+                            np.array(parts[-4:-1] + [max(200, parts[-1])]),
                             [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4])/sum(parts[15:-4])]))
                     except Exception as e:
                         bad_validation += 1
