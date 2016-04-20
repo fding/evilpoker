@@ -82,10 +82,14 @@ class NeuralNet(object):
 
         self._output = T.concatenate([self._vlayers[j] for j in self.output_layers], axis=1)
 
-        self._target = T.matrix()
-        outputp = T.switch(T.eq(self._output, 0), 0.00001, self._output)
-        outputpp = T.switch(T.eq(outputp, 1), 0.999999, outputp)
-        crossentropy = T.nnet.categorical_crossentropy(self._output, self._target)
+        self._targets = [T.matrix() for j in self.output_layers]
+        crossentropy = sum([(T.nnet.categorical_crossentropy(self._vlayers[j], self._targets[i])
+                             if self.wiring[j][1] == SOFTMAX_FUN
+                             else ((self._vlayers[j] - self._targets[i]) ** 2 / (1+self._targets[i])**2).sum())
+                            for i, j in enumerate(self.output_layers)
+                            ])
+        
+        
         self._cost = (crossentropy.sum() + 
                       self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + # L2 regularization
                       self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for bias in self._vbiases if bias is not None))  # L2 regularization
@@ -114,11 +118,11 @@ class NeuralNet(object):
             self._updates.append((self._vbiases[i], self._vbiases[i] - self.learning_rate * self._derivatives[i][1]))
         self._prediction = theano.function(inputs=[self._vlayers[i] for i in self.input_layers],
                                            outputs=self._output)
-        self._train = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
+        self._train = theano.function(inputs=self._targets+[self._vlayers[i] for i in self.input_layers],
                                       outputs=self._cost,
                                       updates=self._updates, allow_input_downcast=True)
                                       #mode=NanGuardMode(nan_is_error=True, inf_is_error=True, big_is_error=True)) # debug NaN
-        self._costfun = theano.function(inputs=[self._target]+[self._vlayers[i] for i in self.input_layers],
+        self._costfun = theano.function(inputs=self._targets+[self._vlayers[i] for i in self.input_layers],
                                       outputs=self._costnoreg, allow_input_downcast=True)
 
     def set_weights(self, weights):
@@ -169,7 +173,13 @@ class NeuralNet(object):
         batch = (numpy.array(target), [numpy.array(inp) for inp in ls])
         assert len(batch[1]) == len(self.input_layers)
 
-        return self._costfun(batch[0], *batch[1])
+        targets = []
+        s = 0
+        for i, v in enumerate(self.output_layers):
+            targets.append(batch[0][:, s : s + self.layers[v]])
+            s += self.layers[v]
+
+        return self._costfun(*(targets + batch[1]))
 
     def train(self, target, inputs, max_epochs=1000, batch_size=100, log=True):
         '''
@@ -203,7 +213,12 @@ class NeuralNet(object):
             err_sum = 0.0
             for batch in batches:
                 batch_count += 1
-                err = self._train(batch[0], *batch[1])
+                targets = []
+                s = 0
+                for i, v in enumerate(self.output_layers):
+                    targets.append(batch[0][:, s : s+self.layers[v]])
+                    s += self.layers[v]
+                err = self._train(*(targets + batch[1]))
                 err_sum += err
             if log:
                 print 'Epoch %d: error = %.4f' % (epoch, err_sum/len(inputs))

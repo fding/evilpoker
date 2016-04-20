@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.append(os.getcwd())
 
-from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN
+from neuralnet import NeuralNet, RELU_FUN, SOFTMAX_FUN, LINEAR_FUN
 #import pokerlib 
 import numpy as np
 from pokernet import PokerNet
@@ -15,8 +15,8 @@ class PokerNetNoLimit(PokerNet):
         # nets is a series of networks mapping nplayers to corresponding nnet
         self.nets = {}
         for i in xrange(2, self.maxn+1):
-            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 4], input_layers=[0, 1, 2], output_layers=[5],
-                         wiring=[(None, None), (None, None), (None, None), ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN)],
+            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 3, 1], input_layers=[0, 1, 2], output_layers=[5, 6],
+                         wiring=[(None, None), (None, None), (None, None), ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN), ([4], LINEAR_FUN)],
                          learning_rate=0.00001, L2REG=0.001, build=False)
 
         # To prevent overfitting, share weights between the networks
