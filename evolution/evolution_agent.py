@@ -168,7 +168,6 @@ class EvoAgent(object):
                 print "\tTotal Winnings: %d" % sum(self.epoch_results[aid])
                 print "\tGames Won: %d/%d" % (len(filter(lambda x: x >= 0, self.epoch_results[aid])), 
                     len(self.epoch_results[aid]))
-                print "---------------------------------------\n"
 		sys.stdout.flush()
 
             # set the agents for the next epoch

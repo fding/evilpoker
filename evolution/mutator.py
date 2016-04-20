@@ -26,11 +26,9 @@ Mutates the agents using three methods:
 '''
 class Mutator(object):
 
-    params_to_cross = 5
-    params_to_mutate = 5
     parents_to_combine = 5
 
-    def __init__(self, parent_agents=[], agent_dir="agent_params"):
+    def __init__(self, parent_agents=[], agent_dir="agent_params_nolimit"):
         self.agent_dir = agent_dir
         self.parent_agents = [] 
         
@@ -62,7 +60,7 @@ class Mutator(object):
             # randomize which parameters to take from which parents
             indices = range(len(parents[0].params))
             for i, j in enumerate(indices):
-                if i < self.params_to_cross:
+                if i < len(parents[0].params)/2:
                     new_agent_params.params.append(parents[0].params[j])
                 else:
                     new_agent_params.params.append(parents[1].params[j])
