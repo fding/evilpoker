@@ -71,7 +71,7 @@ def play_epoch(agents):
     
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        play_game_str = "game/play_match.pl game %s 3000 %d %s %s %s %s" % match_args
+        play_game_str = "game/play_match.pl game %s 6000 %d %s %s %s %s" % match_args
         print >> sys.stderr, "Playing: %s" % play_game_str
 	sys.stderr.flush()
 
