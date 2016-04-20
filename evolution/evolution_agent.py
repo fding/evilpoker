@@ -40,8 +40,8 @@ parser.add_argument('--nagents_to_mutate', type=int, dest='nagents_to_mutate', d
 parser.add_argument('--nagents_to_keep', type=int, dest='nagents_to_keep', default=10)
 parser.add_argument('--coevolve', dest='coevolve', action='store_true')
 parser.add_argument('--nthreads', type=int, dest='nthreads', default=32)
+parser.add_argument('--nhands', type=int, dest='nhands', default=500)
 args = parser.parse_args()
-BMFILE = args.bmfile 
 NN_AGENT_FILE = args.nn_agent_file
 NUM_AGENTS = args.nagents
 NUM_EPOCHS = args.epochs
@@ -50,6 +50,8 @@ TO_MUTATE = args.nagents_to_mutate
 TO_KEEP = args.nagents_to_keep
 GAME = args.gamefile
 AGENT_DIR = args.agent_dir 
+NUM_HANDS = args.nhands
+benchmarks = ["benchmark/play_callorraise.sh", "benchmark/play_alwayscalls.sh", "benchmark/play_alwaysfold.sh", "benchmark/play_alwaysraise.sh"]
 '''
 Plays one epoch (NUM_GAMES_PER_EPOCH games) and outputs a dict of results, 
 which maps a player's aid to the player's scores in each game
@@ -58,7 +60,7 @@ def play_epoch(agents):
     game_results = defaultdict(list)
 
     btes = map(ord, os.urandom(2))
-    match_args = (GAME, btes[0] * 256 + btes[1],)
+    match_args = (GAME, NUM_HANDS, btes[0] * 256 + btes[1],)
     
     # add all agents and the appropriate scripts to the game
     if COEVOLVE:
@@ -67,25 +69,33 @@ def play_epoch(agents):
             match_args += (str(aid), NN_AGENT_FILE,)
     else:
         game_results[agents[0]] = []
-        match_args += ("benchmark", BMFILE, str(agents[0]), NN_AGENT_FILE,)
     
     # play the games and record the output (which is the scores of the agents in the game)
     for i in xrange(NUM_GAMES_PER_EPOCH):
-        play_game_str = "game/play_match.pl game %s 6000 %d %s %s %s %s" % match_args
-        print >> sys.stderr, "Playing: %s" % play_game_str
-	sys.stderr.flush()
+        play_game_strs = []
+        if COEVOLVE:
+            play_game_strs.append("game/play_match.pl game %s %d %d %s %s %s %s" % match_args)
+            print >> sys.stderr, "Playing: %s" % play_game_strs[0] 
+            sys.stderr.flush()
 
-        try:
-            output = subprocess.check_output(play_game_str, shell=True)
-        except subprocess.CalledProcessError as e:
-            raise Exception(str(e))
+        else:
+            for i, bm in enumerate(benchmarks):
+                play_game_strs.append("game/play_match.pl game %s %d %d %s %s %s %s" % (match_args + ("benchmark", bm, str(agents[0]), NN_AGENT_FILE,)))
+                print >> sys.stderr, "Playing: %s" % play_game_strs[i]
+            sys.stderr.flush()
 
-        if output.split(':')[0] == "SCORE": 
-            # output should be of format SCORE:-530|530:Alice|Bob
-            output = re.split(r'[:|]', output)
-            game_results[output[3].strip()].append(int(output[1]))
-            if output[4] != "benchmark":
-                game_results[output[4].strip()].append(int(output[2]))
+        for game in play_game_strs:
+            try:
+                output = subprocess.check_output(game, shell=True)
+            except subprocess.CalledProcessError as e:
+                raise Exception(str(e))
+
+            if output.split(':')[0] == "SCORE": 
+                # output should be of format SCORE:-530|530:Alice|Bob
+                output = re.split(r'[:|]', output)
+                game_results[output[3].strip()].append(int(output[1]))
+                if output[4] != "benchmark":
+                    game_results[output[4].strip()].append(int(output[2]))
     return game_results
 
 

@@ -131,9 +131,10 @@ def count(l):
 
 
 hands_hash = {}
+
 def eval_hand_potential(nplayers, hole, board, ntrials=8000):
-    if (tuple(hole), tuple(board)) in hands_hash:
-        return hands_hash[(tuple(hole), tuple(board))]
+    if (nplayers, tuple(hole), tuple(board)) in hands_hash:
+        return hands_hash[(nplayers, tuple(hole), tuple(board))]
     hole_s = hands_swig.HoleCards()
     board_s = hands_swig.CommunityCards()
     for i, c in enumerate(hole):
@@ -145,5 +146,5 @@ def eval_hand_potential(nplayers, hole, board, ntrials=8000):
         card.unknown = 0
         board_s.set_card(i, card)
 
-    hands_hash[(tuple(hole), tuple(board))] = hands_swig.eval_hand(nplayers, hole_s, board_s, ntrials)
-    return hands_hash[(tuple(hole), tuple(board))]
+    hands_hash[(nplayers, tuple(hole), tuple(board))] = hands_swig.eval_hand(nplayers, hole_s, board_s, ntrials)
+    return hands_hash[(nplayers, tuple(hole), tuple(board))]
