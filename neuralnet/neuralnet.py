@@ -90,8 +90,7 @@ class NeuralNet(object):
                             ])
 
         self._cost = (crossentropy.sum() + 
-                      self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None)) # + # L2 regularization
-        #0.01* self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for j, bias in enumerate(self._vbiases) if bias is not None and self.wiring[j][1] != LINEAR_FUN))  # L2 regularization
+                      self.L2REG/(self.layers[i]) * sum((weight**2).sum() for weight in self._vweights if weight is not None) + self.L2REG/math.sqrt(self.layers[i]) * sum((bias**2).sum() for j, bias in enumerate(self._vbiases) if bias is not None and self.wiring[j][1] != LINEAR_FUN))  # L2 regularization
 
         self._costnoreg = crossentropy.sum()
 

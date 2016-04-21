@@ -51,7 +51,7 @@ TO_KEEP = args.nagents_to_keep
 GAME = args.gamefile
 AGENT_DIR = args.agent_dir 
 NUM_HANDS = args.nhands
-benchmarks = ["benchmark/play_callorraise.sh", "benchmark/play_alwayscalls.sh", "benchmark/play_alwaysfold.sh", "benchmark/play_alwaysraise.sh"]
+benchmarks = ["benchmark/play_callorraise.sh", "benchmark/play_alwayscall.sh", "benchmark/play_alwaysfold.sh", "benchmark/play_alwaysraise.sh"]
 '''
 Plays one epoch (NUM_GAMES_PER_EPOCH games) and outputs a dict of results, 
 which maps a player's aid to the player's scores in each game
