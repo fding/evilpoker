@@ -1,0 +1,50 @@
+benchmark B 0 vs benchmark B 5
+SCORE:17580|-17580:9e727835-7701-4014-a2c0-31c471b81908|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+benchmark B 0 vs benchmark B 6
+SCORE:538969|-538969:9e727835-7701-4014-a2c0-31c471b81908|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+benchmark B 0 vs benchmark B 7
+SCORE:-110111|110111:9e727835-7701-4014-a2c0-31c471b81908|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+benchmark B 0 vs benchmark B 8
+SCORE:336307|-336307:9e727835-7701-4014-a2c0-31c471b81908|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+benchmark B 0 vs benchmark B 9
+SCORE:279443|-279443:9e727835-7701-4014-a2c0-31c471b81908|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+benchmark B 1 vs benchmark B 5
+SCORE:638182|-638182:efc7890c-78b2-469b-8eda-1bd049761f4b|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+benchmark B 1 vs benchmark B 6
+SCORE:267960|-267960:efc7890c-78b2-469b-8eda-1bd049761f4b|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+benchmark B 1 vs benchmark B 7
+SCORE:203504|-203504:efc7890c-78b2-469b-8eda-1bd049761f4b|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+benchmark B 1 vs benchmark B 8
+SCORE:749357|-749357:efc7890c-78b2-469b-8eda-1bd049761f4b|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+benchmark B 1 vs benchmark B 9
+SCORE:311472|-311472:efc7890c-78b2-469b-8eda-1bd049761f4b|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+benchmark B 2 vs benchmark B 5
+SCORE:518827|-518827:4b16fd47-93fa-4578-93dd-e7eb56998603|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+benchmark B 2 vs benchmark B 6
+SCORE:68622|-68622:4b16fd47-93fa-4578-93dd-e7eb56998603|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+benchmark B 2 vs benchmark B 7
+SCORE:356843|-356843:4b16fd47-93fa-4578-93dd-e7eb56998603|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+benchmark B 2 vs benchmark B 8
+SCORE:257311|-257311:4b16fd47-93fa-4578-93dd-e7eb56998603|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+benchmark B 2 vs benchmark B 9
+SCORE:241014|-241014:4b16fd47-93fa-4578-93dd-e7eb56998603|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+benchmark B 3 vs benchmark B 5
+SCORE:335670|-335670:1d09413b-85f0-4ab9-8a98-ce39a180041f|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+benchmark B 3 vs benchmark B 6
+SCORE:714895|-714895:1d09413b-85f0-4ab9-8a98-ce39a180041f|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+benchmark B 3 vs benchmark B 7
+SCORE:-286608|286608:1d09413b-85f0-4ab9-8a98-ce39a180041f|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+benchmark B 3 vs benchmark B 8
+SCORE:741451|-741451:1d09413b-85f0-4ab9-8a98-ce39a180041f|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+benchmark B 3 vs benchmark B 9
+SCORE:358187|-358187:1d09413b-85f0-4ab9-8a98-ce39a180041f|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+benchmark B 4 vs benchmark B 5
+SCORE:358459|-358459:82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+benchmark B 4 vs benchmark B 6
+SCORE:702425|-702425:82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+benchmark B 4 vs benchmark B 7
+SCORE:739176|-739176:82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+benchmark B 4 vs benchmark B 8
+SCORE:-179414|179414:82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+benchmark B 4 vs benchmark B 9
+SCORE:710266|-710266:82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa|f5d18c84-3394-4bf5-8377-3f604c0a3f92
