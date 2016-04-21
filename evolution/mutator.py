@@ -39,7 +39,6 @@ class Mutator(object):
             self.parent_agents.append(p_param)
         # calculate the parent probability of being chosen
         self.num_parents = len(parent_agents)
-        self.parent_weights = [float(self.num_parents - i) / self.num_parents for i in range(self.num_parents)]
       
     '''
     Randomly choose two parent agents, prioritizing the top agents, 
@@ -117,6 +116,6 @@ class Mutator(object):
 
     def get_parents(self, nparents):
         parents = []
-        for i in weighted_values(np.array(range(self.num_parents)), np.array(self.parent_weights), nparents):
-            parents.append(self.parent_agents[i])
+        for _ in xrange(nparents):
+            parents.append(self.parent_agents[random.randint(0, len(self.parent_agents)-1)])
         return parents
