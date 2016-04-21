@@ -36,7 +36,7 @@ parser.add_argument('--gamefile', dest='gamefile', type=str, default='game/holde
 parser.add_argument('--ntopagents', type=int, dest='ntopagents', default=3)
 parser.add_argument('--epochs', type=int, dest='epochs', default=50)
 parser.add_argument('--nagents', type=int, dest='nagents', default=100)
-parser.add_argument('--nagents_to_mutate', type=int, dest='nagents_to_mutate', default=50)
+parser.add_argument('--nagents_to_mutate', type=int, dest='nagents_to_mutate', default=25)
 parser.add_argument('--nagents_to_keep', type=int, dest='nagents_to_keep', default=10)
 parser.add_argument('--coevolve', dest='coevolve', action='store_true')
 parser.add_argument('--nthreads', type=int, dest='nthreads', default=32)
