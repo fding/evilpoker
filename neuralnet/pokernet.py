@@ -18,19 +18,11 @@ class PokerNet(object):
                     extra_params.append(self.nets[i]._vweights[j].get_value())
                     extra_params.append(self.nets[i]._vbiases[j].get_value())
         np.savez_compressed('%s/param-%s.npz' % (dirname, fname),
-                 self.nets[2]._vweights[3].get_value(),
-                 self.nets[2]._vbiases[3].get_value(),
-                 self.nets[2]._vweights[5].get_value(),
-                 self.nets[2]._vbiases[5].get_value(),
                  *extra_params)
 
     def load_params(self, fname):
         with np.load(fname) as data:
-            self.nets[2]._vweights[3].set_value(data['arr_0'])
-            self.nets[2]._vbiases[3].set_value(data['arr_1'])
-            self.nets[2]._vweights[5].set_value(data['arr_2'])
-            self.nets[2]._vbiases[5].set_value(data['arr_3'])
-            count = 4
+            count = 0
             for i in xrange(2, self.maxn+1):
                 for j, (t, _) in enumerate(self.nets[2].wiring):
                     if t is not None:
@@ -44,4 +36,4 @@ class PokerNet(object):
     def cost(self, validation_file):
 	    raise NotImplemented
     def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
-        return self.nets[nplayers].eval([np.array(cardfeatures), np.array(potfeatures), np.array(chipfeatures)])
+        return self.nets[nplayers].eval([np.array(cardfeatures), np.array([p * 0.01 for p in potfeatures[:3]] + potfeatures[3:])])

@@ -15,12 +15,13 @@ class PokerNetNoLimit(PokerNet):
         # nets is a series of networks mapping nplayers to corresponding nnet
         self.nets = {}
         for i in xrange(2, self.maxn+1):
-            self.nets[i] = NeuralNet(layers=[9, 5, i, 5, 8, 3, 1], input_layers=[0, 1, 2], output_layers=[5, 6],
-                         wiring=[(None, None), (None, None), (None, None), ([0], RELU_FUN), ([1, 2, 3], RELU_FUN), ([4], SOFTMAX_FUN), ([4], LINEAR_FUN)],
+            self.nets[i] = NeuralNet(layers=[9, 5, 8, 3, 1], input_layers=[0, 1], output_layers=[3, 4],
+                         wiring=[(None, None), (None, None), ([0, 1], RELU_FUN), ([2], SOFTMAX_FUN), ([2, 3], LINEAR_FUN)],
                          learning_rate=0.00001, L2REG=0.001, build=False)
 
         # To prevent overfitting, share weights between the networks
         # as much as possible
+        '''
         for i in xrange(3, self.maxn+1):
             assert self.nets[i]._vweights[3].get_value().shape == self.nets[2]._vweights[3].get_value().shape
             assert self.nets[i]._vbiases[3].get_value().shape == self.nets[2]._vbiases[3].get_value().shape
@@ -31,8 +32,10 @@ class PokerNetNoLimit(PokerNet):
             self.nets[i]._vweights[5] = self.nets[2]._vweights[5]
             self.nets[i]._vbiases[5] = self.nets[2]._vbiases[5]
             self.nets[i].rebuild()
+        '''
 
         self.nets[2].rebuild()
+        self.nets[2]._vbiases[4].set_value(np.array([250]))
         
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
@@ -54,7 +57,7 @@ class PokerNetNoLimit(PokerNet):
                             continue
                         data[int(parts[0])].append((
                             np.array(parts[-4 : -1] + [max(200, parts[-1])]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4 ])/sum(parts[15:-4 ])]))
+                            [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         bad_training += 1
 
@@ -69,7 +72,7 @@ class PokerNetNoLimit(PokerNet):
                             continue
                         validation[int(parts[0])].append((
                             np.array(parts[-4:-1] + [max(200, parts[-1])]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4])/sum(parts[15:-4])]))
+                            [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         bad_validation += 1
 
@@ -110,8 +113,8 @@ class PokerNetNoLimit(PokerNet):
                         if len(parts[15:-4]) != int(parts[0]):
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-4:]),
-                            [np.array(parts[1: 10]), np.array(parts[10:15]), np.array(parts[15:-4])/sum(parts[15:-4])]))
+                            np.array(parts[-4:-1] + [max(200, parts[-1])]),
+                            [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         pass
 

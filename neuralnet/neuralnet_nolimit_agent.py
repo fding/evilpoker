@@ -55,6 +55,7 @@ class NeuralNetNolimitAgent(PokerBot):
         
 	print card_features
         print action_output
+        print action_probabilities
         
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
