@@ -1,884 +1,2509 @@
 Producing 3 top agents of evolution:
-                25 epochs
+                100 epochs
                 100 agents
                 2 players per game group
                 coevolution: 1
 
 ---------------------------------------
 
-Evaluating top agent 33d38df4-e5a4-4712-b882-0cd21c2f0d5e from epoch 0: 
-	Total Winnings: 82850
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent c2327e1d-5c0d-472e-982c-827263696f0f from epoch 0: 
-	Total Winnings: 77700
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 29fd4325-6712-40e1-9566-73456cfe9e36 from epoch 0: 
-	Total Winnings: 61650
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3827353a-09f1-477f-ab7f-3896f1edb967 from epoch 0: 
-	Total Winnings: 61450
+Evaluating top agent a18efbac-b96f-4437-b9da-355e96b22757 from epoch 0: 
+	Total Winnings: 622264
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 9771feb0-28dd-4bb7-97fe-46811372c231 from epoch 0: 
-	Total Winnings: 57900
+Evaluating top agent 0125c723-43e1-4a60-9b9a-a120676623ab from epoch 0: 
+	Total Winnings: 471755
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 407a16d9-5939-4c7e-ae05-4119d9062b1e from epoch 1: 
-	Total Winnings: 58850
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent cb87e283-b1c4-4a26-862b-1fc39550f59a from epoch 1: 
-	Total Winnings: 43100
+Evaluating top agent 2e162a8c-cfc0-4e3c-8472-d5aecceb53f8 from epoch 0: 
+	Total Winnings: 448948
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 2560030a-0222-44a1-b2e4-a8f1f84fb4cf from epoch 1: 
-	Total Winnings: 41300
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3e1becf8-0241-4ebb-89f6-04d0df760846 from epoch 1: 
-	Total Winnings: 40250
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 1a49beda-9bff-45c6-ae5e-5969362ca688 from epoch 1: 
-	Total Winnings: 38450
+Evaluating top agent 5741519b-a74f-4555-bae9-633c8027db9d from epoch 0: 
+	Total Winnings: 443754
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 3c2cdf71-29b7-4e2a-bcfc-e0ad59084dda from epoch 2: 
-	Total Winnings: 74100
+Evaluating top agent 21690196-5a01-4727-8d09-060b35287800 from epoch 0: 
+	Total Winnings: 418427
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent d80a4e7d-edb7-4a49-9bf7-6a2aab59b577 from epoch 2: 
-	Total Winnings: 71550
+Evaluating top agent c7e9aaa0-0d92-4ca5-af86-a4dd8e8539bd from epoch 1: 
+	Total Winnings: 831706
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 78336fe4-66f9-4674-8dec-9cdbe947f94b from epoch 2: 
-	Total Winnings: 61900
+Evaluating top agent 67fbabbd-944f-4294-80bf-309e04d184c4 from epoch 1: 
+	Total Winnings: 743117
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent e58715f3-570e-4a2b-ada3-2dd07a8ad730 from epoch 1: 
+	Total Winnings: 666919
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent b437979f-b2a6-493b-893c-8306d394cade from epoch 2: 
-	Total Winnings: 59150
+Evaluating top agent 572c2ab9-a4a8-4d62-a56e-6417f80a3147 from epoch 1: 
+	Total Winnings: 654589
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 2b616df7-73b7-4482-9c11-0859772ee544 from epoch 2: 
-	Total Winnings: 58600
+Evaluating top agent e2210534-db0e-4393-b155-d6caedce9e38 from epoch 1: 
+	Total Winnings: 573278
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 85746fb9-a364-4abe-9a27-b61823a633e8 from epoch 3: 
-	Total Winnings: 115050
+Evaluating top agent d813ef0e-14fc-4037-b891-f54537a74bb7 from epoch 2: 
+	Total Winnings: 815619
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 9b6f7368-1c6e-4690-ad4e-fd4d392dba36 from epoch 3: 
-	Total Winnings: 85300
+Evaluating top agent a836623d-730e-4d4e-886a-b83432bf1665 from epoch 2: 
+	Total Winnings: 587190
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent c73deb01-bc23-4efe-9fb5-31947fbae729 from epoch 3: 
-	Total Winnings: 61350
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent b40ae8e2-81fa-4199-a50c-f9276b5fe272 from epoch 3: 
-	Total Winnings: 59950
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent ba734a47-f32e-4483-ab76-a853b16a45a2 from epoch 3: 
-	Total Winnings: 57650
+Evaluating top agent ef619fa3-e0d8-48a8-8680-9f6d30f8c02f from epoch 2: 
+	Total Winnings: 441043
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 23cdf486-8ca5-4848-b335-398d729c65b3 from epoch 4: 
-	Total Winnings: 78650
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent c5c65d57-720c-4478-945b-4e14ff1fe026 from epoch 4: 
-	Total Winnings: 62200
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 140dc9a9-5d3f-4b0b-8a2c-128fc345040c from epoch 4: 
-	Total Winnings: 51400
+Evaluating top agent 72c23cf8-5c86-411c-892f-ee286b0a5253 from epoch 2: 
+	Total Winnings: 439023
 	Games Won: 3/4
 ---------------------------------------
 
+Evaluating top agent c71e163b-bcc8-4403-83e9-aea1ea578bed from epoch 2: 
+	Total Winnings: 424153
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent acbad2c8-7b05-4a8b-ba41-ec69dd01e78c from epoch 4: 
-	Total Winnings: 48250
+Evaluating top agent 1604df86-ff01-49dc-b242-88fc43e62a70 from epoch 3: 
+	Total Winnings: 792923
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 10591ba1-2261-4b8c-a3d3-c2b2090bff28 from epoch 3: 
+	Total Winnings: 722764
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent bffd6a3e-0ce8-4f69-8fcd-cf3759c447d8 from epoch 3: 
+	Total Winnings: 673047
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c833d072-08ad-4a44-a253-577e72c7d601 from epoch 3: 
+	Total Winnings: 650627
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent f65f5cb7-236c-4ddf-85bb-99ad78560f83 from epoch 4: 
-	Total Winnings: 46850
+Evaluating top agent a7f3b8a8-d9ab-4754-84ed-237968a32ed1 from epoch 3: 
+	Total Winnings: 649847
 	Games Won: 3/4
 ---------------------------------------
 
+Evaluating top agent d14213bd-7cc0-45f2-90eb-8045cb8985da from epoch 4: 
+	Total Winnings: 907406
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 885e6c2b-74ca-4ef5-bbae-bbf1cde3b9fb from epoch 5: 
-	Total Winnings: 61650
+Evaluating top agent ca9a259d-22cb-407d-9327-2f9e8b2c93af from epoch 4: 
+	Total Winnings: 741524
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent d31a1818-069b-4962-ae60-f202c9e4568d from epoch 5: 
-	Total Winnings: 57000
+Evaluating top agent 3a3f0692-3337-4001-92ff-715886df6c85 from epoch 4: 
+	Total Winnings: 691510
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 9786b8cf-c3b1-482b-9f1b-5a9a84c48151 from epoch 5: 
-	Total Winnings: 53100
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent a96db841-f4d6-4c5e-823a-6635e8efe928 from epoch 5: 
-	Total Winnings: 52400
+Evaluating top agent f8f3a630-d270-4a18-a4f2-3ea78f6b601f from epoch 4: 
+	Total Winnings: 690880
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 159d4d34-4eb2-4175-b4e0-61e127a8f23f from epoch 5: 
-	Total Winnings: 48800
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent e09d5d0d-8bba-43d6-ab66-14f58332ba5f from epoch 6: 
-	Total Winnings: 79350
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 49dc40c1-4214-4099-9c44-08943b447647 from epoch 6: 
-	Total Winnings: 55000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent cb0b090a-894a-4efc-8dbc-36c2f56ebae4 from epoch 6: 
-	Total Winnings: 54550
+Evaluating top agent e2c546f5-de7a-4d24-b25d-b21348a903e6 from epoch 4: 
+	Total Winnings: 683144
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 5e8de5ba-5a9d-436c-9fe1-a914900336ac from epoch 6: 
-	Total Winnings: 53200
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 8ec14e89-67b7-4e55-bbbd-a65633cb9bd9 from epoch 6: 
-	Total Winnings: 53100
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent b2a568f2-cc14-4271-99bd-0c81cd0b9cb0 from epoch 7: 
-	Total Winnings: 83000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 4caa7096-0fac-48b1-9598-ee162493ae36 from epoch 7: 
-	Total Winnings: 74900
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 703b99c5-936c-4b59-bc32-08721ab89277 from epoch 7: 
-	Total Winnings: 54750
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent e3c79014-aac2-42d5-ac5c-c23e36257f3d from epoch 7: 
-	Total Winnings: 50200
+Evaluating top agent cb5924e0-fd98-4917-8ee7-c4f58e191309 from epoch 5: 
+	Total Winnings: 708856
 	Games Won: 3/4
 ---------------------------------------
 
+Evaluating top agent 14d6c6d7-095d-47ff-8c2a-97f778bf4e61 from epoch 5: 
+	Total Winnings: 656731
+	Games Won: 3/4
 ---------------------------------------
 
-Evaluating top agent 457b2a3e-02e1-4c99-a824-4a3a24837555 from epoch 7: 
-	Total Winnings: 44200
+Evaluating top agent ccca5fe6-eea3-4a16-b118-974cf3887d9d from epoch 5: 
+	Total Winnings: 608485
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 588beb5d-e713-4454-bebb-9e964be32314 from epoch 5: 
+	Total Winnings: 539850
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c27b03b7-9792-4a37-9661-88f7d530f883 from epoch 5: 
+	Total Winnings: 520450
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 0212288c-8f5e-43f8-81ae-9a4abdd1e8cc from epoch 6: 
+	Total Winnings: 887394
+	Games Won: 3/4
 ---------------------------------------
 
-Evaluating top agent 18bae1ca-3f86-4ed1-bb1b-1186217b7e0e from epoch 8: 
-	Total Winnings: 53600
+Evaluating top agent efc69dd3-571b-4949-8827-529aaff8a456 from epoch 6: 
+	Total Winnings: 788089
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 9cb52abc-b90b-475d-9ec6-7824b3f2c652 from epoch 8: 
-	Total Winnings: 48800
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3abd7fce-e53a-4c17-91ec-f21d4aab6825 from epoch 8: 
-	Total Winnings: 48750
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent ecdad2ce-1148-4e9b-a5b1-ac8f14af40f2 from epoch 8: 
-	Total Winnings: 48550
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent c3794e48-5e24-4559-83ee-e52e4f34a120 from epoch 8: 
-	Total Winnings: 48350
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 6256f5c4-3b76-4648-934f-20331e4cd593 from epoch 9: 
-	Total Winnings: 98100
+Evaluating top agent d6213969-1de2-47c2-b99b-95eb7264c925 from epoch 6: 
+	Total Winnings: 786337
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 96937ec1-d7fc-4ab5-aea9-b275f372d102 from epoch 9: 
-	Total Winnings: 68900
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent bed13f16-7559-4963-87b4-f3a1c64f1462 from epoch 9: 
-	Total Winnings: 58300
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 020ee2fe-ff78-44f4-91e0-41833471b512 from epoch 9: 
-	Total Winnings: 53350
+Evaluating top agent 7cece0ac-3171-47e6-8a57-5517cf4c2bd6 from epoch 6: 
+	Total Winnings: 594377
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent dcd19f00-d08b-4be0-98f0-a85920598e1a from epoch 9: 
-	Total Winnings: 49700
+Evaluating top agent 80ac9373-b81a-4109-b337-f6eb2ec2e43f from epoch 6: 
+	Total Winnings: 555484
 	Games Won: 3/4
 ---------------------------------------
 
+Evaluating top agent 49cea153-2456-4c1e-b659-61fd0ccc54f7 from epoch 7: 
+	Total Winnings: 718444
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 71761d7d-42a2-42c0-a4aa-a2f0f196ba57 from epoch 10: 
-	Total Winnings: 64350
+Evaluating top agent b1254eec-0305-4422-9117-043317ddcc8e from epoch 7: 
+	Total Winnings: 667938
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 876dd984-0a72-423e-85bd-10a8df391b5d from epoch 7: 
+	Total Winnings: 581269
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c66dcc87-bcdf-44d7-afa8-b660bcc0ff90 from epoch 7: 
+	Total Winnings: 561353
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent e886cb54-3a72-4486-a242-15ab89eb3a9f from epoch 7: 
+	Total Winnings: 558564
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1f2efbd3-2a48-4468-98a1-3429f3aa08ac from epoch 8: 
+	Total Winnings: 842774
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b340b045-ddaa-4129-8367-a54ff353700c from epoch 8: 
+	Total Winnings: 827499
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8f9577dd-2e61-47fd-99bb-1f9e1589d8c9 from epoch 8: 
+	Total Winnings: 738098
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c2463c06-b8a6-4dde-a4de-30a2e2e32fd0 from epoch 8: 
+	Total Winnings: 658927
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ae03715b-6f1b-42ff-a51d-5d12feac2e52 from epoch 8: 
+	Total Winnings: 618411
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 29e78e8a-47fc-4fa3-a91b-27ad4c34026d from epoch 9: 
+	Total Winnings: 992211
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8c62d46c-dfa4-47fd-8567-92b00e77baab from epoch 9: 
+	Total Winnings: 689713
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 36b9bbd2-6edb-4e80-82ae-ef57e6ba1a9c from epoch 9: 
+	Total Winnings: 624558
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 47619d4b-ef1c-480d-8faf-3ec2e4d66bf2 from epoch 9: 
+	Total Winnings: 620327
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 2ada5a9c-4c52-4514-ab43-e0248257bcda from epoch 9: 
+	Total Winnings: 577447
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent add887ef-922c-454c-b3c5-f1877a0cf147 from epoch 10: 
+	Total Winnings: 490049
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 34ab94e3-1bb6-48df-b784-50391ab9805d from epoch 10: 
+	Total Winnings: 468525
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 94fe2e6c-58ff-4f50-ac4a-1b5f2633d6fc from epoch 10: 
+	Total Winnings: 465231
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 41a8ee8c-996b-4e04-bdf5-f5397ae68966 from epoch 10: 
+	Total Winnings: 462109
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent edb10546-33c1-46f1-bf5f-eae59aec6563 from epoch 10: 
+	Total Winnings: 416712
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f298e80f-17b5-420d-8b2d-14e2e2e91675 from epoch 11: 
+	Total Winnings: 828129
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1e4ffd76-55bd-4db2-a383-ad08e9398bda from epoch 11: 
+	Total Winnings: 740519
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 6a97df2f-e0d8-4e34-bfcc-840d16446831 from epoch 11: 
+	Total Winnings: 717139
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9b92d4bf-e521-40b0-81c4-2aaa6c866095 from epoch 11: 
+	Total Winnings: 532276
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b9bc447f-c13b-4148-afdd-069e23c05494 from epoch 11: 
+	Total Winnings: 517288
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 3bc5be75-05db-46bf-b39a-cc6ba2376010 from epoch 12: 
+	Total Winnings: 654367
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 4fe2743b-0434-4884-966c-4afcc352afde from epoch 12: 
+	Total Winnings: 603011
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 58179031-26a9-406f-90c3-34595093fc46 from epoch 12: 
+	Total Winnings: 598450
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 5bb1b09f-0f4e-45f0-956f-8b8f90eaec50 from epoch 12: 
+	Total Winnings: 568113
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 5467ce3f-55d3-47b2-a44b-cec20c7e31f0 from epoch 12: 
+	Total Winnings: 565805
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c59e5d9a-28eb-4114-8f07-6b6157f4d019 from epoch 13: 
+	Total Winnings: 807544
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9f544a52-0a6b-4487-8e2e-19a04d88251d from epoch 13: 
+	Total Winnings: 742930
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ea40d53d-bc33-4777-8fae-ef167993346f from epoch 13: 
+	Total Winnings: 638059
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c4a2741c-fe99-46a0-873d-36e4731772a2 from epoch 13: 
+	Total Winnings: 636675
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 0605d4b8-1fd0-4b1f-9fd7-2ae548abdd7a from epoch 13: 
+	Total Winnings: 526104
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 65ab3e43-a1af-4377-a580-ab4676af180b from epoch 14: 
+	Total Winnings: 1058947
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 38cf5a79-e1a1-454b-b390-738d090a3772 from epoch 14: 
+	Total Winnings: 699402
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 7b5b0462-c95c-42a1-8fe3-389de84701a3 from epoch 14: 
+	Total Winnings: 674120
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 667792a5-edb4-417c-a8ee-4eda9c50ee1b from epoch 14: 
+	Total Winnings: 670051
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent b9e6f03a-32c8-418a-92da-6075b4abe28e from epoch 14: 
+	Total Winnings: 615275
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 650ae9b5-469a-4d2c-b0ae-ec4753429d25 from epoch 15: 
+	Total Winnings: 988327
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 756e6e3c-a0af-41d7-b022-1b4b88d17b26 from epoch 15: 
+	Total Winnings: 684259
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 80c78e97-5836-489f-aea2-b25cd196b735 from epoch 15: 
+	Total Winnings: 548962
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9b01215c-1011-4da5-a944-2734fc99deb5 from epoch 15: 
+	Total Winnings: 531408
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d3852c4c-fb1e-411b-a376-c3577df1720d from epoch 15: 
+	Total Winnings: 513132
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 854043be-d420-4526-b1a3-6e751c351e65 from epoch 16: 
+	Total Winnings: 828431
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 59a62d1e-22d7-4376-9781-cf40b60d6ef1 from epoch 16: 
+	Total Winnings: 814255
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent adae426d-731e-43f6-a119-26ef7f8a10a8 from epoch 16: 
+	Total Winnings: 754565
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 80712cd7-afe3-4609-aa2c-ed6bbde4ddfb from epoch 16: 
+	Total Winnings: 620997
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 267c96ae-9da3-4a16-90b3-4595c8fee2aa from epoch 16: 
+	Total Winnings: 559457
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 642bc42b-c398-4e47-84dd-ed10761c1840 from epoch 17: 
+	Total Winnings: 747549
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 58689ec3-eeaf-4688-86ef-ded3450fea37 from epoch 17: 
+	Total Winnings: 706384
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent cbac6f4b-7caa-4dae-8965-9e7626473944 from epoch 17: 
+	Total Winnings: 621578
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fc5c2181-3ade-4f7d-8c5d-e7fc8f6d3c93 from epoch 17: 
+	Total Winnings: 596628
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 48219fa0-9d8e-461d-b65d-b0a9c6f96843 from epoch 17: 
+	Total Winnings: 593876
 	Games Won: 2/4
 ---------------------------------------
 
+Evaluating top agent 70cb68d9-0c6d-420a-a095-2ee79112535e from epoch 18: 
+	Total Winnings: 735662
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 3abefaf2-ca28-4ca0-89ed-04ab1495110b from epoch 10: 
-	Total Winnings: 61350
+Evaluating top agent 3484a4ec-63e1-43b8-9e85-569090444e19 from epoch 18: 
+	Total Winnings: 710014
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 32555f10-6024-4262-b9ff-2f1d8c3ee205 from epoch 18: 
+	Total Winnings: 698009
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent e3df35ff-805c-4841-8dd1-10453778687e from epoch 18: 
+	Total Winnings: 637377
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent b1f44aeb-09c8-48f3-9d66-4cded8c731b6 from epoch 10: 
-	Total Winnings: 61100
+Evaluating top agent 3b97831e-3a5d-4c71-8f2d-c385f3381f72 from epoch 18: 
+	Total Winnings: 614034
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 0bd7cc1f-22cc-45e8-95e4-c9abad638beb from epoch 10: 
-	Total Winnings: 59250
+Evaluating top agent 0000d11c-2011-4123-9723-2ab88cfcab80 from epoch 19: 
+	Total Winnings: 813863
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 6b880a2b-3f63-40df-8191-3f621ef3f3b6 from epoch 10: 
-	Total Winnings: 56050
+Evaluating top agent ca76af2b-81aa-4f03-9508-ad5415acb497 from epoch 19: 
+	Total Winnings: 695189
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent aa8847f5-3648-4377-970e-f31a8d99ac0b from epoch 11: 
-	Total Winnings: 64800
+Evaluating top agent d6396718-dae2-47e1-8121-0239da250d59 from epoch 19: 
+	Total Winnings: 609597
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 7f71e7b0-8d62-42e5-9808-8eb71224a9fc from epoch 19: 
+	Total Winnings: 587463
+	Games Won: 2/4
 ---------------------------------------
 
-Evaluating top agent 24e13591-259c-47c3-880e-c08b0a64a930 from epoch 11: 
-	Total Winnings: 58150
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent dc90b74c-2260-4c8e-b528-7872ab393f20 from epoch 11: 
-	Total Winnings: 58000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 50ad89d0-24f8-4b1f-a911-9b2ab6b4d480 from epoch 11: 
-	Total Winnings: 57350
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 4401dcfc-e84e-47fd-aa1a-f856571e7632 from epoch 11: 
-	Total Winnings: 56100
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent d3eb7c20-09bf-46b6-b131-573a93562c85 from epoch 12: 
-	Total Winnings: 79100
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 094c2b0a-4339-42da-a672-4aff5fdcc564 from epoch 12: 
-	Total Winnings: 76800
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent c7578d76-24c0-40c7-91e1-0f9f50de67de from epoch 12: 
-	Total Winnings: 74650
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent f397aba3-b394-4071-9537-5eaf04d5e93a from epoch 12: 
-	Total Winnings: 72850
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 32aff814-e822-47f9-8df2-9347843865cf from epoch 12: 
-	Total Winnings: 67700
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 4db8742d-bced-4f3f-905e-d1ac9f7e4267 from epoch 13: 
-	Total Winnings: 83850
+Evaluating top agent feb816b1-4047-4188-b7e9-4b66b72ddf17 from epoch 19: 
+	Total Winnings: 576979
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 29623d66-77aa-400f-aae1-ddcf90e9be39 from epoch 13: 
-	Total Winnings: 64800
+Evaluating top agent c5d1671b-8eb0-41a1-bef7-b94aec512a44 from epoch 20: 
+	Total Winnings: 952844
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent d5719426-e8b0-4444-8c72-28786ea1ffe2 from epoch 13: 
-	Total Winnings: 59100
+Evaluating top agent db4289e6-304c-42b3-a1eb-a2e578ceb2e4 from epoch 20: 
+	Total Winnings: 703070
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 31666545-d85b-4db2-bb8b-98f592d58fe2 from epoch 13: 
-	Total Winnings: 58500
+Evaluating top agent 2fa077f7-2d75-4ac2-a787-1d6df9cc7dc2 from epoch 20: 
+	Total Winnings: 627494
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent d55869a0-2e62-499b-b1d6-3f56cd454140 from epoch 13: 
-	Total Winnings: 56450
+Evaluating top agent 30593ca1-9662-485f-86fa-9d6b1276ca9b from epoch 20: 
+	Total Winnings: 596167
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 0c83f60e-0ee8-4513-8c2f-9b064e0f7b63 from epoch 14: 
-	Total Winnings: 87950
+Evaluating top agent f649b741-a4a6-45ee-adaa-4d4cc11fae30 from epoch 20: 
+	Total Winnings: 547802
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 5b55e5ba-5c40-445f-923d-1cdf630274f7 from epoch 14: 
-	Total Winnings: 73000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 23a64bcb-bf9f-45ca-bf2f-cdba263d8ab3 from epoch 14: 
-	Total Winnings: 72800
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3da885be-21ca-4440-b318-f490b128fb33 from epoch 14: 
-	Total Winnings: 67550
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent afbfb5b5-ce65-41da-9b50-52e3d52a77a7 from epoch 14: 
-	Total Winnings: 63700
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3b9ba8b9-f41d-4e1e-984c-a01e885581d4 from epoch 15: 
-	Total Winnings: 60600
+Evaluating top agent 4741eb2b-38d9-4bcd-b08b-5f5824b23373 from epoch 21: 
+	Total Winnings: 752921
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent dc3ef740-5d51-4114-ab4b-b7b1cb6714b4 from epoch 15: 
-	Total Winnings: 59050
+Evaluating top agent d52d68f7-3e29-44b0-83ff-25ed2644be91 from epoch 21: 
+	Total Winnings: 704850
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 0ba4745b-001c-4fb2-b809-4c37ced6522b from epoch 21: 
+	Total Winnings: 679240
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent ea7f5c99-0268-4494-bfa3-2702b9beb5a0 from epoch 15: 
-	Total Winnings: 57200
+Evaluating top agent 4c47983f-3816-45b6-bc43-d4ed22c10be4 from epoch 21: 
+	Total Winnings: 575252
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 35fb14b6-e6d0-46f4-979b-ae332576e4c5 from epoch 15: 
-	Total Winnings: 50400
+Evaluating top agent 1ab44cdd-a39f-4c1f-b868-365d7ae8aa65 from epoch 21: 
+	Total Winnings: 541804
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 47dd94a8-b3be-4cd7-b701-6ae52f36e24b from epoch 22: 
+	Total Winnings: 803041
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 8a1abb2e-adcc-45c7-b1bb-19fb2f8f3244 from epoch 15: 
-	Total Winnings: 38950
+Evaluating top agent 0238aba2-3079-4f62-a619-db9bc0eeb98e from epoch 22: 
+	Total Winnings: 762761
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b3414c69-aecb-4ec5-8bc9-a234d893e1bb from epoch 22: 
+	Total Winnings: 722672
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1a2c1ccf-5b09-4b16-9bc2-4d4b6f3f5822 from epoch 22: 
+	Total Winnings: 675213
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ddc8696a-198b-421b-9f8e-a3eaeeea50bc from epoch 22: 
+	Total Winnings: 669851
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent aee76744-11ed-4d0e-91d0-128eca380a34 from epoch 23: 
+	Total Winnings: 771063
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 33d114ac-e3b8-4167-9f6c-86ed7dafb6b9 from epoch 23: 
+	Total Winnings: 679144
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 17d8b833-0185-4d9b-b61e-9b7d42c5c487 from epoch 16: 
-	Total Winnings: 76850
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 9481f8f9-96e4-42d4-884d-c1268fde6c3c from epoch 16: 
-	Total Winnings: 64450
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent d845d73f-6898-4839-8904-35107f049d9a from epoch 16: 
-	Total Winnings: 56550
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent a3166ade-08fd-457d-a686-ae6712599034 from epoch 16: 
-	Total Winnings: 52150
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 04e341d9-a2b1-442c-9ab3-aed0f7f84b95 from epoch 16: 
-	Total Winnings: 50500
+Evaluating top agent 2d20af8f-83d7-4396-b25d-9279f19667aa from epoch 23: 
+	Total Winnings: 649863
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 4ba31f10-5cd9-454e-966e-9a26dbd72514 from epoch 17: 
-	Total Winnings: 67250
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 3f12a661-a071-49bd-b6c1-6e1e6c47f69c from epoch 17: 
-	Total Winnings: 56800
+Evaluating top agent 01eb8f82-d078-431e-9f78-4efb8796f6f0 from epoch 23: 
+	Total Winnings: 640547
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent afeaadf7-1588-495c-954f-dcd635310fe3 from epoch 17: 
-	Total Winnings: 52900
+Evaluating top agent aa6157a5-ee8d-48ba-a7dc-175cb7a1c689 from epoch 23: 
+	Total Winnings: 549570
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 4dfa6263-c85f-4ba9-b6bd-1523c318797c from epoch 17: 
-	Total Winnings: 46600
+Evaluating top agent 4e0a0eb0-dea3-4762-9c91-48f9d324179f from epoch 24: 
+	Total Winnings: 1085639
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 62cecf00-e700-4949-aa39-6f4912d4cc5f from epoch 24: 
+	Total Winnings: 609882
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 7bfe556b-e172-4ecc-8204-08d32694da2e from epoch 17: 
-	Total Winnings: 45600
+Evaluating top agent 70f2d5d1-ee34-4488-ab63-6b841cb66575 from epoch 24: 
+	Total Winnings: 558660
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d00af421-1973-4172-b23a-3977abd9a078 from epoch 24: 
+	Total Winnings: 533097
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 5385929a-e873-40fe-ad69-59a9c9dc1624 from epoch 18: 
-	Total Winnings: 54750
+Evaluating top agent 58858d47-04b6-4385-bbe2-fc724d8c2ce9 from epoch 24: 
+	Total Winnings: 515275
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 2a86b850-bd56-40f1-b817-78ecb6f6850e from epoch 25: 
+	Total Winnings: 810714
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 5914f887-ee4b-4f07-a060-8b8782900046 from epoch 18: 
-	Total Winnings: 51700
+Evaluating top agent ab0dc55f-b9f7-4447-b6a7-91f420fc2378 from epoch 25: 
+	Total Winnings: 804662
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 642856c9-7452-4dd3-9028-4cdea29ea47f from epoch 18: 
-	Total Winnings: 48850
+Evaluating top agent 44c829ee-7346-496d-856b-6ae68f141e43 from epoch 25: 
+	Total Winnings: 791646
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent bf42bd0f-9a11-4611-96d8-efcafdc67672 from epoch 25: 
+	Total Winnings: 654030
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 4f7c22e2-3ac8-4489-a78a-1f43f378ea5c from epoch 18: 
-	Total Winnings: 46850
+Evaluating top agent a461486b-ed9a-432c-9707-f0585d8d0020 from epoch 25: 
+	Total Winnings: 651503
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 94fdc8d6-e8b8-4079-8360-cfc5b93401fc from epoch 26: 
+	Total Winnings: 1099032
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ee44e4c2-bcff-4ac5-b4ed-3e6b3a04d704 from epoch 26: 
+	Total Winnings: 858272
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 51c67d01-e997-45eb-b67f-2ca49d231f9b from epoch 26: 
+	Total Winnings: 675156
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ec865fd5-6a91-4e53-b949-89994169569a from epoch 26: 
+	Total Winnings: 649873
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 8f283c4e-55c6-43d2-af91-45f568e2cfcf from epoch 18: 
-	Total Winnings: 41600
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent d73e857a-f291-46b7-bea5-2fb1b8bb51b4 from epoch 19: 
-	Total Winnings: 73500
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 323b5678-fa19-457e-b475-911a6f710ae1 from epoch 19: 
-	Total Winnings: 71500
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 9870df4d-e0a7-493d-9f02-fb1f9952c73f from epoch 19: 
-	Total Winnings: 63250
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent f88c8044-8811-4a80-b73e-43923757f7ec from epoch 19: 
-	Total Winnings: 55450
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 0a04ddee-0d6e-4a40-9042-6b6ff7041cb9 from epoch 19: 
-	Total Winnings: 52600
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent cb27919d-3196-4a00-b8a5-15c0e43d9fcb from epoch 20: 
-	Total Winnings: 71750
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent d05f066d-64b2-46be-95d4-c6be067226b0 from epoch 20: 
-	Total Winnings: 63000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 6c0ee78b-493a-4fa7-87cc-0916954464fa from epoch 20: 
-	Total Winnings: 60050
+Evaluating top agent 20f347e9-8c33-4ae6-96a5-b6f6dde7e9f8 from epoch 26: 
+	Total Winnings: 632106
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 99e05346-8a55-4364-b7de-1eed2a662c27 from epoch 20: 
-	Total Winnings: 53800
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 7e0d515a-2561-472f-aec6-efe7903ed039 from epoch 20: 
-	Total Winnings: 52400
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent ba9ee26c-4cf7-4140-ba7f-c5eb2f176b6f from epoch 21: 
-	Total Winnings: 79400
+Evaluating top agent 71e2049f-e957-413e-be88-5aaf25fe8358 from epoch 27: 
+	Total Winnings: 795159
 	Games Won: 3/4
 ---------------------------------------
 
+Evaluating top agent c10f3da6-6bc1-4d91-8ebd-ccfdbc5a4c60 from epoch 27: 
+	Total Winnings: 677178
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 6cfd5aa1-4f51-4274-99a5-4deee0b17062 from epoch 21: 
-	Total Winnings: 67800
+Evaluating top agent 17eb99a8-0247-4424-800c-cb6f5d9018dd from epoch 27: 
+	Total Winnings: 645239
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1ed466b2-0b84-4bb6-8687-31f72ac9f6eb from epoch 27: 
+	Total Winnings: 595208
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9ffb0aff-05fe-47ed-9829-87a5ca0cb771 from epoch 27: 
+	Total Winnings: 592018
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent cd6c33b9-2e2c-4362-950d-ae8fb72a48b6 from epoch 21: 
-	Total Winnings: 57000
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 7aae8871-a927-473e-9241-60960dc9506a from epoch 21: 
-	Total Winnings: 56650
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 9c29e5da-9454-47da-a651-3fb68857b941 from epoch 21: 
-	Total Winnings: 56250
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 890c28b1-ccf7-437a-ad9e-64a278e841ad from epoch 22: 
-	Total Winnings: 86400
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent c5b58acb-7730-4973-b1c2-63d2a6f3e866 from epoch 22: 
-	Total Winnings: 66350
-	Games Won: 4/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 5e3ac934-ccf3-4667-a010-8dcccb953e34 from epoch 22: 
-	Total Winnings: 62750
+Evaluating top agent 8954010f-4093-4554-88ba-f5f312d35803 from epoch 28: 
+	Total Winnings: 717704
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 8687ad62-b6fa-43a8-b246-177433487956 from epoch 22: 
-	Total Winnings: 53500
+Evaluating top agent 5074dbe4-6871-424a-86f6-1ec0277726d8 from epoch 28: 
+	Total Winnings: 717528
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 274a091f-6922-4fdd-a15d-ca81eba44c56 from epoch 22: 
-	Total Winnings: 49950
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent f1a6cab3-13e2-46cb-bb89-1caf7be7a47c from epoch 23: 
-	Total Winnings: 75200
+Evaluating top agent a3cc59a6-3650-40ac-8302-8f429fc3c200 from epoch 28: 
+	Total Winnings: 699900
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent dcacb2db-73e8-46e9-ae2e-c59d2d68fd5e from epoch 23: 
-	Total Winnings: 66450
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent ef98784f-c870-4f4b-a06a-92fc4d1a61c2 from epoch 23: 
-	Total Winnings: 52900
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 99d28a0b-fb18-4361-9d56-2dea32ac53d4 from epoch 23: 
-	Total Winnings: 46450
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent 254d820e-0636-499e-b32d-f9dfcac54d87 from epoch 23: 
-	Total Winnings: 44950
-	Games Won: 3/4
----------------------------------------
-
----------------------------------------
-
-Evaluating top agent d1b9974f-f5fa-4b68-b91a-193cad4de2fe from epoch 24: 
-	Total Winnings: 83350
+Evaluating top agent 79cb66e0-2423-4a43-896f-a9847d371f68 from epoch 28: 
+	Total Winnings: 623698
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent 7def8591-c052-4ad2-86ef-69036d28542f from epoch 24: 
-	Total Winnings: 67300
+Evaluating top agent bd150615-8e29-47fd-811e-0ed98826474f from epoch 28: 
+	Total Winnings: 605515
 	Games Won: 3/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent acf7ffbc-221e-45b5-81dd-05cee1e7609c from epoch 24: 
-	Total Winnings: 59700
+Evaluating top agent c2bdda94-67aa-4a59-944c-06b21f8fb3c6 from epoch 29: 
+	Total Winnings: 909839
 	Games Won: 4/4
 ---------------------------------------
 
----------------------------------------
-
-Evaluating top agent a16ba46d-a8aa-4e08-81ec-ebb0a26042f9 from epoch 24: 
-	Total Winnings: 54650
+Evaluating top agent af10d091-7144-424b-9626-d4bc8688078d from epoch 29: 
+	Total Winnings: 906574
 	Games Won: 4/4
 ---------------------------------------
 
+Evaluating top agent 60d22b2e-069e-4e00-a085-4915dd43ebc3 from epoch 29: 
+	Total Winnings: 855822
+	Games Won: 4/4
 ---------------------------------------
 
-Evaluating top agent 6c571c4d-cb1c-420c-9276-e38bc0f67e33 from epoch 24: 
-	Total Winnings: 51250
+Evaluating top agent 06e98909-6fe3-451c-b311-ccc51e3d3660 from epoch 29: 
+	Total Winnings: 669846
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent e8d1a9b1-2d80-459b-a28e-71dac56cfc40 from epoch 29: 
+	Total Winnings: 616945
 	Games Won: 3/4
 ---------------------------------------
 
-Top agent 0 ID: d1b9974f-f5fa-4b68-b91a-193cad4de2fe
-Top agent 1 ID: 7def8591-c052-4ad2-86ef-69036d28542f
-Top agent 2 ID: acf7ffbc-221e-45b5-81dd-05cee1e7609c
+Evaluating top agent d6729943-904b-4aa1-86d3-bac2146fa6c7 from epoch 30: 
+	Total Winnings: 856628
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 48958371-0e0a-4296-a578-09fbdccc543a from epoch 30: 
+	Total Winnings: 709568
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a6e350d4-6916-497f-9caa-a23e4f074c3f from epoch 30: 
+	Total Winnings: 604357
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7b602837-b44d-4a69-abed-cbf7bc4b2d07 from epoch 30: 
+	Total Winnings: 529961
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f0000645-cea4-4af9-91ab-30547f8c2427 from epoch 30: 
+	Total Winnings: 524124
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1b7b2a7e-4892-468b-8c37-4c5df513c45b from epoch 31: 
+	Total Winnings: 913497
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 60a1c854-4f2a-42ff-8280-41e3e280fefd from epoch 31: 
+	Total Winnings: 837197
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 87bdd6cc-3d80-434a-b5f0-93e8b3ca2752 from epoch 31: 
+	Total Winnings: 757969
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 3d7905e2-7189-47c7-a037-a585fcdf259d from epoch 31: 
+	Total Winnings: 579957
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent eda05518-25cb-4cae-bf9a-9b62d1703ae9 from epoch 31: 
+	Total Winnings: 542217
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9339fb71-71e8-4eb8-b554-fc4eb433c984 from epoch 32: 
+	Total Winnings: 673844
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 16455d0b-610b-4880-8e8b-95800acd633c from epoch 32: 
+	Total Winnings: 612023
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 208fed38-f701-44d0-81fb-dff121882e3d from epoch 32: 
+	Total Winnings: 611097
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a30e21d4-7061-49d2-92dc-3c1a78921588 from epoch 32: 
+	Total Winnings: 523234
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 29fb89e5-b614-4a20-b2ea-402877200bd2 from epoch 32: 
+	Total Winnings: 512406
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 53de927b-b344-4787-b1a1-59a599269927 from epoch 33: 
+	Total Winnings: 764722
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a0794fab-7da2-49e7-accf-7c4a0e50d91e from epoch 33: 
+	Total Winnings: 587508
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 7a71f99e-bfe1-4769-954b-8d9b81a75d64 from epoch 33: 
+	Total Winnings: 541899
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent bbeba633-8829-4678-ace4-2fbed046d8c0 from epoch 33: 
+	Total Winnings: 536238
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c73a6fd7-3573-49b8-bbbd-37bff09281de from epoch 33: 
+	Total Winnings: 454817
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7d64f87b-331b-4d82-8588-ccb713fa9234 from epoch 34: 
+	Total Winnings: 884233
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a96117cd-7fbe-4592-aadb-32895297c0de from epoch 34: 
+	Total Winnings: 793897
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 6f93d9d4-56ae-455e-b8c4-50d6104ca150 from epoch 34: 
+	Total Winnings: 750290
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 85fde65d-93de-4fb6-a92b-e381d7d3556a from epoch 34: 
+	Total Winnings: 729352
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 74628a52-53d6-41ef-bd9c-267a0a4689c3 from epoch 34: 
+	Total Winnings: 658448
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 535e5aea-2481-4f05-924a-c68c4060841c from epoch 35: 
+	Total Winnings: 860291
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 168f2e0f-c749-4774-bde2-08ee7a50c39b from epoch 35: 
+	Total Winnings: 575996
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a01f3320-df0e-43d8-9d7f-88b90cccd65d from epoch 35: 
+	Total Winnings: 509178
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3d094473-415e-49e2-8fbd-681e9c290b91 from epoch 35: 
+	Total Winnings: 502763
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 01fb201f-c514-40d4-b669-1fef571d4048 from epoch 35: 
+	Total Winnings: 498107
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1f83e806-bf20-41e5-9a69-996f1cc42ba8 from epoch 36: 
+	Total Winnings: 793945
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 2e142993-720d-47a1-97b6-a5886304bc4b from epoch 36: 
+	Total Winnings: 787643
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 6584c3e3-52d0-47c2-82df-dcbe75d935a0 from epoch 36: 
+	Total Winnings: 701699
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent db48523b-4755-4079-8f73-2285a83c8d7f from epoch 36: 
+	Total Winnings: 600964
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 303f320c-191e-4498-ae57-6047f5464218 from epoch 36: 
+	Total Winnings: 576343
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 670ae14d-f349-44c5-a3ad-22589df41584 from epoch 37: 
+	Total Winnings: 1158194
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 036949a5-af72-4e6e-a3f2-c90bfc7d425f from epoch 37: 
+	Total Winnings: 951957
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 74e8cf22-8deb-45f0-9f25-c52bfe2fbcb8 from epoch 37: 
+	Total Winnings: 777103
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f350b765-d374-4da6-bd6c-4c0d47ea07cc from epoch 37: 
+	Total Winnings: 674177
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 25315855-0fec-4f2e-8db5-a945719f4da5 from epoch 37: 
+	Total Winnings: 652373
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 599155d0-dbef-4771-824d-f95e79793995 from epoch 38: 
+	Total Winnings: 873044
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9c0cc3aa-3155-4b7b-b002-42f4f68e5af1 from epoch 38: 
+	Total Winnings: 653827
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 01ce87dd-a43a-4a89-9e1a-665e66fcb6f4 from epoch 38: 
+	Total Winnings: 626227
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 668a2a19-2e31-4272-8ed5-3793a5729545 from epoch 38: 
+	Total Winnings: 624672
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e7b5d310-622a-4dd9-ad7f-10e978697ff9 from epoch 38: 
+	Total Winnings: 622397
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 3fbb8ed1-45a9-4710-b5fc-c4c1a7b4ce32 from epoch 39: 
+	Total Winnings: 877011
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 02c397a2-9ae3-4d79-9a8e-360ec9a3a821 from epoch 39: 
+	Total Winnings: 648654
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d52fb342-31b9-4464-a961-6897079f8ebc from epoch 39: 
+	Total Winnings: 634455
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ec40a07d-4b94-4d8c-8461-b8901ef621ae from epoch 39: 
+	Total Winnings: 586287
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 18d4322d-6060-4272-b6e0-8a2fe5159281 from epoch 39: 
+	Total Winnings: 494376
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7d293264-cee1-4647-a5c8-25661ab497fe from epoch 40: 
+	Total Winnings: 896516
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent cfd9ff39-2f40-4a78-bd9e-8e3f437ca7c3 from epoch 40: 
+	Total Winnings: 875369
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 6e9fd300-bd83-4beb-adb3-3ffbc681691e from epoch 40: 
+	Total Winnings: 597893
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 7491965e-8cb9-4213-b53d-e1fed55a6f54 from epoch 40: 
+	Total Winnings: 530591
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3cf4c30e-4347-4b44-a91c-8314bfae2cd7 from epoch 40: 
+	Total Winnings: 457828
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7b97b643-d04f-4601-b91d-2b1cbd3bf72c from epoch 41: 
+	Total Winnings: 840581
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 73122c78-20ab-46e5-b6e5-2badb7def0a7 from epoch 41: 
+	Total Winnings: 684969
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 148735ab-f4be-44d3-9ed5-46bb4291f218 from epoch 41: 
+	Total Winnings: 674747
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5a028b08-e2e1-4ce1-bce1-f731cc49d775 from epoch 41: 
+	Total Winnings: 660589
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 02219a5e-fd20-4f69-b920-63c3816b67a5 from epoch 41: 
+	Total Winnings: 620076
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 46133d56-6b96-4339-934e-912bd13bde44 from epoch 42: 
+	Total Winnings: 750520
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 38c72b4a-952c-42d5-a8cd-0e002ea70e70 from epoch 42: 
+	Total Winnings: 685020
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent db80c79e-6f28-410c-9b1c-0939a3c5cee9 from epoch 42: 
+	Total Winnings: 628920
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3705d171-a9f2-463e-9c71-b01890165534 from epoch 42: 
+	Total Winnings: 599720
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 85c77684-b942-4834-8ed7-0bdc8d164ae6 from epoch 42: 
+	Total Winnings: 539817
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f252366f-2e2e-431a-8237-8abec5ac1a67 from epoch 43: 
+	Total Winnings: 830601
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 68f38333-b076-4d6a-bdba-e164b4bb4b6a from epoch 43: 
+	Total Winnings: 783814
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent e3011b7f-466c-4486-9c29-fea58558d890 from epoch 43: 
+	Total Winnings: 740248
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a8bc67b9-278c-41b5-8609-4b229e54a5e8 from epoch 43: 
+	Total Winnings: 686489
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent cad496ec-6408-4942-af52-70051057e722 from epoch 43: 
+	Total Winnings: 635661
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 936aafff-9205-4b0b-9f6e-1edd5253f1da from epoch 44: 
+	Total Winnings: 974103
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d45270c1-a478-4423-9f5a-cae22fec4a03 from epoch 44: 
+	Total Winnings: 714142
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent aa462c59-560c-4582-8162-4bffbcb05313 from epoch 44: 
+	Total Winnings: 698592
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5ba52586-b6f0-4037-b422-e165e69fef85 from epoch 44: 
+	Total Winnings: 667002
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1b93f1d0-4008-4c92-86e8-1206d177972c from epoch 44: 
+	Total Winnings: 616229
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 05a521b3-e349-4450-aa67-9f0a49beb8e5 from epoch 45: 
+	Total Winnings: 551320
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 40557391-ed8f-4710-88a4-274bc5eefe73 from epoch 45: 
+	Total Winnings: 534261
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d1462990-4142-47b6-ae0a-5dbc4a40e93d from epoch 45: 
+	Total Winnings: 528612
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent bb6991fb-1128-4816-8330-cdc63478ea60 from epoch 45: 
+	Total Winnings: 498025
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c3b2cf6a-7fc0-422e-863f-9cef551963d0 from epoch 45: 
+	Total Winnings: 484215
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 838cba1f-c776-47fe-8689-c1a4203065ba from epoch 46: 
+	Total Winnings: 911364
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fc00d184-5666-4b8c-9136-460d2c62437c from epoch 46: 
+	Total Winnings: 605179
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ef31ddc7-dfd1-4ac8-8604-81cfeb146573 from epoch 46: 
+	Total Winnings: 603028
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 0e067bb1-ebb4-4930-b625-8997a586e001 from epoch 46: 
+	Total Winnings: 595706
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 119ca740-c674-49e8-94c6-f435d63ea6ef from epoch 46: 
+	Total Winnings: 540809
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e8080c0b-2182-49ba-9bdc-ba4f61fba1b8 from epoch 47: 
+	Total Winnings: 956025
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 47fe2611-c628-433e-a633-eee49c030ef8 from epoch 47: 
+	Total Winnings: 865035
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 78a6413b-3a28-4193-afcf-ad74b648c83a from epoch 47: 
+	Total Winnings: 841323
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 32056670-1e72-4e41-a5b8-023e57cb3a6b from epoch 47: 
+	Total Winnings: 812033
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3fa65aa3-a52e-44a3-930a-6da3a4921e0f from epoch 47: 
+	Total Winnings: 648676
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 6a7a51a3-ced9-4985-9c6c-7393260fd324 from epoch 48: 
+	Total Winnings: 827849
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 385e4c88-dcfa-4695-80bb-7997d7fd813d from epoch 48: 
+	Total Winnings: 750843
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 045c5e89-a698-44e3-82c4-097cbb54ef11 from epoch 48: 
+	Total Winnings: 593786
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 864d3ddc-5117-4bbe-a5c0-50c12fb18619 from epoch 48: 
+	Total Winnings: 556409
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 87044d1e-3aaf-4339-9c47-dcbffb099ed8 from epoch 48: 
+	Total Winnings: 534580
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 98ca0554-7410-4a5d-a2f3-26c1a7ae272b from epoch 49: 
+	Total Winnings: 787717
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ac1a4861-6fe4-4e57-ac64-6fdb22cb5866 from epoch 49: 
+	Total Winnings: 780024
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c24df802-17b7-4893-912c-6d858816ca32 from epoch 49: 
+	Total Winnings: 624049
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fd5b75df-3221-48a4-9505-47f36dfbd371 from epoch 49: 
+	Total Winnings: 601631
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7609880f-ebed-4378-847c-ea4532acaa78 from epoch 49: 
+	Total Winnings: 573291
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 815649e2-9d09-4a40-8172-805b31e6bfc2 from epoch 50: 
+	Total Winnings: 737633
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 703fbc65-d7c7-4c7b-b1b3-e9a67d2af9b3 from epoch 50: 
+	Total Winnings: 490492
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 5c480af2-dc7c-4c95-a051-85fe7eef512d from epoch 50: 
+	Total Winnings: 449712
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent b37a72d6-e299-4a82-a871-0d5a98d26332 from epoch 50: 
+	Total Winnings: 438071
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent fe48ffd1-360e-4dc2-9d94-f467d6060ead from epoch 50: 
+	Total Winnings: 417728
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a146af91-0610-4d9c-b159-251365621a3d from epoch 51: 
+	Total Winnings: 920324
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1707a9aa-b323-4ca3-b7e4-b36010a7cb72 from epoch 51: 
+	Total Winnings: 749596
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8b044861-2988-4da2-8cb3-bc56fe4aef22 from epoch 51: 
+	Total Winnings: 704866
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9b733468-327b-483e-be78-a9b9bbb63fbd from epoch 51: 
+	Total Winnings: 669053
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5e28f542-0390-41fd-9d8e-273596fe68d8 from epoch 51: 
+	Total Winnings: 667269
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c1cb964e-dc9b-4f09-b8fb-c5386ca01987 from epoch 52: 
+	Total Winnings: 1170882
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8bbc28e1-ae55-4e52-bcca-9de6213355ee from epoch 52: 
+	Total Winnings: 953131
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b54cb316-bf8a-47ad-9d0a-bf10c7ad4c07 from epoch 52: 
+	Total Winnings: 760953
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 38b59d68-3186-4608-ba5f-9b529279ff40 from epoch 52: 
+	Total Winnings: 737968
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 92d19a3e-70f1-4bbd-9557-85baaf69548a from epoch 52: 
+	Total Winnings: 640783
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 75db00ad-cad9-4046-b3ab-00c459e76f3d from epoch 53: 
+	Total Winnings: 964038
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f3cd9baf-521b-4afd-8299-38db0324887f from epoch 53: 
+	Total Winnings: 733790
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 478f3a1b-42c4-4dff-9c9b-69c062d26ea2 from epoch 53: 
+	Total Winnings: 639833
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b7beb5f2-464f-47f0-b4f8-03a3341312f4 from epoch 53: 
+	Total Winnings: 639267
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent fd8e4003-2a4e-457f-9484-fdbf469b9096 from epoch 53: 
+	Total Winnings: 594958
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 8066172b-3d0d-4e80-b66a-0566ef91fe3e from epoch 54: 
+	Total Winnings: 922345
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 4a2871e6-fa2f-487d-993b-d8acb4fd1bda from epoch 54: 
+	Total Winnings: 765674
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent e4e1100b-c5b0-4894-9164-c6e61d8b4561 from epoch 54: 
+	Total Winnings: 678127
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 394e3c2b-b97d-4520-8f77-ed79ad6349d0 from epoch 54: 
+	Total Winnings: 652697
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 91a09022-a9d0-4c30-b641-f512102d4b6b from epoch 54: 
+	Total Winnings: 599024
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 34068701-685a-4f40-b692-9fca0482adca from epoch 55: 
+	Total Winnings: 771747
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 15a856ef-2727-4fc2-a42f-de369493ab75 from epoch 55: 
+	Total Winnings: 662796
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 0001cced-0a19-41b0-b94e-8bbaddf2d465 from epoch 55: 
+	Total Winnings: 651533
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 239f73c6-f514-4a4d-8e22-b061a26135a4 from epoch 55: 
+	Total Winnings: 605874
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent dc82f23e-73e0-4f98-a194-6c1315559afb from epoch 55: 
+	Total Winnings: 547020
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a4161101-12cb-41be-a547-7818bc6b475e from epoch 56: 
+	Total Winnings: 1020657
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3f8f82a7-aba8-418a-a312-7b29cc419ae2 from epoch 56: 
+	Total Winnings: 708514
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 66095d09-65a3-45e2-93b8-df743f452987 from epoch 56: 
+	Total Winnings: 636348
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent cbae817b-4466-4eec-848b-e101a0ec4a83 from epoch 56: 
+	Total Winnings: 555818
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c393f756-3fb9-4622-9302-6fbf9b62c08b from epoch 56: 
+	Total Winnings: 536736
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 344fc265-5425-443a-8919-d969e79bf909 from epoch 57: 
+	Total Winnings: 660541
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1123a91a-b82a-4371-8804-77176590e585 from epoch 57: 
+	Total Winnings: 577045
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3e61346b-e7df-4578-9f11-1554ac3f05c6 from epoch 57: 
+	Total Winnings: 539193
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 819f8f40-3056-4ce9-b78d-3129fd81c601 from epoch 57: 
+	Total Winnings: 523827
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 49d6da5e-bb6a-485e-a423-b752c672038e from epoch 57: 
+	Total Winnings: 479996
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent b72c9595-62d9-47bc-aaad-02cdb6399044 from epoch 58: 
+	Total Winnings: 905974
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 758471c5-2e94-434e-9ae5-83f8dac9a1db from epoch 58: 
+	Total Winnings: 781760
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 4f546e78-f4fc-45e2-9ff1-3490af7e239d from epoch 58: 
+	Total Winnings: 678962
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 43530d4c-9b6b-404a-aab4-da5894d3fc3c from epoch 58: 
+	Total Winnings: 565709
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1a97f8c4-2cbc-47c2-91e6-e389ae79fbc9 from epoch 58: 
+	Total Winnings: 540199
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fc0cd57d-b94b-45b7-80de-3bdbf497f416 from epoch 59: 
+	Total Winnings: 882814
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9c6b0ae9-77e9-4641-ad85-41236188c9ca from epoch 59: 
+	Total Winnings: 541852
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 2bff25d3-e0ab-48ab-af65-0763fe278bd4 from epoch 59: 
+	Total Winnings: 521122
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 330f2bf3-8f88-4336-90fc-0972973863be from epoch 59: 
+	Total Winnings: 518750
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 92ab5650-9555-4ce4-93e2-f20db2f67746 from epoch 59: 
+	Total Winnings: 495503
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 04620c27-6836-4320-b126-00e736927c35 from epoch 60: 
+	Total Winnings: 698579
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent bf5922d7-63ec-4b79-9393-29dc84dc6b65 from epoch 60: 
+	Total Winnings: 696390
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 6f20058c-07d1-485e-9099-92a99803eee5 from epoch 60: 
+	Total Winnings: 671010
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 10f5ca7d-8acc-4a28-9615-e76ca89d31e4 from epoch 60: 
+	Total Winnings: 661522
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 16cdb54d-1d1a-4c88-be17-2d56840b45f9 from epoch 60: 
+	Total Winnings: 653562
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a51fda85-a8a2-4e26-8726-78169c68a6bc from epoch 61: 
+	Total Winnings: 1172003
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c0ccb3da-00ad-470a-b52e-02680c3b11b9 from epoch 61: 
+	Total Winnings: 726368
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 331953c6-03a7-4d6e-bcad-9aa5a81c86f3 from epoch 61: 
+	Total Winnings: 670335
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d47d77eb-9616-49f7-8af2-1351dfd569c7 from epoch 61: 
+	Total Winnings: 613581
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fa2d079a-9473-495a-a533-bb3db0544cc8 from epoch 61: 
+	Total Winnings: 537334
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 452e6bd6-c6d8-44fc-aa0b-96cd1397ffbc from epoch 62: 
+	Total Winnings: 750454
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 414461bd-e056-4d95-b7c9-70fc52c72e73 from epoch 62: 
+	Total Winnings: 724833
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a7aed559-461d-4f0e-9572-78b9d27288f8 from epoch 62: 
+	Total Winnings: 664561
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c44a78a2-39c3-4b81-ba6a-5cc39a2c0981 from epoch 62: 
+	Total Winnings: 588661
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 509670b3-003f-4cc5-a6a0-ab8a4c1ffd25 from epoch 62: 
+	Total Winnings: 587362
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 55d0f553-f57b-494c-835f-13d60dca940a from epoch 63: 
+	Total Winnings: 713437
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d8b6e2b9-c914-441d-a953-38689beb1e7f from epoch 63: 
+	Total Winnings: 636027
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 13a43331-1442-4a3c-8c40-49e6fd81f326 from epoch 63: 
+	Total Winnings: 621028
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e57cc16b-acdf-462e-ad90-b9887a121110 from epoch 63: 
+	Total Winnings: 473029
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 48d5a0aa-301e-47df-ade1-129ce16bd5a1 from epoch 63: 
+	Total Winnings: 467757
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 018adb18-3a03-4315-b75f-062e12f4e42f from epoch 64: 
+	Total Winnings: 1027254
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 65c240b8-df91-4083-aad1-a7df3970d2d1 from epoch 64: 
+	Total Winnings: 700601
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f8e51b87-637d-43c4-8086-5c069c2578a3 from epoch 64: 
+	Total Winnings: 645935
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 09a40e59-d188-40df-85b2-373477493b05 from epoch 64: 
+	Total Winnings: 621354
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent cffc99ad-1c83-4581-973d-9860cd7b0410 from epoch 64: 
+	Total Winnings: 598026
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent fd3b7c77-ea72-4a33-ae57-87b132c0a0db from epoch 65: 
+	Total Winnings: 677866
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9d5e5c5d-ab8d-4d01-8581-d6e344991ae9 from epoch 65: 
+	Total Winnings: 671277
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5d7289c7-c0a6-4740-8424-952b0680aad3 from epoch 65: 
+	Total Winnings: 656751
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 63e36715-0439-4228-b658-81a5e7c27af7 from epoch 65: 
+	Total Winnings: 641339
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c3bc49b0-f7d9-436a-b7b2-b6c8d0f59a94 from epoch 65: 
+	Total Winnings: 635634
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 198bf41e-a130-43cc-9abe-8f0fa53d49be from epoch 66: 
+	Total Winnings: 717356
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 15800002-e293-4f20-bbc4-0d5d077921fe from epoch 66: 
+	Total Winnings: 681257
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f175f08c-e991-4fe3-bfe7-44c906f0fc9f from epoch 66: 
+	Total Winnings: 678875
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ad53e4c3-5167-4b41-a9d9-d6914b7c15a7 from epoch 66: 
+	Total Winnings: 638546
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 87503ddc-cc44-4e93-814e-03a9697e4f4b from epoch 66: 
+	Total Winnings: 569278
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c1553b44-cd4e-48f8-8e7c-f01cfdaba42f from epoch 67: 
+	Total Winnings: 897251
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 66cbcbad-52b7-47a2-a35f-cb5e933a049c from epoch 67: 
+	Total Winnings: 826341
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 2c0fba6e-233f-4eb6-aa6b-5050a1edfb38 from epoch 67: 
+	Total Winnings: 658464
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent ec07b815-e4b8-49e8-8fa0-e33f5011fe2a from epoch 67: 
+	Total Winnings: 654930
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8448e2bc-d3f8-46db-9553-b1aa30c0d31f from epoch 67: 
+	Total Winnings: 513644
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 79f38ee8-a52b-496b-9bbe-518d8af51ca2 from epoch 68: 
+	Total Winnings: 864912
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent e1d77dd9-5850-4532-b441-baa75939b5a4 from epoch 68: 
+	Total Winnings: 793179
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7f4081c6-1e5d-4a10-8c6b-77642f963898 from epoch 68: 
+	Total Winnings: 726053
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a8c837d3-892d-4e37-a56b-42274b11b105 from epoch 68: 
+	Total Winnings: 697681
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1d940816-cc71-45a1-8e00-fe9f44bf7568 from epoch 68: 
+	Total Winnings: 694333
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 03fa890d-06c2-4846-b26e-62c43df1a1f8 from epoch 69: 
+	Total Winnings: 882011
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3cea17a5-e9b4-4594-9461-7d6c3bb9bbe1 from epoch 69: 
+	Total Winnings: 799795
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 61590b64-7c88-4730-9ae3-f1a8ef5e436e from epoch 69: 
+	Total Winnings: 605864
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f75333c7-a0ff-43d3-a33e-9a3352e0e207 from epoch 69: 
+	Total Winnings: 602655
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c5b6a0a4-5ad8-4260-b021-9cfd6a3fa76f from epoch 69: 
+	Total Winnings: 572532
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8674d889-66bb-4d0a-a216-30892de9de72 from epoch 70: 
+	Total Winnings: 745069
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 391a29b2-b7a1-4e07-b119-06bfbbf5dbef from epoch 70: 
+	Total Winnings: 692217
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 618bc41f-6b46-4f3c-924f-5c5602b0ef6a from epoch 70: 
+	Total Winnings: 678231
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 657f6d76-48a1-483a-a8f5-539c700d3b78 from epoch 70: 
+	Total Winnings: 632088
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent e3c44b71-2301-425b-a617-14853cea62c6 from epoch 70: 
+	Total Winnings: 582495
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b1c3a8eb-42f6-44c5-91ce-94e6c94d1687 from epoch 71: 
+	Total Winnings: 879063
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5cc433f2-fe8c-4913-8695-240d07bab912 from epoch 71: 
+	Total Winnings: 726973
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3fa25947-3fe4-42f2-8242-983e0e239ca3 from epoch 71: 
+	Total Winnings: 702798
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 88757370-d7be-4305-81a2-94fc2b2203ec from epoch 71: 
+	Total Winnings: 662039
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5ca34992-c49f-430a-83c5-b495b3aa8537 from epoch 71: 
+	Total Winnings: 578736
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 4e3a4827-da5a-4a56-93d7-295a09c03e69 from epoch 72: 
+	Total Winnings: 796913
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fd141905-16a5-49fe-a367-2abb781cd6c7 from epoch 72: 
+	Total Winnings: 706881
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 36402347-355c-43fd-9877-672e7cc5164c from epoch 72: 
+	Total Winnings: 623902
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 16934a01-5099-40f0-a083-05be889ae4df from epoch 72: 
+	Total Winnings: 486792
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent bc9c579e-e07d-4bca-a512-4fda79ebc29a from epoch 72: 
+	Total Winnings: 486723
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 920a93f6-f760-41fa-858f-d75973390171 from epoch 73: 
+	Total Winnings: 642015
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 6e2bc48f-92f8-4f98-b172-dcf8b30384a4 from epoch 73: 
+	Total Winnings: 598360
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 07bcfa21-9af6-455c-9925-e949bfc75e8a from epoch 73: 
+	Total Winnings: 592878
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d0466ed4-04fd-4aad-aa0a-7e7266102229 from epoch 73: 
+	Total Winnings: 421779
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b6055fcd-265f-48ed-86e0-ae132668a74b from epoch 73: 
+	Total Winnings: 387874
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 7bcc584e-092a-41a4-b866-62d44155cc2e from epoch 74: 
+	Total Winnings: 587463
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 0006f8eb-4121-4252-aadd-89d87f2ee800 from epoch 74: 
+	Total Winnings: 560596
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 971b627f-6728-4924-95a5-5abf7b5e5be4 from epoch 74: 
+	Total Winnings: 489442
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent af83c517-0245-46af-bc7c-03b3f47255f0 from epoch 74: 
+	Total Winnings: 480884
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ecfc510d-d277-4209-ab33-6e626f516078 from epoch 74: 
+	Total Winnings: 477393
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 51071822-64c8-4a76-bb99-70b279159fdf from epoch 75: 
+	Total Winnings: 739856
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3fe87a92-959d-436b-96fd-677c19e859ac from epoch 75: 
+	Total Winnings: 619533
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 2d1a8952-5faa-46d6-9bf9-8cd3ee8ba733 from epoch 75: 
+	Total Winnings: 591576
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent cce0f120-8e4a-49f5-a90d-fa35dbd38dab from epoch 75: 
+	Total Winnings: 568753
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent b0922eba-974e-483b-936e-f722f848edf2 from epoch 75: 
+	Total Winnings: 419091
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1d39f5a0-41fd-41cd-87f7-913807ac1d07 from epoch 76: 
+	Total Winnings: 623822
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 8df335ee-219a-43d3-a6c8-5cf67721ed48 from epoch 76: 
+	Total Winnings: 572258
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9bd31916-0db1-4449-b55d-87bc8e1965e3 from epoch 76: 
+	Total Winnings: 540952
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent cf3dd590-b1ab-4fdb-99a8-80d03c79639b from epoch 76: 
+	Total Winnings: 424603
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent bff851f0-5780-4b44-84eb-2ec1110749fd from epoch 76: 
+	Total Winnings: 419333
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a3d9dd78-6e66-4d5d-ac93-dd2100168d76 from epoch 77: 
+	Total Winnings: 721347
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b0ad2bc8-f711-4f6a-b83d-3456ce00d56b from epoch 77: 
+	Total Winnings: 659483
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c85d8461-9b8b-4b9f-a004-62dd52d8112d from epoch 77: 
+	Total Winnings: 592727
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 57fc0863-46ca-4832-8792-c8a2573cf59f from epoch 77: 
+	Total Winnings: 591295
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f27ca572-9863-4427-ac3f-2ceee1f8a4fa from epoch 77: 
+	Total Winnings: 534564
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 513ed77d-9ad5-455f-a1d6-101a8fc8a161 from epoch 78: 
+	Total Winnings: 640973
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 26d0871e-95a6-485e-929d-4beb79a20129 from epoch 78: 
+	Total Winnings: 555555
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e173069b-52eb-47f0-a449-1a68e7465c12 from epoch 78: 
+	Total Winnings: 512428
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent db9c1aa1-0a59-4814-9363-1c716f72ef4a from epoch 78: 
+	Total Winnings: 483376
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 6a4e1093-4b12-41aa-b957-d18647c37dd5 from epoch 78: 
+	Total Winnings: 465711
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 6be149a0-3e6a-4539-8261-c0e22e8c85c0 from epoch 79: 
+	Total Winnings: 806298
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 58168279-99de-4d0d-b750-31db958627e5 from epoch 79: 
+	Total Winnings: 761948
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ec834b2d-54c3-4a50-a236-fbf6565b5303 from epoch 79: 
+	Total Winnings: 612997
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent fa1c9656-e722-42e3-b545-8ff687236165 from epoch 79: 
+	Total Winnings: 559078
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 41e7d2c3-2fe9-4442-89d0-71218eae4d02 from epoch 79: 
+	Total Winnings: 541585
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f99b3607-9de2-4644-b2cf-d2a0fba73a7e from epoch 80: 
+	Total Winnings: 1168495
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 092cc8cb-4650-45f8-8500-ce1b5fb7de2f from epoch 80: 
+	Total Winnings: 1071129
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d7623863-17a2-4a55-a547-34e3c82625d4 from epoch 80: 
+	Total Winnings: 881213
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1297cb32-2723-4fc5-9ba5-79f43808975b from epoch 80: 
+	Total Winnings: 823206
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 8476aab9-180d-4437-a4c4-08f2afb0cc46 from epoch 80: 
+	Total Winnings: 677200
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a60ff05d-2458-4569-ac62-802bc154862b from epoch 81: 
+	Total Winnings: 901092
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b2f9a881-9d4d-4a50-afb6-7a7dc070f40d from epoch 81: 
+	Total Winnings: 816221
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1810d36c-827a-434a-afc3-08e121372788 from epoch 81: 
+	Total Winnings: 599832
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d0a598a9-5a8f-48be-b16b-f685bfb4e79e from epoch 81: 
+	Total Winnings: 561761
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e5958757-17c8-45b1-983a-158114e3a9e7 from epoch 81: 
+	Total Winnings: 534299
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent d2ecee34-9d83-440d-a512-1dc797b767b0 from epoch 82: 
+	Total Winnings: 813638
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 092a1bf3-145b-4a37-b230-6a2b9159238c from epoch 82: 
+	Total Winnings: 773581
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d33f0326-7953-46f0-a858-790b17a16b01 from epoch 82: 
+	Total Winnings: 656346
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9cba7ea6-7839-4e35-a872-1e1ecde44e2a from epoch 82: 
+	Total Winnings: 645758
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 8d072e84-5064-4696-becd-ae7a08a46df6 from epoch 82: 
+	Total Winnings: 644618
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f758221f-2798-43bf-97ab-282c6621c560 from epoch 83: 
+	Total Winnings: 971553
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a5728702-b174-49fb-ac08-10cd129563b0 from epoch 83: 
+	Total Winnings: 829797
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f2ec01dc-9c91-4da9-a58f-f6ec4a7b6452 from epoch 83: 
+	Total Winnings: 733456
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 92d6c84f-19d0-415e-a2ba-ad9c4a0508c7 from epoch 83: 
+	Total Winnings: 731532
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 33fc0512-ab80-45ca-8de0-feee782d3f0f from epoch 83: 
+	Total Winnings: 697425
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 707e526f-8d1b-43cb-8501-f5b88539d65b from epoch 84: 
+	Total Winnings: 722923
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9f599a5d-e078-46b1-98b7-eebb761582f6 from epoch 84: 
+	Total Winnings: 569746
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent f3dd5169-7e5c-4011-868d-7d662880c881 from epoch 84: 
+	Total Winnings: 527916
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 4f9d5c98-361c-478b-8692-df52fe16e3fe from epoch 84: 
+	Total Winnings: 523833
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent bda9b6e1-8a6e-41a7-b172-87bd7b6e20dc from epoch 84: 
+	Total Winnings: 516047
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c8e70ec7-9b2f-4117-a94b-a50616b57848 from epoch 85: 
+	Total Winnings: 816303
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9f5a37d1-c83f-4486-b62d-e4b7fcb5c9ce from epoch 85: 
+	Total Winnings: 767489
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9b35f878-a14b-4ec8-8e73-441d943e8f6f from epoch 85: 
+	Total Winnings: 740348
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 98e13a3f-ac35-4661-a31c-7863e4ef4c66 from epoch 85: 
+	Total Winnings: 619426
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c16d33ef-b9ba-4dfc-b50e-0cd067152ccf from epoch 85: 
+	Total Winnings: 604867
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 3f78999f-7128-4720-9ed0-f308d7ca881b from epoch 86: 
+	Total Winnings: 982015
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 95e26f69-fb5e-4ebd-a5da-389b34fe2839 from epoch 86: 
+	Total Winnings: 831886
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 90cdf41d-9cda-4510-9388-1b3fc54be2b5 from epoch 86: 
+	Total Winnings: 812539
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent de6292c0-430e-4e9c-8a6a-dd72d04d0154 from epoch 86: 
+	Total Winnings: 692770
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 70e1b34f-b722-4b54-9bf1-ae0c8fb3eb5d from epoch 86: 
+	Total Winnings: 538514
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent ef073c68-737a-4f3c-8f9f-319a8f07ed4d from epoch 87: 
+	Total Winnings: 1090139
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 454c44b1-b676-4b8a-a864-a45348bda5cf from epoch 87: 
+	Total Winnings: 979885
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1f77bf69-7c59-45f0-8fc5-f33c3a2721c4 from epoch 87: 
+	Total Winnings: 529248
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 9592fbe9-47e0-4aae-aae7-17c33f887443 from epoch 87: 
+	Total Winnings: 475119
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 652d3188-7d5f-41bd-a77e-cda288e1f68f from epoch 87: 
+	Total Winnings: 473041
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d8f7b037-30b4-40ed-8f1e-d3e99ffb9113 from epoch 88: 
+	Total Winnings: 885263
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 292d0a14-5f7b-4726-95ea-eafc4c9dd08b from epoch 88: 
+	Total Winnings: 780585
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 72f9d90a-3966-444d-9eb1-a296ca2170a6 from epoch 88: 
+	Total Winnings: 684925
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ca214525-2ca4-44b0-9dd3-adf33869e971 from epoch 88: 
+	Total Winnings: 567626
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 5d710d59-84ac-4679-b885-56dfb7f7152b from epoch 88: 
+	Total Winnings: 537848
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent cc871046-580a-4dc6-add3-aab0e0f14b6b from epoch 89: 
+	Total Winnings: 611514
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 377b47a0-6d68-473b-a6cc-ab971e707902 from epoch 89: 
+	Total Winnings: 610937
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9921d28d-081a-4c33-ace4-13b57dc88ebb from epoch 89: 
+	Total Winnings: 590674
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d43fa89b-bae6-4a77-bfa8-7c20605a8f12 from epoch 89: 
+	Total Winnings: 578782
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 5b7b6902-f79c-4b80-a768-38a5b3a54d2f from epoch 89: 
+	Total Winnings: 483318
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d9ee2c9d-5a52-406d-9761-244d5c9c5725 from epoch 90: 
+	Total Winnings: 1206162
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d58fb642-01ea-4798-b44b-353013198ce5 from epoch 90: 
+	Total Winnings: 859054
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent cb821374-2340-41c7-afa0-7457948272bc from epoch 90: 
+	Total Winnings: 760140
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 784387c4-aada-49b3-af0c-eae6c3a21815 from epoch 90: 
+	Total Winnings: 635318
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 59d42796-8264-4090-8f35-ebd548dd7418 from epoch 90: 
+	Total Winnings: 550189
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 5e9b89ac-1dc3-463f-a91a-9963aaac27f7 from epoch 91: 
+	Total Winnings: 827224
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 05dfe4df-e6fd-4e11-960b-225d184e8712 from epoch 91: 
+	Total Winnings: 651275
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1deb0248-fe1b-4eff-8d0d-fcc4b548550b from epoch 91: 
+	Total Winnings: 608223
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent a8ff3df7-15a0-42d9-a2bf-049ca4f0d56d from epoch 91: 
+	Total Winnings: 586762
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent e6427812-1965-48f0-b8f6-ae499430eaa0 from epoch 91: 
+	Total Winnings: 554226
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 173134e7-6bd6-419d-b173-5aedf0126c5e from epoch 92: 
+	Total Winnings: 844410
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 41036d3d-e1bc-4f44-a230-1c848120dff3 from epoch 92: 
+	Total Winnings: 683872
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f2fecfb1-6b0e-4974-9740-423f0dfe0c41 from epoch 92: 
+	Total Winnings: 603330
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 1deb8760-f2fc-4418-b619-edcf2484e428 from epoch 92: 
+	Total Winnings: 541424
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent e1eaa726-d5c4-42ea-829d-07670c8f2cde from epoch 92: 
+	Total Winnings: 506038
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 7b38d486-cde6-4718-9563-e1ef06ea4bf6 from epoch 93: 
+	Total Winnings: 1137825
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent df551435-8753-4a02-b882-b0f785310ad5 from epoch 93: 
+	Total Winnings: 853252
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 1696e6f6-2705-40c9-b6f3-9aa4b85689d9 from epoch 93: 
+	Total Winnings: 774455
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 18add101-e768-4b67-8e3a-cfe52c0706f3 from epoch 93: 
+	Total Winnings: 663125
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent d6d02656-0bdd-4058-aa1f-4e283f1d57d5 from epoch 93: 
+	Total Winnings: 632148
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 71b6c056-cfa5-40f3-bf91-24120ceda690 from epoch 94: 
+	Total Winnings: 831624
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 2d7e7659-e4c8-4e7b-b864-bc079021f097 from epoch 94: 
+	Total Winnings: 783491
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 10c010ba-4425-4a24-ada1-216f553b8e15 from epoch 94: 
+	Total Winnings: 730731
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 152defe5-d868-4691-8279-659479e109a3 from epoch 94: 
+	Total Winnings: 699599
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent c7eb57e5-8dea-4642-ad4a-50a357a20ca3 from epoch 94: 
+	Total Winnings: 666198
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 2bc1eeda-fff2-4203-87b9-33720c2f5aa4 from epoch 95: 
+	Total Winnings: 843736
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 12d76927-d7e1-4cf3-97a8-abafe1bdf7ac from epoch 95: 
+	Total Winnings: 688964
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f143ccaf-dd5b-4a92-a697-8edb8c72118c from epoch 95: 
+	Total Winnings: 615780
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 6339752b-4e5d-41a5-9f66-6249cf7fbed9 from epoch 95: 
+	Total Winnings: 612980
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 104af1df-cc63-499f-a070-b42c15ef11e8 from epoch 95: 
+	Total Winnings: 608614
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 3ab6ce0c-cacb-4990-a4c0-3cfd94fe245c from epoch 96: 
+	Total Winnings: 926830
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f69f769a-fae1-4b7a-b28c-76320771ba7e from epoch 96: 
+	Total Winnings: 665297
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 69199e36-61e7-4520-b5c8-57e3d20d3627 from epoch 96: 
+	Total Winnings: 546561
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 3f5687c8-03c3-40af-92eb-42681d2bca28 from epoch 96: 
+	Total Winnings: 502213
+	Games Won: 2/4
+---------------------------------------
+
+Evaluating top agent 12270b2b-7b1e-4ba5-8d1f-b7e6cc2293ef from epoch 96: 
+	Total Winnings: 490467
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent a3b90910-6fab-4f00-82c3-fed8e7461df4 from epoch 97: 
+	Total Winnings: 704341
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b03e9f81-b3ee-4da4-943c-b5dc8395b03a from epoch 97: 
+	Total Winnings: 689584
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 8a4ae24f-fefc-4645-bb2d-5e59b3529bd8 from epoch 97: 
+	Total Winnings: 641225
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent c013469f-3f83-4b3f-a93b-abc4f0879117 from epoch 97: 
+	Total Winnings: 570610
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent fd49f437-b119-4489-beef-cd2dfc80fc11 from epoch 97: 
+	Total Winnings: 556930
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 54fe7713-8514-4e64-adb5-e6db4e9c92bd from epoch 98: 
+	Total Winnings: 1124417
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent d94421ac-912f-4709-ab20-77116ed07e4a from epoch 98: 
+	Total Winnings: 668195
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 813ca8bb-09f3-424f-b3da-e3b320df0b77 from epoch 98: 
+	Total Winnings: 664860
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent f2c7f199-4383-481a-928d-f85c0255b78c from epoch 98: 
+	Total Winnings: 631252
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent de7724d1-b012-441f-8deb-ed38f340a7d2 from epoch 98: 
+	Total Winnings: 552493
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent defdf3c4-85aa-4ad0-b933-3fcbb8e2b184 from epoch 99: 
+	Total Winnings: 922773
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent b7e8d74b-7b35-411c-aedf-4b5bc2802dc1 from epoch 99: 
+	Total Winnings: 647453
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent 7cf43402-a38f-43f7-9d6c-1528008ca403 from epoch 99: 
+	Total Winnings: 632124
+	Games Won: 4/4
+---------------------------------------
+
+Evaluating top agent ca83b026-5e1b-4b57-afad-9afd240fb0c3 from epoch 99: 
+	Total Winnings: 608514
+	Games Won: 3/4
+---------------------------------------
+
+Evaluating top agent 9851394a-0919-40b1-a9a8-2882322c191d from epoch 99: 
+	Total Winnings: 577451
+	Games Won: 3/4
+Top agent 0 ID: defdf3c4-85aa-4ad0-b933-3fcbb8e2b184
+Top agent 1 ID: b7e8d74b-7b35-411c-aedf-4b5bc2802dc1
+Top agent 2 ID: 7cf43402-a38f-43f7-9d6c-1528008ca403
