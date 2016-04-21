@@ -35,7 +35,7 @@ class PokerNetNoLimit(PokerNet):
         '''
 
         self.nets[2].rebuild()
-        self.nets[2]._vbiases[4].set_value(np.array([250]))
+        self.nets[2]._vbiases[4].set_value(np.array([1.5]))
         
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
@@ -56,7 +56,7 @@ class PokerNetNoLimit(PokerNet):
                             bad_training += 1
                             continue
                         data[int(parts[0])].append((
-                            np.array(parts[-4 : -1] + [max(200, parts[-1])]),
+                            np.array(parts[-4 : -1] + [max(1.0, parts[-1] / 200.0)]),
                             [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         bad_training += 1
@@ -71,7 +71,7 @@ class PokerNetNoLimit(PokerNet):
                             bad_validation += 1
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-4:-1] + [max(200, parts[-1])]),
+                            np.array(parts[-4:-1] + [max(1.0, parts[-1]/200.0)]),
                             [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         bad_validation += 1
@@ -113,7 +113,7 @@ class PokerNetNoLimit(PokerNet):
                         if len(parts[15:-4]) != int(parts[0]):
                             continue
                         validation[int(parts[0])].append((
-                            np.array(parts[-4:-1] + [max(200, parts[-1])]),
+                            np.array(parts[-4:-1] + [max(1.0, parts[-1] / 200)]),
                             [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
                     except Exception as e:
                         pass

@@ -36,4 +36,6 @@ class PokerNet(object):
     def cost(self, validation_file):
 	    raise NotImplemented
     def eval(self, nplayers, cardfeatures, potfeatures, chipfeatures):
-        return self.nets[nplayers].eval([np.array(cardfeatures), np.array([p * 0.01 for p in potfeatures[:3]] + potfeatures[3:])])
+        ret = self.nets[nplayers].eval([np.array(cardfeatures), np.array([p * 0.01 for p in potfeatures[:3]] + potfeatures[3:])])
+        ret[:, -1] *= 200
+        return ret
