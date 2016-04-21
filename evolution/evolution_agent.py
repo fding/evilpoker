@@ -139,6 +139,7 @@ class EvoAgent(object):
     as benchmarks for the next generation and to ensure that the evolution never loses progress.
     '''
     def run_epochs(self, to_mutate, to_keep):
+        self.init_agents()
         for i in xrange(NUM_EPOCHS):
             # set the gameplaying groups
             self.init_agent_gameplaying_groups()
@@ -220,7 +221,6 @@ class EvoAgent(object):
     in the population that is playing the game
     '''
     def init_agent_gameplaying_groups(self):
-        self.init_agents()
         agent_game_groups = []
        
         if COEVOLVE:
