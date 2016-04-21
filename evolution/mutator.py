@@ -66,7 +66,7 @@ class Mutator(object):
                     new_agent_params.params.append(parents[1].params[j])
             new_agent_params.write_params()
             
-            print "crossover: %d" % new_aid
+            print "crossover: %s" % new_aid
         return agents
 
     def mutate(self, num_agents_to_produce):
@@ -84,7 +84,7 @@ class Mutator(object):
                 new_agent_params.params.append(param * (1 + 0.4 * np.random.normal(0, 1, 1)))
             new_agent_params.write_params()
         
-            print "mutated: %d" % new_aid
+            print "mutated: %s" % new_aid
         return agents
     
     def combo(self, num_agents_to_produce):
@@ -111,7 +111,7 @@ class Mutator(object):
 
             new_agent_params.write_params()
             
-            print "combo: %d" % new_aid
+            print "combo: %s" % new_aid
         return agents
 
     def get_parents(self, nparents):
