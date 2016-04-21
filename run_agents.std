@@ -121,3 +121,63 @@ SCORE:347149|-347149:a18efbac-b96f-4437-b9da-355e96b22757|f5d18c84-3394-4bf5-837
 coevolve A 6 vs benchmark B 60
 SCORE:588054|-588054:0125c723-43e1-4a60-9b9a-a120676623ab|9e727835-7701-4014-a2c0-31c471b81908
 coevolve A 6 vs benchmark B 61
+SCORE:3413|-3413:0125c723-43e1-4a60-9b9a-a120676623ab|efc7890c-78b2-469b-8eda-1bd049761f4b
+coevolve A 6 vs benchmark B 62
+SCORE:214897|-214897:0125c723-43e1-4a60-9b9a-a120676623ab|4b16fd47-93fa-4578-93dd-e7eb56998603
+coevolve A 6 vs benchmark B 63
+SCORE:648152|-648152:0125c723-43e1-4a60-9b9a-a120676623ab|1d09413b-85f0-4ab9-8a98-ce39a180041f
+coevolve A 6 vs benchmark B 64
+SCORE:343255|-343255:0125c723-43e1-4a60-9b9a-a120676623ab|82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa
+coevolve A 6 vs benchmark B 65
+SCORE:399258|-399258:0125c723-43e1-4a60-9b9a-a120676623ab|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+coevolve A 6 vs benchmark B 66
+SCORE:-11495|11495:0125c723-43e1-4a60-9b9a-a120676623ab|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+coevolve A 6 vs benchmark B 67
+SCORE:658657|-658657:0125c723-43e1-4a60-9b9a-a120676623ab|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+coevolve A 6 vs benchmark B 68
+SCORE:523016|-523016:0125c723-43e1-4a60-9b9a-a120676623ab|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+coevolve A 6 vs benchmark B 69
+SCORE:317254|-317254:0125c723-43e1-4a60-9b9a-a120676623ab|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+coevolve A 7 vs benchmark B 70
+SCORE:310207|-310207:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|9e727835-7701-4014-a2c0-31c471b81908
+coevolve A 7 vs benchmark B 71
+SCORE:368211|-368211:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|efc7890c-78b2-469b-8eda-1bd049761f4b
+coevolve A 7 vs benchmark B 72
+SCORE:-265578|265578:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|4b16fd47-93fa-4578-93dd-e7eb56998603
+coevolve A 7 vs benchmark B 73
+SCORE:830700|-830700:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|1d09413b-85f0-4ab9-8a98-ce39a180041f
+coevolve A 7 vs benchmark B 74
+SCORE:409751|-409751:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa
+coevolve A 7 vs benchmark B 75
+SCORE:426443|-426443:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+coevolve A 7 vs benchmark B 76
+SCORE:-127799|127799:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+coevolve A 7 vs benchmark B 77
+SCORE:611863|-611863:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+coevolve A 7 vs benchmark B 78
+SCORE:-431742|431742:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+coevolve A 7 vs benchmark B 79
+SCORE:169182|-169182:2e162a8c-cfc0-4e3c-8472-d5aecceb53f8|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+coevolve A 8 vs benchmark B 80
+SCORE:1401600|-1401600:5741519b-a74f-4555-bae9-633c8027db9d|9e727835-7701-4014-a2c0-31c471b81908
+coevolve A 8 vs benchmark B 81
+SCORE:1280850|-1280850:5741519b-a74f-4555-bae9-633c8027db9d|efc7890c-78b2-469b-8eda-1bd049761f4b
+coevolve A 8 vs benchmark B 82
+SCORE:1161750|-1161750:5741519b-a74f-4555-bae9-633c8027db9d|4b16fd47-93fa-4578-93dd-e7eb56998603
+coevolve A 8 vs benchmark B 83
+SCORE:942400|-942400:5741519b-a74f-4555-bae9-633c8027db9d|1d09413b-85f0-4ab9-8a98-ce39a180041f
+coevolve A 8 vs benchmark B 84
+SCORE:1559600|-1559600:5741519b-a74f-4555-bae9-633c8027db9d|82fa18f5-8aa3-4985-afe7-c40c2ed8dfaa
+coevolve A 8 vs benchmark B 85
+SCORE:861250|-861250:5741519b-a74f-4555-bae9-633c8027db9d|39c74d3b-f5d2-4529-b0f0-d65e652d3e62
+coevolve A 8 vs benchmark B 86
+SCORE:1579400|-1579400:5741519b-a74f-4555-bae9-633c8027db9d|2fcba191-8d9b-4beb-b534-0589ae95fbe0
+coevolve A 8 vs benchmark B 87
+SCORE:803150|-803150:5741519b-a74f-4555-bae9-633c8027db9d|cb1fc19f-39d2-400b-98d5-e1d2c8c60a36
+coevolve A 8 vs benchmark B 88
+SCORE:1381100|-1381100:5741519b-a74f-4555-bae9-633c8027db9d|ffc4f092-8afc-437b-aa64-a817ba3a7ded
+coevolve A 8 vs benchmark B 89
+SCORE:843400|-843400:5741519b-a74f-4555-bae9-633c8027db9d|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+coevolve A 9 vs benchmark B 90
+SCORE:1341050|-1341050:21690196-5a01-4727-8d09-060b35287800|9e727835-7701-4014-a2c0-31c471b81908
+coevolve A 9 vs benchmark B 91
