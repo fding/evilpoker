@@ -117,3 +117,7 @@ SCORE:648635|-648635:a18efbac-b96f-4437-b9da-355e96b22757|cb1fc19f-39d2-400b-98d
 coevolve A 5 vs benchmark B 58
 SCORE:643380|-643380:a18efbac-b96f-4437-b9da-355e96b22757|ffc4f092-8afc-437b-aa64-a817ba3a7ded
 coevolve A 5 vs benchmark B 59
+SCORE:347149|-347149:a18efbac-b96f-4437-b9da-355e96b22757|f5d18c84-3394-4bf5-8377-3f604c0a3f92
+coevolve A 6 vs benchmark B 60
+SCORE:588054|-588054:0125c723-43e1-4a60-9b9a-a120676623ab|9e727835-7701-4014-a2c0-31c471b81908
+coevolve A 6 vs benchmark B 61
