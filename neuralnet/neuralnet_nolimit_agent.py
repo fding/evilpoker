@@ -53,7 +53,7 @@ class NeuralNetNolimitAgent(PokerBot):
         # Normalize probabilities because they no longer sum to 1
         # action_probabilities = [float(p)/sum(action_probabilities) for p in action_probabilities]
         
-	print card_features
+        print card_features
         print action_output[:3]
         print 'Raise amount=', action_output[3] 
         
