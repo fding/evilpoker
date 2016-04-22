@@ -3,6 +3,7 @@ coevolve=("797ead4d-bdee-4aa5-9143-3aec9900a976" "c51dafff-3da3-43ff-b56b-195ce2
 
 benchmarks=("e45556ee-1928-4385-a828-bd3d454378e0" "0093233f-fe90-4002-8af8-4cb3cbd84d9c" "66ec13c6-e5d2-4171-9773-fa28f02cc649" "69a8c022-d2ba-4aa2-b1e6-112b67476121" "5ac588db-e34c-464f-8a58-d70b6eb1bdae" "75662f2c-dc4f-448a-a5b1-887bf498f54f" "3a617f08-e08e-452a-b5d4-94241fdfb723" "764c4e3c-d54b-46e2-8018-13f0f0edab5f" "a588fef6-7582-46a6-99ed-ee8fa19b885e" "4dd97199-47c5-446e-bfef-c57591ec8e8e")
 
+cd ../
 for i1 in `seq 0 4`; 
 do
     for i2 in `seq 5 9` 

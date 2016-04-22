@@ -18,7 +18,7 @@ class NeuralNetNolimitAgent(PokerBot):
         self.neural_net = PokerNetNoLimit(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
-        self.lastaction = None
+        self.prev_action = poker.FOLD
 
         super(NeuralNetNolimitAgent, self).__init__(host, port, gamefile)
 
@@ -77,13 +77,10 @@ class NeuralNetNolimitAgent(PokerBot):
         elif (poker.isValidAction(self.game, state, 0, action ) <= 0):
             action.type = poker.CALL
 
-        if self.lastaction == poker.RAISE:
+        if action.type == poker.RAISE and self.prev_action == poker.RAISE:
             action.type = poker.CALL
-            action.size = 0
-
         print action.type, action.size
-        self.lastaction = action.type
-	
+        self.prev_action = action.type	
         assert(poker.isValidAction( self.game, state, 0, action ) > 0)
         return action
 
