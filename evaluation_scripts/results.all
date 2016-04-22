@@ -1,0 +1,218 @@
+benchmark B benchmark/play_alwayscall.sh vs agent 0
+SCORE:-57382|57382:benchmark/play_alwayscall.sh|797ead4d-bdee-4aa5-9143-3aec9900a976
+benchmark B benchmark/play_alwaysfold.sh vs agent 0
+SCORE:-216350|216350:benchmark/play_alwaysfold.sh|797ead4d-bdee-4aa5-9143-3aec9900a976
+benchmark B benchmark/play_alwaysraise.sh vs agent 0
+SCORE:1422670|-1422670:benchmark/play_alwaysraise.sh|797ead4d-bdee-4aa5-9143-3aec9900a976
+benchmark B benchmark/play_callorraise.sh vs agent 0
+SCORE:126987|-126987:benchmark/play_callorraise.sh|797ead4d-bdee-4aa5-9143-3aec9900a976
+benchmark B benchmark/play_safe.sh vs agent 0
+SCORE:-140661|140661:benchmark/play_safe.sh|797ead4d-bdee-4aa5-9143-3aec9900a976
+benchmark B benchmark/play_alwayscall.sh vs agent 1
+SCORE:-72462|72462:benchmark/play_alwayscall.sh|c51dafff-3da3-43ff-b56b-195ce2f87e86
+benchmark B benchmark/play_alwaysfold.sh vs agent 1
+SCORE:-217050|217050:benchmark/play_alwaysfold.sh|c51dafff-3da3-43ff-b56b-195ce2f87e86
+benchmark B benchmark/play_alwaysraise.sh vs agent 1
+SCORE:1343456|-1343456:benchmark/play_alwaysraise.sh|c51dafff-3da3-43ff-b56b-195ce2f87e86
+benchmark B benchmark/play_callorraise.sh vs agent 1
+SCORE:1238215|-1238215:benchmark/play_callorraise.sh|c51dafff-3da3-43ff-b56b-195ce2f87e86
+benchmark B benchmark/play_safe.sh vs agent 1
+SCORE:-107637|107637:benchmark/play_safe.sh|c51dafff-3da3-43ff-b56b-195ce2f87e86
+benchmark B benchmark/play_alwayscall.sh vs agent 2
+SCORE:-3783|3783:benchmark/play_alwayscall.sh|3dd46949-9199-4d59-acc1-d57c4217417b
+benchmark B benchmark/play_alwaysfold.sh vs agent 2
+SCORE:-196100|196100:benchmark/play_alwaysfold.sh|3dd46949-9199-4d59-acc1-d57c4217417b
+benchmark B benchmark/play_alwaysraise.sh vs agent 2
+SCORE:78597|-78597:benchmark/play_alwaysraise.sh|3dd46949-9199-4d59-acc1-d57c4217417b
+benchmark B benchmark/play_callorraise.sh vs agent 2
+SCORE:145862|-145862:benchmark/play_callorraise.sh|3dd46949-9199-4d59-acc1-d57c4217417b
+benchmark B benchmark/play_safe.sh vs agent 2
+SCORE:-50938|50938:benchmark/play_safe.sh|3dd46949-9199-4d59-acc1-d57c4217417b
+benchmark B benchmark/play_alwayscall.sh vs agent 3
+SCORE:9575|-9575:benchmark/play_alwayscall.sh|d5d256f3-5228-448c-9b28-ec3842562200
+benchmark B benchmark/play_alwaysfold.sh vs agent 3
+SCORE:-196250|196250:benchmark/play_alwaysfold.sh|d5d256f3-5228-448c-9b28-ec3842562200
+benchmark B benchmark/play_alwaysraise.sh vs agent 3
+SCORE:-292355|292355:benchmark/play_alwaysraise.sh|d5d256f3-5228-448c-9b28-ec3842562200
+benchmark B benchmark/play_callorraise.sh vs agent 3
+SCORE:-11441|11441:benchmark/play_callorraise.sh|d5d256f3-5228-448c-9b28-ec3842562200
+benchmark B benchmark/play_safe.sh vs agent 3
+SCORE:-70417|70417:benchmark/play_safe.sh|d5d256f3-5228-448c-9b28-ec3842562200
+
+
+benchmark B benchmark/play_alwayscall.sh vs agent 4
+SCORE:24087|-24087:benchmark/play_alwayscall.sh|ecef7f69-6a8b-4aaa-9026-799649a514d1
+benchmark B benchmark/play_alwaysfold.sh vs agent 4
+SCORE:-172550|172550:benchmark/play_alwaysfold.sh|ecef7f69-6a8b-4aaa-9026-799649a514d1
+benchmark B benchmark/play_alwaysraise.sh vs agent 4
+SCORE:613329|-613329:benchmark/play_alwaysraise.sh|ecef7f69-6a8b-4aaa-9026-799649a514d1
+benchmark B benchmark/play_callorraise.sh vs agent 4
+SCORE:252585|-252585:benchmark/play_callorraise.sh|ecef7f69-6a8b-4aaa-9026-799649a514d1
+benchmark B benchmark/play_safe.sh vs agent 4
+SCORE:5495|-5495:benchmark/play_safe.sh|ecef7f69-6a8b-4aaa-9026-799649a514d1
+benchmark B benchmark/play_alwayscall.sh vs agent 5
+SCORE:-48976|48976:benchmark/play_alwayscall.sh|6921212e-8066-4acb-90ba-95aedff82ef2
+benchmark B benchmark/play_alwaysfold.sh vs agent 5
+SCORE:-191300|191300:benchmark/play_alwaysfold.sh|6921212e-8066-4acb-90ba-95aedff82ef2
+benchmark B benchmark/play_alwaysraise.sh vs agent 5
+SCORE:497974|-497974:benchmark/play_alwaysraise.sh|6921212e-8066-4acb-90ba-95aedff82ef2
+benchmark B benchmark/play_callorraise.sh vs agent 5
+SCORE:-304982|304982:benchmark/play_callorraise.sh|6921212e-8066-4acb-90ba-95aedff82ef2
+benchmark B benchmark/play_safe.sh vs agent 5
+SCORE:-6574|6574:benchmark/play_safe.sh|6921212e-8066-4acb-90ba-95aedff82ef2
+
+benchmark B benchmark/play_alwayscall.sh vs agent 6
+SCORE:-57607|57607:benchmark/play_alwayscall.sh|adc371e2-0239-45a1-b109-51bc1cfd4227
+benchmark B benchmark/play_alwaysfold.sh vs agent 6
+SCORE:-191000|191000:benchmark/play_alwaysfold.sh|adc371e2-0239-45a1-b109-51bc1cfd4227
+benchmark B benchmark/play_alwaysraise.sh vs agent 6
+SCORE:981278|-981278:benchmark/play_alwaysraise.sh|adc371e2-0239-45a1-b109-51bc1cfd4227
+benchmark B benchmark/play_callorraise.sh vs agent 6
+SCORE:-126224|126224:benchmark/play_callorraise.sh|adc371e2-0239-45a1-b109-51bc1cfd4227
+benchmark B benchmark/play_safe.sh vs agent 6
+
+SCORE:-17300|17300:benchmark/play_safe.sh|adc371e2-0239-45a1-b109-51bc1cfd4227
+benchmark B benchmark/play_alwayscall.sh vs agent 7
+SCORE:-50701|50701:benchmark/play_alwayscall.sh|ba450ca7-26be-4b1d-99a0-0914d8992297
+benchmark B benchmark/play_alwaysfold.sh vs agent 7
+SCORE:-191650|191650:benchmark/play_alwaysfold.sh|ba450ca7-26be-4b1d-99a0-0914d8992297
+benchmark B benchmark/play_alwaysraise.sh vs agent 7
+SCORE:1209816|-1209816:benchmark/play_alwaysraise.sh|ba450ca7-26be-4b1d-99a0-0914d8992297
+benchmark B benchmark/play_callorraise.sh vs agent 7
+SCORE:-368423|368423:benchmark/play_callorraise.sh|ba450ca7-26be-4b1d-99a0-0914d8992297
+benchmark B benchmark/play_safe.sh vs agent 7
+SCORE:-21523|21523:benchmark/play_safe.sh|ba450ca7-26be-4b1d-99a0-0914d8992297
+
+benchmark B benchmark/play_alwayscall.sh vs agent 8
+SCORE:-55588|55588:benchmark/play_alwayscall.sh|b5dbc384-392a-4c54-9dc9-155794d90103
+benchmark B benchmark/play_alwaysfold.sh vs agent 8
+SCORE:-190700|190700:benchmark/play_alwaysfold.sh|b5dbc384-392a-4c54-9dc9-155794d90103
+benchmark B benchmark/play_alwaysraise.sh vs agent 8
+SCORE:777684|-777684:benchmark/play_alwaysraise.sh|b5dbc384-392a-4c54-9dc9-155794d90103
+benchmark B benchmark/play_callorraise.sh vs agent 8
+SCORE:-12541|12541:benchmark/play_callorraise.sh|b5dbc384-392a-4c54-9dc9-155794d90103
+benchmark B benchmark/play_safe.sh vs agent 8
+SCORE:-17414|17414:benchmark/play_safe.sh|b5dbc384-392a-4c54-9dc9-155794d90103
+benchmark B benchmark/play_alwayscall.sh vs agent 9
+SCORE:-59526|59526:benchmark/play_alwayscall.sh|98c3044e-54b6-4c29-a86f-118c80c472c1
+benchmark B benchmark/play_alwaysfold.sh vs agent 9
+SCORE:-192150|192150:benchmark/play_alwaysfold.sh|98c3044e-54b6-4c29-a86f-118c80c472c1
+benchmark B benchmark/play_alwaysraise.sh vs agent 9
+SCORE:1001470|-1001470:benchmark/play_alwaysraise.sh|98c3044e-54b6-4c29-a86f-118c80c472c1
+benchmark B benchmark/play_callorraise.sh vs agent 9
+SCORE:-170170|170170:benchmark/play_callorraise.sh|98c3044e-54b6-4c29-a86f-118c80c472c1
+benchmark B benchmark/play_safe.sh vs agent 9
+SCORE:-9576|9576:benchmark/play_safe.sh|98c3044e-54b6-4c29-a86f-118c80c472c1
+
+
+benchmark B benchmark/play_alwayscall.sh vs agent 10
+SCORE:-2299491|2299491:benchmark/play_alwayscall.sh|e45556ee-1928-4385-a828-bd3d454378e0
+benchmark B benchmark/play_alwaysfold.sh vs agent 10
+SCORE:-221900|221900:benchmark/play_alwaysfold.sh|e45556ee-1928-4385-a828-bd3d454378e0
+benchmark B benchmark/play_alwaysraise.sh vs agent 10
+SCORE:1480050|-1480050:benchmark/play_alwaysraise.sh|e45556ee-1928-4385-a828-bd3d454378e0
+benchmark B benchmark/play_callorraise.sh vs agent 10
+SCORE:1093301|-1093301:benchmark/play_callorraise.sh|e45556ee-1928-4385-a828-bd3d454378e0
+benchmark B benchmark/play_safe.sh vs agent 10
+SCORE:548961|-548961:benchmark/play_safe.sh|e45556ee-1928-4385-a828-bd3d454378e0
+
+benchmark B benchmark/play_alwayscall.sh vs agent 11
+SCORE:-2552789|2552789:benchmark/play_alwayscall.sh|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+benchmark B benchmark/play_alwaysfold.sh vs agent 11
+SCORE:-220200|220200:benchmark/play_alwaysfold.sh|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+benchmark B benchmark/play_alwaysraise.sh vs agent 11
+SCORE:1500000|-1500000:benchmark/play_alwaysraise.sh|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+benchmark B benchmark/play_callorraise.sh vs agent 11
+SCORE:1166540|-1166540:benchmark/play_callorraise.sh|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+benchmark B benchmark/play_safe.sh vs agent 11
+SCORE:503339|-503339:benchmark/play_safe.sh|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+
+benchmark B benchmark/play_alwayscall.sh vs agent 12
+SCORE:-2325487|2325487:benchmark/play_alwayscall.sh|66ec13c6-e5d2-4171-9773-fa28f02cc649
+benchmark B benchmark/play_alwaysfold.sh vs agent 12
+SCORE:-219650|219650:benchmark/play_alwaysfold.sh|66ec13c6-e5d2-4171-9773-fa28f02cc649
+benchmark B benchmark/play_alwaysraise.sh vs agent 12
+SCORE:1500000|-1500000:benchmark/play_alwaysraise.sh|66ec13c6-e5d2-4171-9773-fa28f02cc649
+benchmark B benchmark/play_callorraise.sh vs agent 12
+SCORE:813186|-813186:benchmark/play_callorraise.sh|66ec13c6-e5d2-4171-9773-fa28f02cc649
+benchmark B benchmark/play_safe.sh vs agent 12
+SCORE:539991|-539991:benchmark/play_safe.sh|66ec13c6-e5d2-4171-9773-fa28f02cc649
+
+benchmark B benchmark/play_alwayscall.sh vs agent 13
+SCORE:-1243269|1243269:benchmark/play_alwayscall.sh|69a8c022-d2ba-4aa2-b1e6-112b67476121
+benchmark B benchmark/play_alwaysfold.sh vs agent 13
+SCORE:-223000|223000:benchmark/play_alwaysfold.sh|69a8c022-d2ba-4aa2-b1e6-112b67476121
+benchmark B benchmark/play_alwaysraise.sh vs agent 13
+SCORE:1480500|-1480500:benchmark/play_alwaysraise.sh|69a8c022-d2ba-4aa2-b1e6-112b67476121
+benchmark B benchmark/play_callorraise.sh vs agent 13
+SCORE:1558937|-1558937:benchmark/play_callorraise.sh|69a8c022-d2ba-4aa2-b1e6-112b67476121
+benchmark B benchmark/play_safe.sh vs agent 13
+SCORE:560517|-560517:benchmark/play_safe.sh|69a8c022-d2ba-4aa2-b1e6-112b67476121
+
+benchmark B benchmark/play_alwayscall.sh vs agent 14
+SCORE:-2614035|2614035:benchmark/play_alwayscall.sh|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+benchmark B benchmark/play_alwaysfold.sh vs agent 14
+SCORE:-221400|221400:benchmark/play_alwaysfold.sh|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+benchmark B benchmark/play_alwaysraise.sh vs agent 14
+SCORE:1500000|-1500000:benchmark/play_alwaysraise.sh|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+benchmark B benchmark/play_callorraise.sh vs agent 14
+SCORE:937036|-937036:benchmark/play_callorraise.sh|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+benchmark B benchmark/play_safe.sh vs agent 14
+SCORE:609181|-609181:benchmark/play_safe.sh|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+
+benchmark B benchmark/play_alwayscall.sh vs agent 15
+SCORE:-40485|40485:benchmark/play_alwayscall.sh|75662f2c-dc4f-448a-a5b1-887bf498f54f
+benchmark B benchmark/play_alwaysfold.sh vs agent 15
+SCORE:-191700|191700:benchmark/play_alwaysfold.sh|75662f2c-dc4f-448a-a5b1-887bf498f54f
+benchmark B benchmark/play_alwaysraise.sh vs agent 15
+SCORE:836536|-836536:benchmark/play_alwaysraise.sh|75662f2c-dc4f-448a-a5b1-887bf498f54f
+benchmark B benchmark/play_callorraise.sh vs agent 15
+SCORE:-492772|492772:benchmark/play_callorraise.sh|75662f2c-dc4f-448a-a5b1-887bf498f54f
+benchmark B benchmark/play_safe.sh vs agent 15
+SCORE:1799|-1799:benchmark/play_safe.sh|75662f2c-dc4f-448a-a5b1-887bf498f54f
+
+benchmark B benchmark/play_alwayscall.sh vs agent 16
+SCORE:-64910|64910:benchmark/play_alwayscall.sh|3a617f08-e08e-452a-b5d4-94241fdfb723
+benchmark B benchmark/play_alwaysfold.sh vs agent 16
+SCORE:-192100|192100:benchmark/play_alwaysfold.sh|3a617f08-e08e-452a-b5d4-94241fdfb723
+benchmark B benchmark/play_alwaysraise.sh vs agent 16
+SCORE:840564|-840564:benchmark/play_alwaysraise.sh|3a617f08-e08e-452a-b5d4-94241fdfb723
+benchmark B benchmark/play_callorraise.sh vs agent 16
+SCORE:-99315|99315:benchmark/play_callorraise.sh|3a617f08-e08e-452a-b5d4-94241fdfb723
+benchmark B benchmark/play_safe.sh vs agent 16
+SCORE:-10526|10526:benchmark/play_safe.sh|3a617f08-e08e-452a-b5d4-94241fdfb723
+
+
+benchmark B benchmark/play_alwayscall.sh vs agent 17
+SCORE:-37586|37586:benchmark/play_alwayscall.sh|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+benchmark B benchmark/play_alwaysfold.sh vs agent 17
+SCORE:-187150|187150:benchmark/play_alwaysfold.sh|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+benchmark B benchmark/play_alwaysraise.sh vs agent 17
+SCORE:530406|-530406:benchmark/play_alwaysraise.sh|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+benchmark B benchmark/play_callorraise.sh vs agent 17
+SCORE:-769323|769323:benchmark/play_callorraise.sh|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+benchmark B benchmark/play_safe.sh vs agent 17
+SCORE:1682|-1682:benchmark/play_safe.sh|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+
+benchmark B benchmark/play_alwayscall.sh vs agent 18
+SCORE:-49336|49336:benchmark/play_alwayscall.sh|a588fef6-7582-46a6-99ed-ee8fa19b885e
+benchmark B benchmark/play_alwaysfold.sh vs agent 18
+SCORE:-194250|194250:benchmark/play_alwaysfold.sh|a588fef6-7582-46a6-99ed-ee8fa19b885e
+benchmark B benchmark/play_alwaysraise.sh vs agent 18
+SCORE:933012|-933012:benchmark/play_alwaysraise.sh|a588fef6-7582-46a6-99ed-ee8fa19b885e
+benchmark B benchmark/play_callorraise.sh vs agent 18
+SCORE:-311383|311383:benchmark/play_callorraise.sh|a588fef6-7582-46a6-99ed-ee8fa19b885e
+benchmark B benchmark/play_safe.sh vs agent 18
+SCORE:-7369|7369:benchmark/play_safe.sh|a588fef6-7582-46a6-99ed-ee8fa19b885e
+
+benchmark B benchmark/play_alwayscall.sh vs agent 19
+SCORE:-56504|56504:benchmark/play_alwayscall.sh|4dd97199-47c5-446e-bfef-c57591ec8e8e
+benchmark B benchmark/play_alwaysfold.sh vs agent 19
+SCORE:-190800|190800:benchmark/play_alwaysfold.sh|4dd97199-47c5-446e-bfef-c57591ec8e8e
+benchmark B benchmark/play_alwaysraise.sh vs agent 19
+SCORE:580142|-580142:benchmark/play_alwaysraise.sh|4dd97199-47c5-446e-bfef-c57591ec8e8e
+benchmark B benchmark/play_callorraise.sh vs agent 19
+SCORE:-229255|229255:benchmark/play_callorraise.sh|4dd97199-47c5-446e-bfef-c57591ec8e8e
+benchmark B benchmark/play_safe.sh vs agent 19
+SCORE:-6819|6819:benchmark/play_safe.sh|4dd97199-47c5-446e-bfef-c57591ec8e8e
+
