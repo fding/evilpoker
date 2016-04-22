@@ -1,0 +1,199 @@
+5229
+benchmark B benchmark/play_alwaysfold.sh vs agent 0
+208900
+benchmark B benchmark/play_alwaysraise.sh vs agent 0
+-36158
+benchmark B benchmark/play_callorraise.sh vs agent 0
+-101790
+benchmark B benchmark/play_safe.sh vs agent 0
+6181
+benchmark B benchmark/play_alwayscall.sh vs agent 1
+54886
+benchmark B benchmark/play_alwaysfold.sh vs agent 1
+209750
+benchmark B benchmark/play_alwaysraise.sh vs agent 1
+-51570
+benchmark B benchmark/play_callorraise.sh vs agent 1
+11349
+benchmark B benchmark/play_safe.sh vs agent 1
+-16320
+benchmark B benchmark/play_alwayscall.sh vs agent 2
+10246
+benchmark B benchmark/play_alwaysfold.sh vs agent 2
+183850
+benchmark B benchmark/play_alwaysraise.sh vs agent 2
+-121262
+benchmark B benchmark/play_callorraise.sh vs agent 2
+-11492
+benchmark B benchmark/play_safe.sh vs agent 2
+1901
+benchmark B benchmark/play_alwayscall.sh vs agent 3
+-3651
+benchmark B benchmark/play_alwaysfold.sh vs agent 3
+187700
+benchmark B benchmark/play_alwaysraise.sh vs agent 3
+-115819
+benchmark B benchmark/play_callorraise.sh vs agent 3
+-49624
+benchmark B benchmark/play_safe.sh vs agent 3
+14200
+benchmark B benchmark/play_alwayscall.sh vs agent 4
+-6977
+benchmark B benchmark/play_alwaysfold.sh vs agent 4
+163100
+benchmark B benchmark/play_alwaysraise.sh vs agent 4
+-468305
+benchmark B benchmark/play_callorraise.sh vs agent 4
+-200366
+benchmark B benchmark/play_safe.sh vs agent 4
+-15037
+benchmark B benchmark/play_alwayscall.sh vs agent 5
+44945
+benchmark B benchmark/play_alwaysfold.sh vs agent 5
+178050
+benchmark B benchmark/play_alwaysraise.sh vs agent 5
+166286
+benchmark B benchmark/play_callorraise.sh vs agent 5
+71180
+benchmark B benchmark/play_safe.sh vs agent 5
+5961
+benchmark B benchmark/play_alwayscall.sh vs agent 6
+46968
+benchmark B benchmark/play_alwaysfold.sh vs agent 6
+179750
+benchmark B benchmark/play_alwaysraise.sh vs agent 6
+81352
+benchmark B benchmark/play_callorraise.sh vs agent 6
+101989
+benchmark B benchmark/play_safe.sh vs agent 6
+1096
+benchmark B benchmark/play_alwayscall.sh vs agent 7
+37656
+benchmark B benchmark/play_alwaysfold.sh vs agent 7
+181850
+benchmark B benchmark/play_alwaysraise.sh vs agent 7
+79188
+benchmark B benchmark/play_callorraise.sh vs agent 7
+104288
+benchmark B benchmark/play_safe.sh vs agent 7
+-6146
+benchmark B benchmark/play_alwayscall.sh vs agent 8
+28020
+benchmark B benchmark/play_alwaysfold.sh vs agent 8
+177500
+benchmark B benchmark/play_alwaysraise.sh vs agent 8
+104204
+benchmark B benchmark/play_callorraise.sh vs agent 8
+74601
+benchmark B benchmark/play_safe.sh vs agent 8
+3300
+benchmark B benchmark/play_alwayscall.sh vs agent 9
+34285
+benchmark B benchmark/play_alwaysfold.sh vs agent 9
+181000
+benchmark B benchmark/play_alwaysraise.sh vs agent 9
+116572
+benchmark B benchmark/play_callorraise.sh vs agent 9
+114977
+benchmark B benchmark/play_safe.sh vs agent 9
+1457
+benchmark B benchmark/play_alwayscall.sh vs agent 10
+1539011
+benchmark B benchmark/play_alwaysfold.sh vs agent 10
+220600
+benchmark B benchmark/play_alwaysraise.sh vs agent 10
+-1379500
+benchmark B benchmark/play_callorraise.sh vs agent 10
+74456
+benchmark B benchmark/play_safe.sh vs agent 10
+-228151
+benchmark B benchmark/play_alwayscall.sh vs agent 11
+2026765
+benchmark B benchmark/play_alwaysfold.sh vs agent 11
+215300
+benchmark B benchmark/play_alwaysraise.sh vs agent 11
+-1482232
+benchmark B benchmark/play_callorraise.sh vs agent 11
+226549
+benchmark B benchmark/play_safe.sh vs agent 11
+-266459
+benchmark B benchmark/play_alwayscall.sh vs agent 12
+1931595
+benchmark B benchmark/play_alwaysfold.sh vs agent 12
+220500
+benchmark B benchmark/play_alwaysraise.sh vs agent 12
+-1426074
+benchmark B benchmark/play_callorraise.sh vs agent 12
+-570392
+benchmark B benchmark/play_safe.sh vs agent 12
+-329007
+benchmark B benchmark/play_alwayscall.sh vs agent 13
+1431041
+benchmark B benchmark/play_alwaysfold.sh vs agent 13
+222400
+benchmark B benchmark/play_alwaysraise.sh vs agent 13
+-1500000
+benchmark B benchmark/play_callorraise.sh vs agent 13
+-960398
+benchmark B benchmark/play_safe.sh vs agent 13
+-410786
+benchmark B benchmark/play_alwayscall.sh vs agent 14
+1452381
+benchmark B benchmark/play_alwaysfold.sh vs agent 14
+219600
+benchmark B benchmark/play_alwaysraise.sh vs agent 14
+-1422280
+benchmark B benchmark/play_callorraise.sh vs agent 14
+477403
+benchmark B benchmark/play_safe.sh vs agent 14
+-191173
+benchmark B benchmark/play_alwayscall.sh vs agent 15
+31660
+benchmark B benchmark/play_alwaysfold.sh vs agent 15
+181500
+benchmark B benchmark/play_alwaysraise.sh vs agent 15
+155082
+benchmark B benchmark/play_callorraise.sh vs agent 15
+92582
+benchmark B benchmark/play_safe.sh vs agent 15
+3830
+benchmark B benchmark/play_alwayscall.sh vs agent 16
+38840
+benchmark B benchmark/play_alwaysfold.sh vs agent 16
+176450
+benchmark B benchmark/play_alwaysraise.sh vs agent 16
+72664
+benchmark B benchmark/play_callorraise.sh vs agent 16
+57764
+benchmark B benchmark/play_safe.sh vs agent 16
+2355
+benchmark B benchmark/play_alwayscall.sh vs agent 17
+32492
+benchmark B benchmark/play_alwaysfold.sh vs agent 17
+179900
+benchmark B benchmark/play_alwaysraise.sh vs agent 17
+118232
+benchmark B benchmark/play_callorraise.sh vs agent 17
+82955
+benchmark B benchmark/play_safe.sh vs agent 17
+9691
+benchmark B benchmark/play_alwayscall.sh vs agent 18
+33658
+benchmark B benchmark/play_alwaysfold.sh vs agent 18
+176700
+benchmark B benchmark/play_alwaysraise.sh vs agent 18
+124500
+benchmark B benchmark/play_callorraise.sh vs agent 18
+50997
+benchmark B benchmark/play_safe.sh vs agent 18
+8404
+benchmark B benchmark/play_alwayscall.sh vs agent 19
+38495
+benchmark B benchmark/play_alwaysfold.sh vs agent 19
+181450
+benchmark B benchmark/play_alwaysraise.sh vs agent 19
+93758
+benchmark B benchmark/play_callorraise.sh vs agent 19
+74552
+benchmark B benchmark/play_safe.sh vs agent 19
+-731

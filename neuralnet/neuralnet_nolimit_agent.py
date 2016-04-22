@@ -74,7 +74,7 @@ class NeuralNetNolimitAgent(PokerBot):
             action.type = poker.CALL
         elif (poker.isValidAction(self.game, state, 0, action ) <= 0):
             action.type = poker.CALL
-        elif action.type == poker.RAISE and self.prev_action == poker.RAISE:
+        if action.type == poker.RAISE and self.prev_action == poker.RAISE:
             action.type = poker.CALL
         print action.type, action.size
         self.prev_action = action.type	
