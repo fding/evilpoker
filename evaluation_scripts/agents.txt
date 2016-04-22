@@ -1,0 +1,200 @@
+coevolve A 0 vs benchmark B 0
+SCORE:795564|-795564:797ead4d-bdee-4aa5-9143-3aec9900a976|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 0 vs benchmark B 1
+SCORE:1460967|-1460967:797ead4d-bdee-4aa5-9143-3aec9900a976|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 0 vs benchmark B 2
+SCORE:1415353|-1415353:797ead4d-bdee-4aa5-9143-3aec9900a976|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 0 vs benchmark B 3
+SCORE:1517094|-1517094:797ead4d-bdee-4aa5-9143-3aec9900a976|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 0 vs benchmark B 4
+SCORE:1091405|-1091405:797ead4d-bdee-4aa5-9143-3aec9900a976|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 0 vs benchmark B 5
+SCORE:563607|-563607:797ead4d-bdee-4aa5-9143-3aec9900a976|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 0 vs benchmark B 6
+SCORE:316390|-316390:797ead4d-bdee-4aa5-9143-3aec9900a976|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 0 vs benchmark B 7
+SCORE:457618|-457618:797ead4d-bdee-4aa5-9143-3aec9900a976|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 0 vs benchmark B 8
+SCORE:600314|-600314:797ead4d-bdee-4aa5-9143-3aec9900a976|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 0 vs benchmark B 9
+SCORE:555872|-555872:797ead4d-bdee-4aa5-9143-3aec9900a976|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 1 vs benchmark B 10
+SCORE:1078108|-1078108:c51dafff-3da3-43ff-b56b-195ce2f87e86|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 1 vs benchmark B 11
+SCORE:1000072|-1000072:c51dafff-3da3-43ff-b56b-195ce2f87e86|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 1 vs benchmark B 12
+SCORE:1236381|-1236381:c51dafff-3da3-43ff-b56b-195ce2f87e86|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 1 vs benchmark B 13
+SCORE:1342148|-1342148:c51dafff-3da3-43ff-b56b-195ce2f87e86|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 1 vs benchmark B 14
+SCORE:988678|-988678:c51dafff-3da3-43ff-b56b-195ce2f87e86|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 1 vs benchmark B 15
+SCORE:428986|-428986:c51dafff-3da3-43ff-b56b-195ce2f87e86|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 1 vs benchmark B 16
+SCORE:357737|-357737:c51dafff-3da3-43ff-b56b-195ce2f87e86|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 1 vs benchmark B 17
+SCORE:333115|-333115:c51dafff-3da3-43ff-b56b-195ce2f87e86|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 1 vs benchmark B 18
+SCORE:396403|-396403:c51dafff-3da3-43ff-b56b-195ce2f87e86|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 1 vs benchmark B 19
+SCORE:394685|-394685:c51dafff-3da3-43ff-b56b-195ce2f87e86|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 2 vs benchmark B 20
+SCORE:187810|-187810:3dd46949-9199-4d59-acc1-d57c4217417b|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 2 vs benchmark B 21
+SCORE:775027|-775027:3dd46949-9199-4d59-acc1-d57c4217417b|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 2 vs benchmark B 22
+SCORE:580525|-580525:3dd46949-9199-4d59-acc1-d57c4217417b|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 2 vs benchmark B 23
+SCORE:1264015|-1264015:3dd46949-9199-4d59-acc1-d57c4217417b|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 2 vs benchmark B 24
+SCORE:-46028|46028:3dd46949-9199-4d59-acc1-d57c4217417b|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 2 vs benchmark B 25
+SCORE:112539|-112539:3dd46949-9199-4d59-acc1-d57c4217417b|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 2 vs benchmark B 26
+SCORE:156328|-156328:3dd46949-9199-4d59-acc1-d57c4217417b|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 2 vs benchmark B 27
+SCORE:138662|-138662:3dd46949-9199-4d59-acc1-d57c4217417b|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 2 vs benchmark B 28
+SCORE:118399|-118399:3dd46949-9199-4d59-acc1-d57c4217417b|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 2 vs benchmark B 29
+SCORE:126049|-126049:3dd46949-9199-4d59-acc1-d57c4217417b|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 3 vs benchmark B 30
+SCORE:315885|-315885:d5d256f3-5228-448c-9b28-ec3842562200|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 3 vs benchmark B 31
+SCORE:1094351|-1094351:d5d256f3-5228-448c-9b28-ec3842562200|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 3 vs benchmark B 32
+SCORE:1439830|-1439830:d5d256f3-5228-448c-9b28-ec3842562200|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 3 vs benchmark B 33
+SCORE:1455028|-1455028:d5d256f3-5228-448c-9b28-ec3842562200|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 3 vs benchmark B 34
+SCORE:656086|-656086:d5d256f3-5228-448c-9b28-ec3842562200|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 3 vs benchmark B 35
+SCORE:181286|-181286:d5d256f3-5228-448c-9b28-ec3842562200|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 3 vs benchmark B 36
+SCORE:194006|-194006:d5d256f3-5228-448c-9b28-ec3842562200|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 3 vs benchmark B 37
+SCORE:202669|-202669:d5d256f3-5228-448c-9b28-ec3842562200|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 3 vs benchmark B 38
+SCORE:143968|-143968:d5d256f3-5228-448c-9b28-ec3842562200|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 3 vs benchmark B 39
+SCORE:152307|-152307:d5d256f3-5228-448c-9b28-ec3842562200|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 4 vs benchmark B 40
+SCORE:-444756|444756:ecef7f69-6a8b-4aaa-9026-799649a514d1|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 4 vs benchmark B 41
+SCORE:350019|-350019:ecef7f69-6a8b-4aaa-9026-799649a514d1|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 4 vs benchmark B 42
+SCORE:-330073|330073:ecef7f69-6a8b-4aaa-9026-799649a514d1|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 4 vs benchmark B 43
+SCORE:837590|-837590:ecef7f69-6a8b-4aaa-9026-799649a514d1|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 4 vs benchmark B 44
+SCORE:-545243|545243:ecef7f69-6a8b-4aaa-9026-799649a514d1|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 4 vs benchmark B 45
+SCORE:-70299|70299:ecef7f69-6a8b-4aaa-9026-799649a514d1|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 4 vs benchmark B 46
+SCORE:-26053|26053:ecef7f69-6a8b-4aaa-9026-799649a514d1|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 4 vs benchmark B 47
+SCORE:-19097|19097:ecef7f69-6a8b-4aaa-9026-799649a514d1|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 4 vs benchmark B 48
+SCORE:-7758|7758:ecef7f69-6a8b-4aaa-9026-799649a514d1|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 4 vs benchmark B 49
+SCORE:-33708|33708:ecef7f69-6a8b-4aaa-9026-799649a514d1|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 5 vs benchmark B 50
+SCORE:-567737|567737:6921212e-8066-4acb-90ba-95aedff82ef2|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 5 vs benchmark B 51
+SCORE:207208|-207208:6921212e-8066-4acb-90ba-95aedff82ef2|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 5 vs benchmark B 52
+SCORE:704324|-704324:6921212e-8066-4acb-90ba-95aedff82ef2|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 5 vs benchmark B 53
+SCORE:861332|-861332:6921212e-8066-4acb-90ba-95aedff82ef2|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 5 vs benchmark B 54
+SCORE:76784|-76784:6921212e-8066-4acb-90ba-95aedff82ef2|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 5 vs benchmark B 55
+SCORE:184276|-184276:6921212e-8066-4acb-90ba-95aedff82ef2|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 5 vs benchmark B 56
+SCORE:130868|-130868:6921212e-8066-4acb-90ba-95aedff82ef2|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 5 vs benchmark B 57
+SCORE:175032|-175032:6921212e-8066-4acb-90ba-95aedff82ef2|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 5 vs benchmark B 58
+SCORE:174715|-174715:6921212e-8066-4acb-90ba-95aedff82ef2|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 5 vs benchmark B 59
+SCORE:116866|-116866:6921212e-8066-4acb-90ba-95aedff82ef2|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 6 vs benchmark B 60
+SCORE:-246178|246178:adc371e2-0239-45a1-b109-51bc1cfd4227|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 6 vs benchmark B 61
+SCORE:145212|-145212:adc371e2-0239-45a1-b109-51bc1cfd4227|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 6 vs benchmark B 62
+SCORE:1059991|-1059991:adc371e2-0239-45a1-b109-51bc1cfd4227|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 6 vs benchmark B 63
+SCORE:1007232|-1007232:adc371e2-0239-45a1-b109-51bc1cfd4227|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 6 vs benchmark B 64
+SCORE:298138|-298138:adc371e2-0239-45a1-b109-51bc1cfd4227|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 6 vs benchmark B 65
+SCORE:187611|-187611:adc371e2-0239-45a1-b109-51bc1cfd4227|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 6 vs benchmark B 66
+SCORE:101055|-101055:adc371e2-0239-45a1-b109-51bc1cfd4227|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 6 vs benchmark B 67
+SCORE:162633|-162633:adc371e2-0239-45a1-b109-51bc1cfd4227|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 6 vs benchmark B 68
+SCORE:168943|-168943:adc371e2-0239-45a1-b109-51bc1cfd4227|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 6 vs benchmark B 69
+SCORE:154187|-154187:adc371e2-0239-45a1-b109-51bc1cfd4227|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 7 vs benchmark B 70
+SCORE:393881|-393881:ba450ca7-26be-4b1d-99a0-0914d8992297|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 7 vs benchmark B 71
+SCORE:8441|-8441:ba450ca7-26be-4b1d-99a0-0914d8992297|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 7 vs benchmark B 72
+SCORE:823383|-823383:ba450ca7-26be-4b1d-99a0-0914d8992297|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 7 vs benchmark B 73
+SCORE:823912|-823912:ba450ca7-26be-4b1d-99a0-0914d8992297|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 7 vs benchmark B 74
+SCORE:-778726|778726:ba450ca7-26be-4b1d-99a0-0914d8992297|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 7 vs benchmark B 75
+SCORE:203157|-203157:ba450ca7-26be-4b1d-99a0-0914d8992297|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 7 vs benchmark B 76
+SCORE:53122|-53122:ba450ca7-26be-4b1d-99a0-0914d8992297|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 7 vs benchmark B 77
+SCORE:81099|-81099:ba450ca7-26be-4b1d-99a0-0914d8992297|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 7 vs benchmark B 78
+SCORE:148264|-148264:ba450ca7-26be-4b1d-99a0-0914d8992297|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 7 vs benchmark B 79
+SCORE:142086|-142086:ba450ca7-26be-4b1d-99a0-0914d8992297|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 8 vs benchmark B 80
+SCORE:-312336|312336:b5dbc384-392a-4c54-9dc9-155794d90103|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 8 vs benchmark B 81
+SCORE:445880|-445880:b5dbc384-392a-4c54-9dc9-155794d90103|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 8 vs benchmark B 82
+SCORE:514408|-514408:b5dbc384-392a-4c54-9dc9-155794d90103|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 8 vs benchmark B 83
+SCORE:869755|-869755:b5dbc384-392a-4c54-9dc9-155794d90103|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 8 vs benchmark B 84
+SCORE:-722002|722002:b5dbc384-392a-4c54-9dc9-155794d90103|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 8 vs benchmark B 85
+SCORE:96290|-96290:b5dbc384-392a-4c54-9dc9-155794d90103|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 8 vs benchmark B 86
+SCORE:207389|-207389:b5dbc384-392a-4c54-9dc9-155794d90103|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 8 vs benchmark B 87
+SCORE:191905|-191905:b5dbc384-392a-4c54-9dc9-155794d90103|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 8 vs benchmark B 88
+SCORE:194630|-194630:b5dbc384-392a-4c54-9dc9-155794d90103|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 8 vs benchmark B 89
+SCORE:58280|-58280:b5dbc384-392a-4c54-9dc9-155794d90103|4dd97199-47c5-446e-bfef-c57591ec8e8e
+coevolve A 9 vs benchmark B 90
+SCORE:294193|-294193:98c3044e-54b6-4c29-a86f-118c80c472c1|e45556ee-1928-4385-a828-bd3d454378e0
+coevolve A 9 vs benchmark B 91
+SCORE:285950|-285950:98c3044e-54b6-4c29-a86f-118c80c472c1|0093233f-fe90-4002-8af8-4cb3cbd84d9c
+coevolve A 9 vs benchmark B 92
+SCORE:1003610|-1003610:98c3044e-54b6-4c29-a86f-118c80c472c1|66ec13c6-e5d2-4171-9773-fa28f02cc649
+coevolve A 9 vs benchmark B 93
+SCORE:1131307|-1131307:98c3044e-54b6-4c29-a86f-118c80c472c1|69a8c022-d2ba-4aa2-b1e6-112b67476121
+coevolve A 9 vs benchmark B 94
+SCORE:632670|-632670:98c3044e-54b6-4c29-a86f-118c80c472c1|5ac588db-e34c-464f-8a58-d70b6eb1bdae
+coevolve A 9 vs benchmark B 95
+SCORE:220403|-220403:98c3044e-54b6-4c29-a86f-118c80c472c1|75662f2c-dc4f-448a-a5b1-887bf498f54f
+coevolve A 9 vs benchmark B 96
+SCORE:123472|-123472:98c3044e-54b6-4c29-a86f-118c80c472c1|3a617f08-e08e-452a-b5d4-94241fdfb723
+coevolve A 9 vs benchmark B 97
+SCORE:103227|-103227:98c3044e-54b6-4c29-a86f-118c80c472c1|764c4e3c-d54b-46e2-8018-13f0f0edab5f
+coevolve A 9 vs benchmark B 98
+SCORE:158581|-158581:98c3044e-54b6-4c29-a86f-118c80c472c1|a588fef6-7582-46a6-99ed-ee8fa19b885e
+coevolve A 9 vs benchmark B 99
+SCORE:238192|-238192:98c3044e-54b6-4c29-a86f-118c80c472c1|4dd97199-47c5-446e-bfef-c57591ec8e8e
