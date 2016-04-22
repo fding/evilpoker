@@ -49,7 +49,9 @@ class NeuralNetNolimitAgent(PokerBot):
         chip_features = [c/float(s) for c in chip_features]
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
-        action_probabilities = np.round(1000 * action_output[:3]) * 0.001
+        action_probabilities = action_output[:3]
+
+        action_probabilities[0] *= 20
         s = sum(action_probabilities)
         action_probabilities = action_probabilities / s
         raise_amount = int(action_output[3])
