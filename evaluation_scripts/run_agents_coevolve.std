@@ -1,0 +1,50 @@
+coevolve A 0 vs coevolve A 5
+SCORE:-4903|4903:9851394a-0919-40b1-a9a8-2882322c191d|a18efbac-b96f-4437-b9da-355e96b22757
+coevolve A 0 vs coevolve A 6
+SCORE:-51695|51695:9851394a-0919-40b1-a9a8-2882322c191d|0125c723-43e1-4a60-9b9a-a120676623ab
+coevolve A 0 vs coevolve A 7
+SCORE:941271|-941271:9851394a-0919-40b1-a9a8-2882322c191d|2e162a8c-cfc0-4e3c-8472-d5aecceb53f8
+coevolve A 0 vs coevolve A 8
+SCORE:-174857|174857:9851394a-0919-40b1-a9a8-2882322c191d|5741519b-a74f-4555-bae9-633c8027db9d
+coevolve A 0 vs coevolve A 9
+SCORE:194525|-194525:9851394a-0919-40b1-a9a8-2882322c191d|21690196-5a01-4727-8d09-060b35287800
+coevolve A 1 vs coevolve A 5
+SCORE:55529|-55529:ca83b026-5e1b-4b57-afad-9afd240fb0c3|a18efbac-b96f-4437-b9da-355e96b22757
+coevolve A 1 vs coevolve A 6
+SCORE:439152|-439152:ca83b026-5e1b-4b57-afad-9afd240fb0c3|0125c723-43e1-4a60-9b9a-a120676623ab
+coevolve A 1 vs coevolve A 7
+SCORE:353414|-353414:ca83b026-5e1b-4b57-afad-9afd240fb0c3|2e162a8c-cfc0-4e3c-8472-d5aecceb53f8
+coevolve A 1 vs coevolve A 8
+SCORE:97558|-97558:ca83b026-5e1b-4b57-afad-9afd240fb0c3|5741519b-a74f-4555-bae9-633c8027db9d
+coevolve A 1 vs coevolve A 9
+SCORE:72452|-72452:ca83b026-5e1b-4b57-afad-9afd240fb0c3|21690196-5a01-4727-8d09-060b35287800
+coevolve A 2 vs coevolve A 5
+SCORE:62473|-62473:7cf43402-a38f-43f7-9d6c-1528008ca403|a18efbac-b96f-4437-b9da-355e96b22757
+coevolve A 2 vs coevolve A 6
+SCORE:216439|-216439:7cf43402-a38f-43f7-9d6c-1528008ca403|0125c723-43e1-4a60-9b9a-a120676623ab
+coevolve A 2 vs coevolve A 7
+SCORE:141586|-141586:7cf43402-a38f-43f7-9d6c-1528008ca403|2e162a8c-cfc0-4e3c-8472-d5aecceb53f8
+coevolve A 2 vs coevolve A 8
+SCORE:159245|-159245:7cf43402-a38f-43f7-9d6c-1528008ca403|5741519b-a74f-4555-bae9-633c8027db9d
+coevolve A 2 vs coevolve A 9
+SCORE:86281|-86281:7cf43402-a38f-43f7-9d6c-1528008ca403|21690196-5a01-4727-8d09-060b35287800
+coevolve A 3 vs coevolve A 5
+SCORE:311064|-311064:b7e8d74b-7b35-411c-aedf-4b5bc2802dc1|a18efbac-b96f-4437-b9da-355e96b22757
+coevolve A 3 vs coevolve A 6
+SCORE:236729|-236729:b7e8d74b-7b35-411c-aedf-4b5bc2802dc1|0125c723-43e1-4a60-9b9a-a120676623ab
+coevolve A 3 vs coevolve A 7
+SCORE:825333|-825333:b7e8d74b-7b35-411c-aedf-4b5bc2802dc1|2e162a8c-cfc0-4e3c-8472-d5aecceb53f8
+coevolve A 3 vs coevolve A 8
+SCORE:64881|-64881:b7e8d74b-7b35-411c-aedf-4b5bc2802dc1|5741519b-a74f-4555-bae9-633c8027db9d
+coevolve A 3 vs coevolve A 9
+SCORE:608793|-608793:b7e8d74b-7b35-411c-aedf-4b5bc2802dc1|21690196-5a01-4727-8d09-060b35287800
+coevolve A 4 vs coevolve A 5
+SCORE:-79046|79046:defdf3c4-85aa-4ad0-b933-3fcbb8e2b184|a18efbac-b96f-4437-b9da-355e96b22757
+coevolve A 4 vs coevolve A 6
+SCORE:648871|-648871:defdf3c4-85aa-4ad0-b933-3fcbb8e2b184|0125c723-43e1-4a60-9b9a-a120676623ab
+coevolve A 4 vs coevolve A 7
+SCORE:589434|-589434:defdf3c4-85aa-4ad0-b933-3fcbb8e2b184|2e162a8c-cfc0-4e3c-8472-d5aecceb53f8
+coevolve A 4 vs coevolve A 8
+SCORE:268630|-268630:defdf3c4-85aa-4ad0-b933-3fcbb8e2b184|5741519b-a74f-4555-bae9-633c8027db9d
+coevolve A 4 vs coevolve A 9
+SCORE:380193|-380193:defdf3c4-85aa-4ad0-b933-3fcbb8e2b184|21690196-5a01-4727-8d09-060b35287800
