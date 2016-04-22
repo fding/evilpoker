@@ -18,6 +18,7 @@ class NeuralNetNolimitAgent(PokerBot):
         self.neural_net = PokerNetNoLimit(maxn=2)
         self.neural_net.load_params(paramf)
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
+        self.lastaction = None
 
         super(NeuralNetNolimitAgent, self).__init__(host, port, gamefile)
 
@@ -48,14 +49,16 @@ class NeuralNetNolimitAgent(PokerBot):
         chip_features = [c/float(s) for c in chip_features]
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
-        action_probabilities = action_output[:3]
+        action_probabilities = np.round(1000 * action_output[:3]) * 0.001
+        s = sum(action_probabilities)
+        action_probabilities = action_probabilities / s
         raise_amount = int(action_output[3])
         # Normalize probabilities because they no longer sum to 1
         # action_probabilities = [float(p)/sum(action_probabilities) for p in action_probabilities]
         
         print card_features
-        print action_output[:3]
-        print 'Raise amount=', action_output[3] 
+        print action_probabilities
+        print 'Raise amount=', raise_amount
         
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
@@ -73,7 +76,13 @@ class NeuralNetNolimitAgent(PokerBot):
             action.type = poker.CALL
         elif (poker.isValidAction(self.game, state, 0, action ) <= 0):
             action.type = poker.CALL
+
+        if self.lastaction == poker.RAISE:
+            action.type = poker.CALL
+            action.size = 0
+
         print action.type, action.size
+        self.lastaction = action.type
 	
         assert(poker.isValidAction( self.game, state, 0, action ) > 0)
         return action
