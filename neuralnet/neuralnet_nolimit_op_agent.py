@@ -17,6 +17,8 @@ class NeuralNetNolimitOpAgent(PokerBot):
         # Initialize both self and op neural net with initial params
         self.neural_net = PokerNetNoLimit(maxn=2)
         self.neural_net.load_params(paramf)
+        self.neural_net_op = PokerNetNoLimit(maxn=2)
+        self.neural_net_op.load_params(paramf)
         
         self.actions = [poker.FOLD, poker.CALL, poker.RAISE]
         self.prev_action = poker.FOLD
@@ -51,6 +53,10 @@ class NeuralNetNolimitOpAgent(PokerBot):
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
         action_probabilities = action_output[:3]
+
+        action_probabilities[0] *= 20
+        s = sum(action_probabilities)
+        action_probabilities = action_probabilities / s
         raise_amount = int(action_output[3])
         
         #print card_features
@@ -148,10 +154,10 @@ class NeuralNetNolimitOpAgent(PokerBot):
                 
                 # Calculate prediction accuracy of previous opponent
                 # NN on new data
-                err = self.neural_net.cost_array(op_data)
+                err = self.neural_net_op.cost_array(op_data)
                 print 'Validation error for opponent neural net: %s' % (str(err))
                 # Backpropogation: update opponent NN params
-                self.neural_net.backprop(op_data)
+                self.neural_net_op.backprop(op_data)
                 continue
 
             if poker.currentPlayer(self.game, state.state) != state.viewingPlayer:
