@@ -67,6 +67,13 @@ int getNumActions(const State *state, int rnd) {
     return state->numActions[rnd];
 }
 
+int getActingPlayer(const State *state, int rnd, int action_num) {
+    return state->actingPlayer[rnd][action_num];
+}
+
+ Action getAction(const State *state, int rnd, int action_num) {
+    return state->action[rnd][action_num];
+}
 
 %}
 %include "stdint.i"

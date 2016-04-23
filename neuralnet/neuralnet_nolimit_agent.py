@@ -51,8 +51,6 @@ class NeuralNetNolimitAgent(PokerBot):
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
         action_probabilities = action_output[:3]
         raise_amount = int(action_output[3])
-        # Normalize probabilities because they no longer sum to 1
-        # action_probabilities = [float(p)/sum(action_probabilities) for p in action_probabilities]
         
         print card_features
         print action_output[:3]

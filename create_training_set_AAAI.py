@@ -84,7 +84,8 @@ def write_features(datafile, writer):
 					cur_hand = hands[player_index]
 					cur_action, rest_of_round = find_next_action(rest_of_round)
 					raise_amount = cur_action[3]
-					
+
+                                        # Oops, should be chips_to_call = chips_in_pot[~player_index] - chips_in_pot[player_index]
 					chips_to_call = chips_in_pot[player_index] - chips_in_pot[~player_index]
 					hole_cards = hands[player_index]
 					card_features = calculate_card_features(nplayers, hole_cards, board_cards)

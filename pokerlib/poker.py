@@ -24,7 +24,9 @@ from poker_swig import (
     getSpent,
     getNumActions,
     getStack,
-    getFolded
+    getFolded,
+    getActingPlayer,
+    getAction
 )
 
 import hands_swig
