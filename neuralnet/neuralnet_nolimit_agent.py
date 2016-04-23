@@ -50,11 +50,15 @@ class NeuralNetNolimitAgent(PokerBot):
 
         action_output = self.neural_net.eval(nremaining, card_features, pot_features, chip_features)[0]
         action_probabilities = action_output[:3]
+
+        action_probabilities[0] *= 20
+        s = sum(action_probabilities)
+        action_probabilities = action_probabilities / s
         raise_amount = int(action_output[3])
         
         print card_features
-        print action_output[:3]
-        print 'Raise amount=', action_output[3] 
+        print action_probabilities
+        print 'Raise amount=', raise_amount
         
         action = poker.Action()
         action.type = np.random.choice(self.actions, 1, p=action_probabilities)[0]
@@ -72,6 +76,7 @@ class NeuralNetNolimitAgent(PokerBot):
             action.type = poker.CALL
         elif (poker.isValidAction(self.game, state, 0, action ) <= 0):
             action.type = poker.CALL
+
         if action.type == poker.RAISE and self.prev_action == poker.RAISE:
             action.type = poker.CALL
         print action.type, action.size

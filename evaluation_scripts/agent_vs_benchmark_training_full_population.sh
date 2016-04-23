@@ -7,9 +7,9 @@ benchmarks=("e45556ee-1928-4385-a828-bd3d454378e0" "0093233f-fe90-4002-8af8-4cb3
 
 cd ../
 co_i=0
-b_i=0
 for co in "${coevolve[@]}"
 do
+    b_i=0
     for b in "${benchmarks[@]}"
     do
 	echo coevolve A $co_i vs benchmark B $b_i
