@@ -156,7 +156,7 @@ typedef int score_t;
 #define STRAIGHT_FLUSH_MIN (FOUR_OF_KIND_MIN + 15*15)
 
 
-score_t score_hand(HoleCards* hole_cards, CommunityCards* community_cards);
+int score_hand(HoleCards* hole_cards, CommunityCards* community_cards);
 
 // 20000 gives accuracy within ~0.003 in 6 ms.
 float eval_hand(int nplayers, HoleCards* hole_cards, CommunityCards* community_cards, int ntrials=20000);

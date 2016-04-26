@@ -24,7 +24,14 @@ from poker_swig import (
     getSpent,
     getNumActions,
     getStack,
-    getFolded
+    getFolded,
+    getRaiseSize,
+    getNumActions,
+    getAction,
+    getActingPlayer,
+    getBlind,
+    getNumBoardCards,
+    getFirstPlayer,
 )
 
 import hands_swig
@@ -53,6 +60,11 @@ def int_to_card(i):
     suits = "cdhs"
     ranks = "23456789TJQKA"
     return ranks[i / 4] + suits[i % 4]
+
+def card_to_int(c):
+    suits = "cdhs"
+    ranks = "23456789TJQKA"
+    return ranks.index(c[0]) * 4 + suits.index(c[1])
 
 def get_board_cards(game, state):
     '''Return all board cards at given state'''
@@ -148,3 +160,17 @@ def eval_hand_potential(nplayers, hole, board, ntrials=8000):
 
     hands_hash[(nplayers, tuple(hole), tuple(board))] = hands_swig.eval_hand(nplayers, hole_s, board_s, ntrials)
     return hands_hash[(nplayers, tuple(hole), tuple(board))]
+
+def score_hand(hole, board):
+    hole_s = hands_swig.HoleCards()
+    board_s = hands_swig.CommunityCards()
+    for i, c in enumerate(hole):
+        card = hands_swig.Card(c)
+        card.unknown = 0
+        hole_s.set_card(i, card)
+    for i, c in enumerate(board):
+        card = hands_swig.Card(c)
+        card.unknown = 0
+        board_s.set_card(i, card)
+
+    return hands_swig.score_hand(hole_s, board_s)

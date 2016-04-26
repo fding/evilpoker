@@ -67,6 +67,26 @@ int getNumActions(const State *state, int rnd) {
     return state->numActions[rnd];
 }
 
+Action* getAction(const State* state, int rnd, int act) {
+    return &state->action[rnd][act];
+}
+
+int getActingPlayer(const State* state, int rnd, int act) {
+    return state->actingPlayer[rnd][act];
+}
+
+int getBlind(const Game* game, int player) {
+    return game->blind[player];
+}
+
+int getNumBoardCards(const Game* game, int r) {
+    return game->numBoardCards[r];
+}
+
+int getFirstPlayer(const Game* game, int r) {
+    return game->firstPlayer[r];
+}
+
 
 %}
 %include "stdint.i"

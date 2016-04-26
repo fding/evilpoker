@@ -67,7 +67,7 @@ inline static int find_straight(Card* cards) {
     return -1;
 }
 
-score_t score_hand(HoleCards* hole_cards, CommunityCards* community_cards) {
+int score_hand(HoleCards* hole_cards, CommunityCards* community_cards) {
     Cardset c = emptyCardset();
     addCardToCardset(&c, hole_cards->cards[0].suit, hole_cards->cards[0].value-2);
     addCardToCardset(&c, hole_cards->cards[1].suit, hole_cards->cards[1].value-2);

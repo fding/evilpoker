@@ -23,7 +23,8 @@ class SafeAgent(PokerBot):
          
         # pot features are chips in pot, chips to call, number of opponents, and position 
         chips_in_pot = poker.getPotSize(state, nplayers)
-        expected_winning = poker.eval_hand_potential(nremaining, hole_cards, board_cards) * chips_in_pot
+        p = poker.eval_hand_potential(nremaining, hole_cards, board_cards)
+        expected_winning =  p / (1.001-p) * chips_in_pot
 
         chips_to_call = poker.chipsToCall(state, my_id)
         my_chips_in_pot = poker.getSpent(state, my_id)
