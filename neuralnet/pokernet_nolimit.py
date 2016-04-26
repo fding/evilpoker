@@ -36,6 +36,24 @@ class PokerNetNoLimit(PokerNet):
 
         self.nets[2].rebuild()
         self.nets[2]._vbiases[4].set_value(np.array([1.5]))
+
+    # Performs backpropagation.
+    # input_array should be an array of features and targets, as they would be in an input_file.
+    def backprop(self, input_array):
+        data = {}
+        for i in range(2, self.maxn+1):
+            data[i] = []
+        # Process data as we would in self.train
+        for parts in input_array:            
+            data[parts[0]].append((np.array(parts[-4 : -1] + [max(1.0, parts[-1] / 200.0)]), [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
+            
+        for i in range(2, self.maxn+1):
+            examples = data[i]
+            self.nets[i].train([e[0] for e in examples],
+                               [e[1] for e in examples],
+                               max_epochs = 1,
+                               batch_size=len(examples),
+                               log=False)
         
     def train(self, input_file, validation_file, max_epochs = 1000):
         data = {}
@@ -100,6 +118,22 @@ class PokerNetNoLimit(PokerNet):
                         print 'Validation error for net %d after %d batches: %.4f' % (j, counter, err)
                     self.save_params(counter, dirname="agent_params_nolimit")
 
+    # Computes cost from array of data points, validation_array
+    # Note: only works for maxn=2, 2 player
+    # Returns a single integer error value
+    def cost_array(self, validation_array):
+        validation = {}
+        for i in range(2, self.maxn+1):
+            validation[i] = []
+        # Process data as we would in self.train
+        for parts in validation_array:            
+            validation[parts[0]].append((np.array(parts[-4 : -1] + [max(1.0, parts[-1] / 200.0)]), [np.array(parts[1: 10]), np.array([p * 0.01 for p in parts[10:12]] + parts[12:15])]))
+            
+        for j in range(2, self.maxn+1):
+            err = self.nets[j].cost([e[0] for e in validation[j]], [e[1] for e in validation[j]]) / len(validation[j])
+        return err
+    
+    # Computes cost from validation file.               
     def cost(self, validation_file):
         validation = {}
         for i in range(2, self.maxn+1):

@@ -87,7 +87,6 @@ int getFirstPlayer(const Game* game, int r) {
     return game->firstPlayer[r];
 }
 
-
 %}
 %include "stdint.i"
 
