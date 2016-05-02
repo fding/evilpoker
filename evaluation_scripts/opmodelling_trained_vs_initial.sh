@@ -8,5 +8,5 @@ for i1 in `seq 0 4`;
 do
     i2=$((i1+5))
 	echo coevolve A $i1 vs coevolve A $i2
-	game/play_match.pl game game/holdem.nolimit.2p.game 3000 0 ${coevolve[i1]} neuralnet/play_nolimit_op_agent.sh ${coevolve[i2]} neuralnet/play_nolimit_op_agent.sh
+	game/play_match.pl game game/holdem.nolimit.2p.game 200 0 ${coevolve[i1]} neuralnet/play_nolimit_op_agent.sh ${coevolve[i2]} neuralnet/play_nolimit_op_agent.sh
 done
